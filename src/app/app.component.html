@@ -1,0 +1,11 @@
+<div *ngIf="!isAutenticado()" class="box centrado" >
+    <a routerLink="/login">Login</a>
+</div>
+<div *ngIf="isAutenticado()" class="box centrado" >    
+    <a style="cursor:pointer" (click)="salir()">Salir</a> 
+</div> 
+
+
+
+<!--para que se muestre el componente inidicamos que queremos que trabaje app-routing con <router-oulet>-->
+<router-outlet></router-outlet>

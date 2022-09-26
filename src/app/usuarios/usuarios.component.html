@@ -1,0 +1,16 @@
+<div style="text-align: center;">
+    <button style="cursor: pointer" (click)="agregar()">+</button> <!--pointer hace que se vea el cursor cuando nos posicionamos en el botón-->
+  </div>
+  <div class="box">
+      <!--iteramos cada uno de los objetos de tipo Persona--><!--Usaremos property biding-->
+      <app-usuario *ngFor="let usuarioElemento of usuarios; let i = index"   
+      [usuario] = "usuarioElemento" 
+      [indice] = "i">
+      </app-usuario><!--[usuario] Pasando elementos a componente hijo usuario.component.html-->
+    </div>
+  <router-outlet></router-outlet> <!--se quitó lo que había antes, para que con esto se muestre las opciones de editar y de agregar persona-->
+    
+    
+    <!--Se movió Componente hijo-->
+    
+  

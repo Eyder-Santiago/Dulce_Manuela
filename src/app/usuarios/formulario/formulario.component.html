@@ -1,0 +1,10 @@
+<!--se corrigen los estilos en usuarios/agregar-->
+<div class="box">
+    <form class="item" #f="ngForm"(ngSubmit)="f.form.valid && onGuardarUsuario()"> <!--campos obligatorios (validaciones) se usará local reference clase 65-->
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="nombreInput" required> <!--clase 48 nuevamente se usa two way bidding-->
+          <input type="text" name="apellido" id="apellido" placeholder="Apellido" [(ngModel)]="apellidoInput" required> <!--local reference, solo podemos enviar información de nuestra plantilla hacia nuestro componente #apellidoInput-->
+          <button type="submit" style="cursor: pointer;"> +</button> <!--clase 43, pasar sin parámetros usando localReference, se usará viewchild-->
+          <button *ngIf="index != null" type="submit" style="cursor: pointer" 
+          class="buttonRed" (click)="eliminarUsuario()">-</button>
+    </form>
+</div>

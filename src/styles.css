@@ -9,6 +9,7 @@
     margin: 0;
     align-items: center;
     justify-content: center;
+
   }
   
   .container {
@@ -53,7 +54,7 @@
   }
   
   .boton-iniciar-sesion {
-    margin-left: 130px;
+    margin-left: 50%;
     border: none;
     width: 50%;
     font-size: 20px;
@@ -82,6 +83,36 @@
   .centrado{
     text-align: center;
   }
+
+
+  thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.table_centrado{
+  width: 20%;
+  height: 50%;
+  padding: 15px;
+  box-shadow: 5px 5px 15px rgb(100, 100, 100);
+  margin: auto;
+
+}
+
+.divFinal{
+  position: sticky; /*observar para que se quede estático*/
+  margin-top: 15%;
+  margin-bottom: 7%;
+}
+.divCrearUsuario{
+  position: sticky;
+  margin-left: 37%;
+  margin-bottom: 7%;
+}
+.divWhite{
+  background-color: white;
+}
   
   
 

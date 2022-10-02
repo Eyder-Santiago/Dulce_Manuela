@@ -15,23 +15,27 @@ import { UsuariosService } from './usuariosService';
 import { DataServices } from './data.services';
 import { LoginService } from './login/login.service';
 import { LoginGuardian } from './login/login-guardian.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    UsuariosComponent,
-    ErrorComponent,
-    FormularioComponent,
-    UsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FlashMessagesModule.forRoot(),
   ],
   providers: [LoggingService, UsuariosService, DataServices, LoginService, LoginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+    /*
+    LoginComponent,
+    UsuariosComponent,
+    ErrorComponent,
+    FormularioComponent,
+    UsuarioComponent
+    */

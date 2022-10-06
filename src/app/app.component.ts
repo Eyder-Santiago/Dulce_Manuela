@@ -1,29 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import firebase from 'firebase/compat/app';
-import { LoginService } from './login/login.service';
-
+import { Usuario } from './modelo/usuario';
+import { UsuarioService } from './servicios/usuario.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Dulce_Manuela';
-  constructor(private loginService: LoginService){}
+
+
+usuarios:Usuario[] = [];
+
+constructor(private servicioUsuario : UsuarioService){
+
+}
+
+  cargarUsuarios(){
+    this.servicioUsuario.getUsuarios().subscribe((res: Usuario[]) => {
+      this.usuarios = res;
+    });
+  }
+  
+  
+  onUsuarioCreado(usuario : Usuario){
+    this.cargarUsuarios();
+    console.log(usuario);
+  }
+  
+  onUsuarioEliminado(usuario:Usuario){
+    this.cargarUsuarios();
+    console.log(usuario);
+  }
+  
+  onUsuarioEditado(usuario:Usuario){2
+    this.cargarUsuarios();
+    console.log(usuario);
+  }
 
   ngOnInit(): void {
-   firebase.initializeApp({
-    apiKey: "AIzaSyCDqppaopyWyql9I14RG3OG2T0oiVDY9Zc",
-    authDomain: "dulce-manuela.firebaseapp.com",
-   })
-  }
-
-  isAutenticado(){
-    return this.loginService.isAutenticado();
-  }
-
-  salir(){
-    this.loginService.logout();
+    this.cargarUsuarios(); //lista los usuarios automáticamente
   }
 }

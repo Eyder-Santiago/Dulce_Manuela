@@ -1,0 +1,26 @@
+<div class="container text-center" >
+    <div class="row">
+        <div class="col"></div>
+        <div class="col border gray">
+        <h2 *ngIf="usuario.id==0">Registro Usuario</h2>
+        <h2 *ngIf="usuario.id>0">Editar Usuario</h2>
+        <label>Nombre:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.nombre" >
+        <label>Apellido:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.apellido" >
+        <label>Email:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.email" >
+        <label>Dirección:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.direccion" >
+        <label>BirthDate:</label>
+        <input type="date" class="form-control"  [(ngModel)]="usuario.birthDate" >
+        <label>Estado:</label>
+        <input type="number" class="form-control" [(ngModel)]="usuario.estado" >
+        <br> <!--si está el id==0 asumimos que está creando, else está editando-->
+        <button class="btn btn-success" *ngIf="usuario.id==0" (click)="agregarUsuario()">Registrar</button>
+        <button *ngIf="usuario.id>0" class="btn btn-success" (click)="modificarUsuario()">Actualizar</button>
+        </div>
+        <div class="col"></div>
+    </div>
+  
+

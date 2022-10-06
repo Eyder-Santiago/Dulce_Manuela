@@ -1,20 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorComponent } from './error/error.component';
-import { LoginGuardian } from './login/login-guardian.service';
-import { LoginComponent } from './login/login.component';
-import { FormularioComponent } from './usuarios/formulario/formulario.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ListadoComponent } from './usuario/listado/listado.component';
+import { UsuarioModule } from './usuario/usuarios.module';
 
 const routes: Routes = [
-  {path: '', component:UsuariosComponent}, //usando el guardián con /usuarios
-  {path: 'usuarios', component: UsuariosComponent ,children: [
-    {path: 'agregar', component: FormularioComponent}, 
-    {path: ':id', component: FormularioComponent}, 
-  ]},
-  {path: 'login', component: LoginComponent},
-  {path: '**', component: ErrorComponent},
-]
+  {path: '', component:ListadoComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListadoComponent } from './usuario/listado/listado.component';
 import { UsuarioModule } from './usuario/usuarios.module';
 
+
 const routes: Routes = [
-  {path: '', component:ListadoComponent}
+  {path: '', component:UsuarioModule}
 ];
 
 @NgModule({

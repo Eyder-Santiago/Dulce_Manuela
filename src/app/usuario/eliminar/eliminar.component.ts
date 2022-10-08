@@ -20,6 +20,7 @@ export class EliminarComponent implements OnInit {
     direccion:"",
     email:"",
     birthDate:new Date(),
+    password:"",
     estado:0,
   }
 

@@ -15,7 +15,7 @@ export class RegistroComponent implements OnInit {
 
   @Output() usuarioEditado = new EventEmitter<Usuario>();
 
-  @Input() usuario:Usuario = new Usuario("","","","", new Date(),0);
+  @Input() usuario:Usuario = new Usuario("","","","", new Date(),"",0);
 
 
   constructor(public servicioUsuario:UsuarioService) { }
@@ -31,7 +31,7 @@ export class RegistroComponent implements OnInit {
     this.servicioUsuario.crearUsuario(this.usuario).subscribe(resp =>{
       //una vez se envíe el objeto local se define en blanco
       this.usuarioCreado.emit(this.usuario);  //emite el objeto Usuario que se haya creado en registro
-      this.usuario = new Usuario("","","","", new Date(),0)
+      this.usuario = new Usuario("","","","", new Date(),"",0)
     }
     );
   }

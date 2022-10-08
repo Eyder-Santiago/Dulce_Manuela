@@ -6,6 +6,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CifrarComponent } from './cifrar/cifrar.component';
 
 
 
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegistroComponent,
     EdicionComponent,
     ListadoComponent,
-    EliminarComponent
+    EliminarComponent,
+    CifrarComponent
   ],
   imports: [
     CommonModule,

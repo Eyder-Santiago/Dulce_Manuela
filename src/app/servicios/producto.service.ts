@@ -21,12 +21,12 @@ UrlBase:string = environment.UrlBackend;
 
 public getProductos(){
    //defino la url donde esta el servicio
-   let  url = this.UrlBase + '/ProductoService.php';
-      let header=new HttpHeaders();
-      header.append('Content-Type','aplication/json')
-      header.append('Access-Control-Allow-Origin','http://localhost');
+  let  url = this.UrlBase + '/ProductoService.php';
+  let header=new HttpHeaders();
+  header.append('Content-Type','aplication/json')
+  header.append('Access-Control-Allow-Origin','http://localhost');
 
-      return this.http.get<Producto[]>(url,{headers:header});
+  return this.http.get<Producto[]>(url,{headers:header});
 }
 
 public crearProducto(producto:Producto){

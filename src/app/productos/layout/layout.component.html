@@ -1,0 +1,12 @@
+<div class="container bg-dark text-light">
+    <br>
+    <h1 class="text-center ">Listado Productos</h1>
+    <br>
+  </div>
+  
+  <app-registro (productoCreado)="onProductoCreado($event)"></app-registro>
+  
+  <br>
+  <hr>
+  <app-listado #listado [productos]="productos" (productoEliminado)="onProductoEliminado($event)"
+  (productoEditado)="onProductoEditado($event)" ></app-listado>

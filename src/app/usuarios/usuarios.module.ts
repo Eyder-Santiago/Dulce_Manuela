@@ -9,8 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CifrarComponent } from './cifrar/cifrar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
-
+import { UsuariosRoutingModule } from './usuarios-routing';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,14 @@ import { LoginComponent } from './login/login.component';
     EliminarComponent,
     CifrarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UsuariosRoutingModule,
   ],
   exports:[
     RegistroComponent,

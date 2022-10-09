@@ -42,17 +42,4 @@
   </div>
   </nav>
 
-
-
-<div class="container bg-dark text-light">
-  <br>
-  <h1 class="text-center ">Listado usuarios</h1>
-  <br>
-</div>
-
-<app-registro (usuarioCreado)="onUsuarioCreado($event)"></app-registro>
-
-<br>
-<hr>
-<app-listado #listado [usuarios]="usuarios" (usuarioEliminado)="onUsuarioEliminado($event)"
-(usuarioEditado)="onUsuarioEditado($event)" ></app-listado>
+  <router-outlet></router-outlet>

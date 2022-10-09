@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from "../modelo/usuario";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { environment } from '../../environments/environment'
 
 @Injectable({
     providedIn: 'root'
@@ -12,13 +13,15 @@ export class UsuarioService{
 
     constructor(private http: HttpClient) { }
 
+    UrlBase:string = environment.UrlBackend;
+
     public agregar(usuario : Usuario){
         this.usuarios.push(usuario); //agregando el usuario al arreglo
     }
 
     public getUsuarios(){
         //defino la url donde esta el servicio
-       let  url ='http://localhost/dulceservice/UsuarioService.php';
+       let  url =this.UrlBase + '/UsuarioService.php';
        let header=new HttpHeaders();
        header.append('Content-Type','aplication/json')
        header.append('Access-Control-Allow-Origin','http://localhost');
@@ -29,7 +32,7 @@ export class UsuarioService{
     public crearUsuario(usuario:Usuario){
 
         //defino la url donde esta el servicio
-        let  url ='http://localhost/dulceservice/UsuarioService.php';
+        let  url = this.UrlBase + '/UsuarioService.php';
            let header=new HttpHeaders();
            header.append('Content-Type','aplication/json')
            header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
@@ -40,7 +43,7 @@ export class UsuarioService{
     public editarUsuario(usuario:Usuario){
 
         //defino la url donde esta el servicio
-        let  url ='http://localhost/dulceservice/UsuarioService.php';
+        let  url = this.UrlBase + '/UsuarioService.php';
            let header=new HttpHeaders();
            header.append('Content-Type','aplication/json')
            header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
@@ -50,7 +53,7 @@ export class UsuarioService{
 
     eliminarUsuario(usuario:Usuario){
         //defino la url donde esta el servicio
-        let  url ='http://localhost/dulceservice/UsuarioService.php?id='+ usuario.id;
+        let  url = this.UrlBase + '/UsuarioService.php?id='+ usuario.id;
         let header=new HttpHeaders();
         header.append('Content-Type','aplication/json')
         header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')

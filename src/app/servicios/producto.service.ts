@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../modelo/producto';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,11 @@ public agregar(p:Producto){
   this.productos.push(p);
 }
 
+UrlBase:string = environment.UrlBackend;
+
 public getProductos(){
    //defino la url donde esta el servicio
-   let  url ='http://localhost/tiendaservice/ProductoService.php';
+   let  url = this.UrlBase + '/ProductoService.php';
       let header=new HttpHeaders();
       header.append('Content-Type','aplication/json')
       header.append('Access-Control-Allow-Origin','http://localhost');
@@ -29,7 +32,7 @@ public getProductos(){
 public crearProducto(producto:Producto){
 
   //defino la url donde esta el servicio
-  let  url ='http://localhost/tiendaservice/ProductoService.php';
+  let  url = this.UrlBase + '/ProductoService.php';
      let header=new HttpHeaders();
      header.append('Content-Type','aplication/json')
      header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
@@ -40,7 +43,7 @@ public crearProducto(producto:Producto){
 public editarProducto(producto:Producto){
 
   //defino la url donde esta el servicio
-  let  url ='http://localhost/tiendaservice/ProductoService.php';
+  let  url = this.UrlBase + '/ProductoService.php';
      let header=new HttpHeaders();
      header.append('Content-Type','aplication/json')
      header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
@@ -50,7 +53,7 @@ public editarProducto(producto:Producto){
 
 eliminarProducto(producto:Producto){
   //defino la url donde esta el servicio
-  let  url ='http://localhost/tiendaservice/ProductoService.php?id='+ producto.id;
+  let  url = this.UrlBase + '/ProductoService.php?id='+ producto.id;
   let header=new HttpHeaders();
   header.append('Content-Type','aplication/json')
   header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')

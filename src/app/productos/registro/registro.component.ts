@@ -18,9 +18,6 @@ export class RegistroComponent implements OnInit{
 
   @Input() producto:Producto = new Producto("",0,0,0);
 
-
-
-
   constructor(public servicioProducto:ProductoService) { }
 
   ngOnInit(): void {
@@ -29,27 +26,25 @@ export class RegistroComponent implements OnInit{
   //se define la función ccrear que será llamada cuando se de clic en registrar
   agregarProducto() : void{
     this.servicioProducto.crearProducto(this.producto).subscribe(resp =>{
-      //una vez se envíe el objeto local se define en blanco
-      this.productoCreado.emit(this.producto);
-      this.producto = new Producto("", 0, 0, 0);
-    }
+        //una vez se envíe el objeto local se define en blanco
+        this.productoCreado.emit(this.producto);
+        this.producto = new Producto("", 0, 0, 0);
+      },
+      err => {
+        alert("No se pudo crear el producto: " + err.error);
+      }
     );
   }
 
   modificarProducto() : void{
     this.servicioProducto.editarProducto(this.producto).subscribe(resp =>{
       //una vez se envíe el objeto local se define en blanco
-      this.productoEditado.emit(this.producto);
-      //this.producto = new Producto("", 0, 0, 0);
-    }
+        this.productoEditado.emit(this.producto);
+        //this.producto = new Producto("", 0, 0, 0);
+      },
+      err => {
+        alert("No se pudo actualizar el producto: " + err.error);
+      }
     );
-
   }
-
-  
-
-
-
-
-
 }

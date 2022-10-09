@@ -1,0 +1,23 @@
+<div class="container text-center" >
+    <div class="row">
+        <div class="col"></div>
+        <div class="col border gray">
+        <h2>Registrarse</h2>
+        <label>Nombre:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.nombre" >
+        <label>Apellido:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.apellido" >
+        <label>Email:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.email" >
+        <label>Dirección:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.direccion" >
+        <label>BirthDate:</label>
+        <input type="date" class="form-control"  [(ngModel)]="usuario.birthDate" >
+        <label>Contraseña:</label>
+        <input type="password" class="form-control" [(ngModel)]="usuario.password">
+        <br>
+        <button class="btn btn-success" (click)="agregarUsuario()">Registrar</button>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

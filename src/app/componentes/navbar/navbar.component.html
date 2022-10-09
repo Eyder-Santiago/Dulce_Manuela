@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" routerLink="pagina_principal" routerLinkActive="active"><img
+      src="../assets/logoNavbar/logo.png" alt="logo-dulce-manuela" /></a>
+  <button type="button" data-toggle="collapse" data-target="#navbarsExample"
+    aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <!-- boton de home -->
+        <a class="nav-link" routerLink="pagina_principal" routerLinkActive="active">
+          <h2>Pagina Principal</h2>
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="!estaLogueado">
+        <!-- boton de login -->
+        <a class="nav-link" routerLink="ingresar" routerLinkActive="active">
+          <h2>Ingresar</h2>
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="estaLogueado">
+        <!-- boton de logout -->
+        <button type="button" class="btn btn-block" (click)="logout()">
+          <h2>Desconectarse</h2>
+        </button>
+      </li>
+
+      <li class="nav-item" *ngIf="!estaLogueado">
+        <a class="nav-link" routerLink="registrar" routerLinkActive="active">
+          <h2>Registrar Usuario</h2>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="estaLogueado" routerLink="area_administradora" routerLinkActive="active">
+          <h2>Area Admnistrador</h2>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

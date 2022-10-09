@@ -34,7 +34,10 @@ export class EliminarComponent implements OnInit {
         console.log(resp);
         this.productoEliminado.emit(this.producto);
         alert('El producto ha sido eliminado exitosamente');
-       }); 
+       },
+       err => {
+        alert("No se pudo eliminar el producto: " + err.error);
+      }); 
     }
   }
 

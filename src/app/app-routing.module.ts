@@ -8,8 +8,11 @@ const routes: Routes = [
   },
   {
     path: 'usuarios',
-    //component: LayoutComponent
     loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuarioModule)
+  },
+  {
+    path: 'cuenta',
+    loadChildren: () => import('./cuenta/cuenta.module').then(m => m.CuentaModule)
   },
 ];
 

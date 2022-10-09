@@ -58,6 +58,7 @@ class Usuario{
 
         return $usuarios;
     }
+
     function consultarUsuarioLike($param){
         $sql="select * from usuario where nombre like '%$param%' and estado = '1'";
         $conexion = new Conexion();
@@ -69,6 +70,19 @@ class Usuario{
         $conexion->close();
 
         return $usuarios;
+    }
+
+    function consultarUsuarioCorreo(){
+        $sql = "select * from usuario where email = '$this->email'";
+        $conexion = new Conexion();
+        $res = $conexion->executeQuery($sql);
+        $usuario = null;
+        if($p = $res->fetch_object()){
+            $usuario = $p;
+        }
+        $conexion->close();
+
+        return $usuario;
     }
 
 }

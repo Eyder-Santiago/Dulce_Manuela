@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Usuario } from "../modelo/usuario";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from '../../environments/environment'
+import { TokenService } from './token.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,10 @@ export class UsuarioService{
 
     public usuarios:Array<Usuario> = [];
 
-    constructor(private http: HttpClient) { }
+    constructor(
+      private http: HttpClient,
+      private tokenService: TokenService
+    ) { }
 
     UrlBase:string = environment.UrlBackend;
 
@@ -22,44 +26,27 @@ export class UsuarioService{
     public getUsuarios(){
         //defino la url donde esta el servicio
        let  url =this.UrlBase + '/UsuarioService.php';
-       let header=new HttpHeaders();
-       header.append('Content-Type','aplication/json')
-       header.append('Access-Control-Allow-Origin','http://localhost');
-    
-       return this.http.get<Usuario[]>(url,{headers:header});
+       return this.http.get<Usuario[]>(url,{headers:this.tokenService.obtenerHeaders()});
     }
 
     public crearUsuario(usuario:Usuario){
 
         //defino la url donde esta el servicio
         let  url = this.UrlBase + '/UsuarioService.php';
-           let header=new HttpHeaders();
-           header.append('Content-Type','aplication/json')
-           header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
-           header.append('Access-Control-Allow-Origin','http://localhost');
-           return this.http.post(url,JSON.stringify(usuario),{headers:header});
+        return this.http.post(url,JSON.stringify(usuario),{headers:this.tokenService.obtenerHeaders()});
       }
 
     public editarUsuario(usuario:Usuario){
 
         //defino la url donde esta el servicio
         let  url = this.UrlBase + '/UsuarioService.php';
-           let header=new HttpHeaders();
-           header.append('Content-Type','aplication/json')
-           header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
-           header.append('Access-Control-Allow-Origin','http://localhost');
-           return this.http.put(url,JSON.stringify(usuario),{headers:header});
+        return this.http.put(url,JSON.stringify(usuario),{headers:this.tokenService.obtenerHeaders()});
       }
 
     eliminarUsuario(usuario:Usuario){
         //defino la url donde esta el servicio
-        let  url = this.UrlBase + '/UsuarioService.php?id='+ usuario.id;
-        let header=new HttpHeaders();
-        header.append('Content-Type','aplication/json')
-        header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
-        header.append('Access-Control-Allow-Origin','http://localhost');
-      
-        return this.http.delete(url,{headers:header});
+        let  url = this.UrlBase + '/UsuarioService.php?id='+ usuario.id;      
+        return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
       }
       
       

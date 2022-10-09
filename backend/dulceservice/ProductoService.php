@@ -2,15 +2,37 @@
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With");
+header("Access-Control-Allow-Headers: *");
 
 
 include_once("Producto.php");
+include_once("Token.php");
 
 //obtención del metodo empleado por el cliente para hacer la petición
 $metodo =  $_SERVER['REQUEST_METHOD'];
 
-if($metodo == "GET"){
+if ($metodo != "GET" && $metodo != "OPTIONS") {
+    if ($tokenRecibido = $_SERVER['HTTP_X_TOKEN']) {
+        $tokenRecibido = json_decode($tokenRecibido);
+        $token = new Token();            
+        $token->id_usuario = $tokenRecibido->idUsuario;
+        $token->valor = $tokenRecibido->valor;
+        
+        if (!$token->buscarTokenValor()) {
+            echo "El token no es válido";
+            //echo json_encode(["error" => "El token no es válido"]);
+            http_response_code(401);
+            exit();
+        }
+    }
+    else {
+        echo "No se envió el token";
+        http_response_code(401);
+        exit();
+    }
+}
 
+if($metodo == "GET"){
     //creación de objeto producto
     $producto = new Producto();
     $productos = array();
@@ -94,8 +116,3 @@ if($metodo =="PUT"){
     echo json_encode($request);
     exit();
 }
-
-
-
-
-?>

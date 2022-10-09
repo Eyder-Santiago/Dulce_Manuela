@@ -7,6 +7,8 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CifrarComponent } from './cifrar/cifrar.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -16,7 +18,9 @@ import { CifrarComponent } from './cifrar/cifrar.component';
     EdicionComponent,
     ListadoComponent,
     EliminarComponent,
-    CifrarComponent
+    CifrarComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

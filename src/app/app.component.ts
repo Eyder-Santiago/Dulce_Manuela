@@ -42,4 +42,36 @@ constructor(private servicioUsuario : UsuarioService){
   ngOnInit(): void {
     this.cargarUsuarios(); //lista los usuarios automáticamente
   }
+
+  loginbtn:boolean;
+  logoutbtn:boolean;
+
+  /*
+  title = 'sitio-videos';
+  constructor(private dataService: ApiService) {
+  dataService.getLoggedInName.subscribe(name => this.changeName(name));
+  if(this.dataService.isLoggedIn())
+  {
+  console.log("loggedin");
+  this.loginbtn=false;
+  this.logoutbtn=true
+  }
+  else{
+  this.loginbtn=true;
+  this.logoutbtn=false
+  }
+  
+  }
+  */
+  
+  private changeName(name: boolean): void {
+  this.logoutbtn = name;
+  this.loginbtn = !name;
+  }
+  logout()
+  {
+  //this.dataService.deleteToken();
+  window.location.href = "/pagina_principal";
+  
+  }
 }

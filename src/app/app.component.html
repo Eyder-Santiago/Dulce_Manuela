@@ -1,4 +1,49 @@
 
+
+<!--
+<h3><span class="glyphicon glyphicon-play-circle">bootstrap Funcionando</span></h3>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" routerLink="pagina_principal" routerLinkActive="active"><img src="../assets/logoNavbar/logo.png" alt="logo-dulce-manuela"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+  
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarsExample">
+  <ul class="navbar-nav mr-auto">
+   
+
+    <li class="nav-item">  <!-- boton de home -->
+  <a class="nav-link" *ngIf="loginbtn" routerLink="pagina_principal" routerLinkActive="active"><h2>Pagina Principal</h2></a>
+  </li>
+
+  <li class="nav-item"> <!-- boton de login -->
+  <a class="nav-link" *ngIf="loginbtn" routerLink="ingresar" routerLinkActive="active"><h2>Ingresar</h2></a>
+  </li>
+
+  <li class="nav-item"> <!-- boton de logout -->
+  <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()"><h2>Desconectarse</h2></button>
+  </li>
+
+  
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="loginbtn" routerLink="registrar" routerLinkActive="active"><h2>Registrar Usuario</h2></a>
+  </li>
+
+  
+
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="logoutbtn" routerLink="area_administradora" routerLinkActive="active"><h2>Area Admnistrador</h2></a>
+  </li>
+  
+  </ul>
+  </div>
+  </nav>
+
+
+
 <div class="container bg-dark text-light">
   <br>
   <h1 class="text-center ">Listado usuarios</h1>

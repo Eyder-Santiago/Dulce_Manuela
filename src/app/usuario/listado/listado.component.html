@@ -5,24 +5,24 @@
     <thead>
         <th>Nombre</th>
         <th>Apellido</th>
-        <th>Email</th>
+        <th>Correo Elecctronico</th>
+        <th>Contraseña</th>
         <th>Dirección</th>
-        <th>Birth Date</th>
+        <th>Fecha de Nacimiento</th>
         <th>Estado</th>
-        <th style="width: 80px;">Acciones</th>
+        <th class="ar-acciones">Acciones</th>
     </thead>
     <tbody>
     <tr *ngFor="let u of usuarios">
        <td>{{u.nombre}}</td>
        <td>{{u.apellido}}</td>
        <td>{{u.email}}</td>
+       <td>{{u.password}}</td>
        <td>{{u.direccion}}</td>
        <td>{{u.birthDate}}</td>
        <td>{{u.estado}}</td>
        <td><app-edicion (usuarioEditado)="onUsuarioEditado($event)" [usuario]="u"></app-edicion>
         <app-eliminar (usuarioEliminado)="onUsuarioEliminado($event)" [usuario]="u"></app-eliminar>
         </td>
-        
-
     </tr>
 </tbody>

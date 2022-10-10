@@ -43,5 +43,6 @@ export class NavbarComponent implements OnInit {
   {
     //this.dataService.deleteToken();
     window.location.href = "/pagina_principal";
+    this.tokenService.quitarToken();
   }
 }

@@ -17,7 +17,7 @@
 
       <li class="nav-item" *ngIf="!estaLogueado">
         <!-- boton de login -->
-        <a class="nav-link" routerLink="ingresar" routerLinkActive="active">
+        <a class="nav-link" routerLink="cuenta/login" routerLinkActive="active">
           <h2>Ingresar</h2>
         </a>
       </li>
@@ -30,7 +30,7 @@
       </li>
 
       <li class="nav-item" *ngIf="!estaLogueado">
-        <a class="nav-link" routerLink="registrar" routerLinkActive="active">
+        <a class="nav-link" routerLink="cuenta/registrar" routerLinkActive="active">
           <h2>Registrar Usuario</h2>
         </a>
       </li>
@@ -40,6 +40,7 @@
           <h2>Productos</h2>
         </a>
       </li>
+      
 
       <li class="nav-item" *ngIf="estaLogueado">
         <a class="nav-link" routerLink="usuarios" routerLinkActive="active">

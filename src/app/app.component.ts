@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from './servicios/token.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'Dulce_Manuela';
 
-  constructor(){
+  constructor(
+    private tokenService: TokenService
+  ){
 
   }
 
   ngOnInit(): void {
-    
+    this.tokenService.obtenerToken();
   }
 }

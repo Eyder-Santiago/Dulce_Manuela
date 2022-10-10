@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'navbar',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private tokenService: TokenService
+  ) { }
   
   estaLogueado:boolean;
 
   ngOnInit(): void {
+    this.tokenService.estaLogueado$.subscribe(valor => this.estaLogueado = valor);
   }
 
   /*

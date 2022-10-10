@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders} from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,21 +9,32 @@ export class TokenService {
 
   constructor() { }
 
+  
+  private estaLogueado = new BehaviorSubject<boolean>(false);
+  estaLogueado$ = this.estaLogueado.asObservable();
+  
+
   guardarToken(valor:string, idUsuario:number) {
     const item = JSON.stringify({ valor, idUsuario });
     localStorage.setItem('token', item);
+    this.estaLogueado.next(true);
   }
 
   quitarToken() {
     localStorage.removeItem('token');
+    this.estaLogueado.next(false);
   }
 
   obtenerToken() :string {
     let respuesta = "";
     const item = localStorage.getItem('token');
     if (item) {
+      this.estaLogueado.next(true);
       //respuesta = JSON.parse(item);
       respuesta = item;
+    }
+    else {
+      this.estaLogueado.next(false);
     }
 
     return respuesta;

@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { BuscadorComponent } from './componentes/buscador/buscador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

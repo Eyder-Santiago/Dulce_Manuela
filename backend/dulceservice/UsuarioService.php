@@ -10,7 +10,7 @@ include_once("Usuario.php");
 //obtención del metodo empleado por el cliente para hacer la petición
 $metodo =  $_SERVER['REQUEST_METHOD'];
 
-if ($metodo != "GET" && $metodo != "OPTIONS") {
+if ($metodo != "GET" && $metodo != "OPTIONS" && $metodo != "POST") {
     if ($tokenRecibido = $_SERVER['HTTP_X_TOKEN']) {
         $tokenRecibido = json_decode($tokenRecibido);
         $token = new Token();            

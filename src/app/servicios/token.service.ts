@@ -9,10 +9,10 @@ export class TokenService {
 
   constructor() { }
 
-  
+
   private estaLogueado = new BehaviorSubject<boolean>(false);
   estaLogueado$ = this.estaLogueado.asObservable();
-  
+
 
   guardarToken(valor:string, idUsuario:number) {
     const item = JSON.stringify({ valor, idUsuario });

@@ -45,11 +45,11 @@ export class UsuarioService{
 
     eliminarUsuario(usuario:Usuario){
         //defino la url donde esta el servicio
-        let  url = this.UrlBase + '/UsuarioService.php?id='+ usuario.id;      
+        let  url = this.UrlBase + '/UsuarioService.php?id='+ usuario.id;
         return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
       }
-      
-      
+
+
 
 
 

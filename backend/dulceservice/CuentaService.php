@@ -1,4 +1,4 @@
-<?php 
+<?php
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With");
@@ -10,7 +10,7 @@ include_once("Token.php");
 $metodo =  $_SERVER['REQUEST_METHOD'];
 
 if($metodo =="POST"){
-    //se obtienen los contenidos de la petición 
+    //se obtienen los contenidos de la petición
     $postdata = file_get_contents("php://input");
     //se decofican los datos que vienen en JSON
     $request = json_decode($postdata);
@@ -44,7 +44,7 @@ if($metodo =="POST"){
                 'id_usuario' => $usuarioLogin->id,
             ];
 
-            $token = new Token();            
+            $token = new Token();
             $token->id_usuario = $usuarioLogin->id;
             $token->valor = $respuesta['token'];
             $token->fecha = date('Y-m-d H:i:s');

@@ -8,13 +8,15 @@ import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { AsignPasswordComponent } from './asign-password/asign-password.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
+import { LayoutPasswordComponent } from './layout-password/layout-password.component';
 
 @NgModule({
   declarations: [
     RegistroComponent,
     LoginComponent,
     RetrievePasswordComponent,
-    AsignPasswordComponent
+    AsignPasswordComponent,
+    LayoutPasswordComponent
   ],
   imports: [
     CommonModule,

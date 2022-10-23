@@ -3,7 +3,8 @@ import { NavigationExtras, Router } from '@angular/router';
 //import { FormBuilder, FormGroup } from '@angular/forms';
 import { Usuario } from 'src/app/modelo/usuario';
 import { RetrieveService } from 'src/app/servicios/retrieve.service';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { TokenPasswordService } from 'src/app/servicios/tokenPassword.service';
+
 
 @Component({
   selector: 'app-retrieve-password',
@@ -33,7 +34,8 @@ export class RetrievePasswordComponent implements OnInit {
 
   constructor(
     public servicioRetrieve : RetrieveService,
-    private router: Router
+    private router: Router,
+    private tokenPasswordService : TokenPasswordService
   ) { }
 
   ngOnInit(): void {
@@ -75,8 +77,8 @@ export class RetrievePasswordComponent implements OnInit {
           mensaje = "El correo existe con id =" + p.id;
 
           this.router.navigate(["cuenta/asign-password"]); //envío el objeto que coincida con el correo existe con la ruta
-          this.idOfPassword.emit(p);
-          
+          this.idOfPassword.emit(p); //emito el objeto del id del correo que se seleccionó
+          this.tokenPasswordService.guardarToken(p.id, p.apellido, p.email, p.direccion, p.birthDate, p.password, p.estado);
           
 
         }else{

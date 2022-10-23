@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Usuario } from 'src/app/modelo/usuario';
 import { RetrieveService } from 'src/app/servicios/retrieve.service';
+import { TokenPasswordService } from 'src/app/servicios/tokenPassword.service';
 
 @Component({
   selector: 'app-asign-password',
@@ -12,7 +13,8 @@ export class AsignPasswordComponent implements OnInit {
 
   public contrasena:string = '';
   public confirmarContrasena:string = '';
-
+ // almacenarUsuarios : Usuario[] = [];
+  almacenar : string = "";
   @Output() idOfPassword = new EventEmitter<Usuario>();
  
   
@@ -29,7 +31,10 @@ export class AsignPasswordComponent implements OnInit {
   }
 
 
-  constructor(public servicioRetrieve : RetrieveService) { }
+  constructor(
+    public servicioRetrieve : RetrieveService,
+    private tokenPasswordService : TokenPasswordService
+  ) { }
 
   ngOnInit(): void {
     console.log(this.idOfPassword);
@@ -37,13 +42,16 @@ export class AsignPasswordComponent implements OnInit {
 
   newPassword(){
 
+    
     let mensaje : string = "Las contraseñas no coinciden";
 
     if (this.contrasena == this.confirmarContrasena){
       mensaje = "La contraseña se ha modificado satisfactoriamente";
 
-      this.editPassword()
+      //this.editPassword()
+      this.almacenar = this.tokenPasswordService.obtenerToken();
 
+      console.log(this.almacenar);
 
     }
     alert(mensaje);
@@ -51,9 +59,6 @@ export class AsignPasswordComponent implements OnInit {
 
   procesarContrasena(){
     
-
-
-   // for (let transform of usuarioSelected)
   }
 
   editPassword(){

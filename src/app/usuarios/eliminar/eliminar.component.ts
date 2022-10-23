@@ -9,9 +9,9 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class EliminarComponent implements OnInit {
 
-  @Output() usuarioEliminado = new EventEmitter<Usuario>();
-
   constructor(public servicioUsuario:UsuarioService) { }
+
+  @Output() usuarioEliminado = new EventEmitter<Usuario>();
 
   @Input() usuario:Usuario={
     id:0,
@@ -34,8 +34,11 @@ export class EliminarComponent implements OnInit {
       this.servicioUsuario.eliminarUsuario(this.usuario).subscribe(resp=>{
         console.log(resp);
         this.usuarioEliminado.emit(this.usuario);
-        alert('El producto ha sido eliminado exitosamente');
-       }); 
+        alert('El usuario ha sido eliminado exitosamente');
+       },
+       err => {
+        alert("No se pudo eliminar el usuario: " + err.error);
+      }); 
     }
   }
 

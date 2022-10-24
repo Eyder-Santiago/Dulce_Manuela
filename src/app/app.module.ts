@@ -13,6 +13,7 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { ProductoCarritoComponent } from './componentes/producto-carrito/producto-carrito.component';
 import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodos-pago/valor-total-metodos-pago.component';
 import { PublicacionComponent } from './componentes/publicacion/publicacion.component';
+import { HeaderComponent } from './componentes/header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PublicacionComponent } from './componentes/publicacion/publicacion.comp
     ProductoComponent,
     ProductoCarritoComponent,
     ValorTotalMetodosPagoComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

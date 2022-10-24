@@ -31,7 +31,7 @@ export class RetrieveService {
 
     public editPassword(usuario:Usuario){
         let header=new HttpHeaders();
-        let  url =this.UrlBase + '/UsuarioService.php'; //no afectó llamarlo retrieve
+        let  url =this.UrlBase + '/RetrievePasswordService.php'; //no afectó llamarlo retrieve
         return this.http.put(url,JSON.stringify(usuario),{headers:header});
     }
         

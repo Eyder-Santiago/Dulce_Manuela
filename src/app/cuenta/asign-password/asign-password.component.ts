@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/modelo/usuario';
 import { RetrieveService } from 'src/app/servicios/retrieve.service';
 import { TokenPasswordService } from 'src/app/servicios/tokenPassword.service';
@@ -14,11 +15,8 @@ export class AsignPasswordComponent implements OnInit {
   public contrasena:string = '';
   public confirmarContrasena:string = '';
  // almacenarUsuarios : Usuario[] = [];
-  almacenar : string = "";
   @Output() idOfPassword = new EventEmitter<Usuario>();
  
-  
-  
   @Input() usuario:Usuario={
     id:0,
     nombre:"",
@@ -32,6 +30,7 @@ export class AsignPasswordComponent implements OnInit {
 
 
   constructor(
+    private router: Router,
     public servicioRetrieve : RetrieveService,
     private tokenPasswordService : TokenPasswordService
   ) { }
@@ -41,20 +40,17 @@ export class AsignPasswordComponent implements OnInit {
   }
 
   newPassword(){
-
-    
-    let mensaje : string = "Las contraseñas no coinciden";
-
     if (this.contrasena == this.confirmarContrasena){
-      mensaje = "La contraseña se ha modificado satisfactoriamente";
-
       //this.editPassword()
-      this.almacenar = this.tokenPasswordService.obtenerToken();
-
-      console.log(this.almacenar);
-
+      this.usuario = this.tokenPasswordService.obtenerToken();
+      this.usuario.password =this.contrasena;
+      console.log(this.usuario);
+      this.editPassword();
     }
-    alert(mensaje);
+    else {
+      alert("Las contraseñas no coinciden");
+    }
+    
   }
 
   procesarContrasena(){
@@ -62,16 +58,14 @@ export class AsignPasswordComponent implements OnInit {
   }
 
   editPassword(){
-
-    
-    
-
     this.servicioRetrieve.editPassword(this.usuario).subscribe(resp =>{
-
+      alert("La contraseña se ha modificado satisfactoriamente");
 
       //una vez se envíe el objeto local se define en blanco
       //this.usuarioCambioContrasena.emit(this.usuario);
-      //this.usuario = new Usuario("","","","", new Date())
+      this.usuario = new Usuario("","","","", new Date(),"",1);
+      this.tokenPasswordService.quitarToken();
+      this.router.navigate(["cuenta/login"])
       //console.log(resp);
     }
     );

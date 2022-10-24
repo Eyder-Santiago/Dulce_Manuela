@@ -1,8 +1,12 @@
 import { HttpHeaders } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { Usuario } from "../modelo/usuario";
 //import { BehaviorSubject } from "rxjs";
 
 
+@Injectable({
+  providedIn: 'root'
+})
 export class TokenPasswordService {
 
     constructor() { }
@@ -12,8 +16,8 @@ export class TokenPasswordService {
 //  estaLogueado$ = this.estaLogueado.asObservable();
   
 
-  guardarToken(id:number, nombre:string, apellido:string, email:string, birthDate:Date, password:string, estado:number) {
-    const item = JSON.stringify({ id, nombre, apellido, email, birthDate, password, estado});
+  guardarToken(usuario:Usuario) {
+    const item = JSON.stringify(usuario);
     localStorage.setItem('token', item);
     //this.estaLogueado.next(true);
   }
@@ -32,13 +36,13 @@ export class TokenPasswordService {
     //this.estaLogueado.next(false);
   }
 
-  obtenerToken() :string {
-    let respuesta = "";
+  obtenerToken() :Usuario {
+    let respuesta = new Usuario("","","","", new Date(),"",1);
     const item = localStorage.getItem('token');
     if (item) {
       //this.estaLogueado.next(true);
-      //respuesta = JSON.parse(item);
-      respuesta = item;
+      respuesta = JSON.parse(item);
+      //respuesta = item;
     }
     else {
       //this.estaLogueado.next(false);
@@ -46,15 +50,4 @@ export class TokenPasswordService {
 
     return respuesta;
   }
-
-  obtenerHeaders() :HttpHeaders {
-    return new HttpHeaders({
-      'Content-Type': 'aplication/json',
-      'x-token': this.obtenerToken(),
-      'Access-Control-Allow-Methods': '"POST, GET,DELETE,PUT"',
-      'Access-Control-Allow-Origin': 'http://localhost',
-    });
-  }
-
-
 }

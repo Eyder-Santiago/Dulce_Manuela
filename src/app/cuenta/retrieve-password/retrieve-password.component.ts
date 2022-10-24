@@ -75,12 +75,10 @@ export class RetrievePasswordComponent implements OnInit {
         //redirige a cuenta/asign-password si el correo ingresado si exista en la base de datos
         if(p.email == this.correoInput){
           mensaje = "El correo existe con id =" + p.id;
-
-          this.router.navigate(["cuenta/asign-password"]); //envío el objeto que coincida con el correo existe con la ruta
           this.idOfPassword.emit(p); //emito el objeto del id del correo que se seleccionó
-          this.tokenPasswordService.guardarToken(p.id, p.apellido, p.email, p.direccion, p.birthDate, p.password, p.estado);
+          this.tokenPasswordService.guardarToken(p);
+          this.router.navigate(["cuenta/asign-password"]); //envío el objeto que coincida con el correo existe con la ruta
           
-
         }else{
   
         }

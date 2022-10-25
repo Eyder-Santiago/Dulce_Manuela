@@ -13,4 +13,64 @@
       <img src="img/menu.png" alt="imagen-sidebar" />
     </a>
   </nav>
+</header><header>
+  <a class="logo" href="#../../Pages/body/body.component.html" >
+    <img src="img/Logo.png" alt="logo-Dulce-Manuela" />
+  </a>
+  <nav>
+    <a class="btn-img link-dark" href="../../inicio-sesion/inicio/inicio.component.html" >
+      <i class="fa-solid fa-user-lock fa-2x"></i>
+    </a>
+    <a class="btn-img link-dark" href="#../../Pages/carrito-de-compras/carrito-de-compras.component.html" >
+      <i class="fa-solid fa-cart-shopping fa-2x"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <i class="fa-solid fa-bars fa-2x"></i>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house-chimney"></i>  Pagina de inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-solid fa-shop"></i>  Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-solid fa-user-pen"></i>  Editar Usuario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa-solid fa-users"></i>  Sobre Nosotros</a>
+              </li>
+              <li>
+                <hr class="nav-divider">
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user-secret"></i> Administrar Publicaciones
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Crear Publicaciones</a></li>
+                  <li><a class="dropdown-item" href="#">Editar Publicaciones</a></li>
+                  <li><a class="dropdown-item" href="#">Eliminar Publicaciones</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user-secret"></i> Administrar Productos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Crear Productos</a></li>
+                  <li><a class="dropdown-item" href="#">Editar Productos</a></li>
+                  <li><a class="dropdown-item" href="#">Eliminar Productos</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </nav>
 </header>

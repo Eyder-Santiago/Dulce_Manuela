@@ -10,7 +10,7 @@ include_once("Usuario.php");
 //obtención del metodo empleado por el cliente para hacer la petición
 $metodo =  $_SERVER['REQUEST_METHOD'];
 
-if ($metodo != "GET" && $metodo != "OPTIONS" && $metodo != "POST") {
+if ($metodo != "GET" && $metodo != "OPTIONS" && $metodo != "POST" && $metodo != "DELETE") {
     if ($tokenRecibido = $_SERVER['HTTP_X_TOKEN']) {
         $tokenRecibido = json_decode($tokenRecibido);
         $token = new Token();            
@@ -36,12 +36,12 @@ if($metodo == "GET"){
     //creación de objeto producto
     $usuario = new Usuario();
     $usuarios = [];
-    //si la consulta trae algun parametro
+    //si la consulta trae algun parameto
         if(isset($_GET['param'])){
             $usuarios = $usuario->consultarUsuarioLike($_GET['param']);
             
         }else{
-            //si la consulta no trae parametros se consultan todos
+            //si la consulta o trae parametros se consultan todos
           $usuarios =  $usuario->consultarUsuarios();
         }
         // Se envia encabezado con el estado de la solicitud

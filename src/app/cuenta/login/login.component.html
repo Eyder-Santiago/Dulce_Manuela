@@ -1,15 +1,14 @@
 <div class="container text-center" >
-    <div class="row">
-        <div class="col"></div>
-        <div class="col border gray">
-        <h2>Inicio de sesión</h2>
-        <label>Email:</label>
-        <input type="text" class="form-control" [(ngModel)]="usuario.email" >
-        <label>Contraseña:</label>
-        <input type="password" class="form-control" [(ngModel)]="usuario.password">
-        <br>
-        <button class="btn btn-success" (click)="hacerLogin()">Iniciar sesión</button>
-        </div>
-        <div class="col"></div>
+    <img src="../../../assets/logo/logo.png" alt="logo-dulce-manuela"/>
+    <div class="col conte-for">
+    <h2>Inicio de sesión</h2>
+    <input type="text" class="form-control login" [(ngModel)]="usuario.email" placeholder="Correo electronico">
+    <br>
+    <input type="password" class="form-control password" [(ngModel)]="usuario.password" placeholder="contraseña">
+    <p class="olvidastePassword">¿Olvidaste tu <a href="cuenta/forget-password">contraseña</a>?</p>
+    <p class="sinCuenta">¿No tienes una <a href="cuenta/registrar">cuenta</a>?</p>
+    <button class="btn btn-success" (click)="hacerLogin()">Iniciar sesión</button>
     </div>
+
 </div>
+

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CarritoDeComprasComponent } from './carrito-de-compras/carrito-de-compras.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'cuenta',
     loadChildren: () => import('./cuenta/cuenta.module').then(m => m.CuentaModule)
   },
+  {
+    path: 'carrito',
+    component: CarritoDeComprasComponent
+  }
 ];
 
 @NgModule({

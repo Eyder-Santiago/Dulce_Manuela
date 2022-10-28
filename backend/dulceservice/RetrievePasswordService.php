@@ -10,26 +10,7 @@ include_once("Usuario.php");
 //obtención del metodo empleado por el cliente para hacer la petición
 $metodo =  $_SERVER['REQUEST_METHOD'];
 
-if ($metodo != "GET" && $metodo != "OPTIONS" && $metodo != "POST" && $metodo != "DELETE") {
-    if ($tokenRecibido = $_SERVER['HTTP_X_TOKEN']) {
-        $tokenRecibido = json_decode($tokenRecibido);
-        $token = new Token();            
-        $token->id_usuario = $tokenRecibido->idUsuario;
-        $token->valor = $tokenRecibido->valor;
-        
-        if (!$token->buscarTokenValor()) {
-            echo "El token no es válido";
-            //echo json_encode(["error" => "El token no es válido"]);
-            http_response_code(401);
-            exit();
-        }
-    }
-    else {
-        echo "No se envió el token";
-        http_response_code(401);
-        exit();
-    }
-}
+
 
 if($metodo == "GET"){
 
@@ -38,7 +19,7 @@ if($metodo == "GET"){
     $usuarios = [];
     //si la consulta trae algun parameto
         if(isset($_GET['param'])){
-            $usuarios = $usuario->consultarUsuarioLike($_GET['param']);
+            $usuarios = $usuario->consultarUsuarioCorreo();
             
         }else{
             //si la consulta o trae parametros se consultan todos

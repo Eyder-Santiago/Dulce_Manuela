@@ -15,6 +15,7 @@ import { ProductoCarritoComponent } from './componentes/producto-carrito/product
 import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodos-pago/valor-total-metodos-pago.component';
 import { PublicacionComponent } from './componentes/publicacion/publicacion.component';
 import { HeaderComponent } from './componentes/header/header.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 
 
@@ -30,7 +31,8 @@ import { HeaderComponent } from './componentes/header/header.component';
     ProductoCarritoComponent,
     ValorTotalMetodosPagoComponent,
     PublicacionComponent,
-    HeaderComponent
+    HeaderComponent,
+    SobreNosotrosComponent
   ],
   imports: [
     BrowserModule,

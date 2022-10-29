@@ -3,8 +3,8 @@ header {
   justify-content: space-between;
   height: 75px;
   align-items: center;
-  padding: 8px;
   background-color: var(--color-amarillo);
+  padding: 0 10px;
 }
 
 a {

@@ -1,27 +1,15 @@
 <header>
-  <a class="logo" href="#../../Pages/body/body.component.html" >
-    <img src="../../../assets/logo/Logo.png" alt="logo-Dulce-Manuela" />
+  <a class="logo" routerLink="" routerLinkActive="active">
+    <img src="../../../assets/logo/logo.png" alt="logo-Dulce-Manuela" />
   </a>
   <nav>
-    <a class="btn-img nav-link" href="../../inicio-sesion/inicio/inicio.component.html" >
-      <i class="fa-solid fa-user-lock fa-3x"></i>
-    </a>
-    <a class="btn-img nav-link" href="#../../Pages/carrito-de-compras/carrito-de-compras.component.html" >
-      <i class="fa-solid fa-cart-shopping fa-3x"></i>
-    </a>
-    <a class="btn-img" href="#../sidebar/sidebar.component.html" >
-      <img src="img/menu.png" alt="imagen-sidebar" />
-    </a>
-  </nav>
-</header><header>
-  <a class="logo" href="#../../Pages/body/body.component.html" >
-    <img src="img/Logo.png" alt="logo-Dulce-Manuela" />
-  </a>
-  <nav>
-    <a class="btn-img link-dark" href="../../inicio-sesion/inicio/inicio.component.html" >
+    <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="cuenta/login">
       <i class="fa-solid fa-user-lock fa-2x"></i>
     </a>
-    <a class="btn-img link-dark" href="#../../Pages/carrito-de-compras/carrito-de-compras.component.html" >
+    <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="">
+      <i class="fa-solid fa-person-to-door fa-2x"></i>
+    </a>
+    <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="carrito">
       <i class="fa-solid fa-cart-shopping fa-2x"></i>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

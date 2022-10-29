@@ -1,3 +1,8 @@
+:root {
+  --color-amarillo: #FFFF7E;
+  --color-rojo: #F54852;
+}
+
 * {
   padding-top: 10px;
  }

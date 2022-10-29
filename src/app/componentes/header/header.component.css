@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  padding: 8px;
+  background-color: var(--color-amarillo);
+}
+
+a {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.logo img {
+  width: 100px;
+  align-items: center;
+}
+
+.btn-img img {
+  height: 50px;
+  width: 50px;
+  padding-right: 10px;
+}

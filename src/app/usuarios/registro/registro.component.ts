@@ -21,9 +21,9 @@ export class RegistroComponent implements OnInit {
   constructor(public servicioUsuario:UsuarioService) { }
 
   ngOnInit(): void {
-    
-  }
 
+  }
+ 
   //se define la función registro que será llamada cuando se de clic en agregar
   agregarUsuario() : void{
     this.servicioUsuario.crearUsuario(this.usuario).subscribe(resp =>{

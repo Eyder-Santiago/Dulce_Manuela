@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CarritoDeComprasComponent } from './carrito-de-compras/carrito-de-compras.component';
+import { EdicionComponent } from './productos/edicion/edicion.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'carrito',
     component: CarritoDeComprasComponent
+  },
+  {
+    path: 'editar-usuario',
+    component: EdicionComponent
+  },
+  {
+    path: 'sobre-nosotros',
+    component: SobreNosotrosComponent
   }
 ];
 

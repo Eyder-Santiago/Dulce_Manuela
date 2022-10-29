@@ -7,18 +7,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
- }
+}
 
- .body {
+.body {
   font-family: comic;
   margin: 0;
   align-items: center;
   justify-content: center;
 }
 
- .ar-acciones {
+.ar-acciones {
   width: 50px;
- }
+}
 
 .ar-most-formu {
   background-color: rgba(0,0,0,0.5);

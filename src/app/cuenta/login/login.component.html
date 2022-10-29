@@ -5,9 +5,12 @@
     <input type="text" class="form-control login" [(ngModel)]="usuario.email" placeholder="Correo electronico">
     <br>
     <input type="password" class="form-control password" [(ngModel)]="usuario.password" placeholder="contraseña">
-    <p class="olvidastePassword">¿Olvidaste tu <a href="cuenta/forget-password">contraseña</a>?</p>
-    <p class="sinCuenta">¿No tienes una <a href="cuenta/registrar">cuenta</a>?</p>
-    <button class="btn btn-success" (click)="hacerLogin()">Iniciar sesión</button>
+    <p class="olvidastePassword">¿Olvidaste tu <a class="link-danger" href="cuenta/forget-password">contraseña</a>?</p>
+    <p class="sinCuenta">¿No tienes una <a class="link-danger" href="cuenta/registrar">cuenta</a>?</p>
+    <p align="right">
+      <button class="btn " (click)="hacerLogin()">Iniciar sesión</button>
+    </p>
+
     </div>
 
 </div>

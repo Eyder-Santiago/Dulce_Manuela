@@ -16,6 +16,8 @@ import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodo
 import { PublicacionComponent } from './componentes/publicacion/publicacion.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { FormasDePagoModule } from './formas-de-pago/formas-de-pago.module';
+import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.component';
 
 
 
@@ -38,7 +40,8 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FormasDePagoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

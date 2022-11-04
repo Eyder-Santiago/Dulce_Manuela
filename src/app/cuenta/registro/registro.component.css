@@ -1,15 +1,22 @@
 .contenedor {
   width: 43em;
-  height: 31em;
+  height: 32em;
   padding: 0 30px;
   box-shadow: 5px 5px 15px rgb(100, 100, 100);
   margin: 1.5em auto;
 }
 
+p {
+  font-size: 15px;
+  margin: 0;
+}
+
+
+
 @media screen and (max-width: 600px) {
   .contenedor{
     width: 22em;
-    height: 43em;
+    height: 46em;
     padding: 30px;
     margin: 2em auto;
   }
@@ -19,8 +26,10 @@
   }
 
   .ultimo {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
+
+
 }
 
 .title {

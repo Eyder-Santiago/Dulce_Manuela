@@ -21,6 +21,7 @@ export class EdicionComponent implements OnInit {
     direccion:"",
     email:"",
     birthDate:new Date(),
+    numCelular:'',
     password:'',
     estado:0,
   }

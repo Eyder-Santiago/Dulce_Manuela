@@ -23,6 +23,7 @@ export class RetrievePasswordComponent implements OnInit {
     email:"",
     birthDate:new Date(),
     password:'',
+    numCelular:'',
     estado:1,
   }
 

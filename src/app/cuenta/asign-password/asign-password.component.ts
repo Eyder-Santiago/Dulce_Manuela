@@ -24,6 +24,7 @@ export class AsignPasswordComponent implements OnInit {
     direccion:"",
     email:"",
     birthDate:new Date(),
+    numCelular:'',
     password:'',
     estado:1,
   }
@@ -63,7 +64,7 @@ export class AsignPasswordComponent implements OnInit {
 
       //una vez se envíe el objeto local se define en blanco
       //this.usuarioCambioContrasena.emit(this.usuario);
-      this.usuario = new Usuario("","","","", new Date(),"",1);
+      this.usuario = new Usuario("","","","", new Date(),"","",1);
       this.tokenPasswordService.quitarToken();
       this.router.navigate(["cuenta/login"])
       //console.log(resp);

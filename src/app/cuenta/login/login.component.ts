@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   @Output() usuarioLogueado = new EventEmitter<Usuario>();
 
-  usuario:Usuario = new Usuario("","","","", new Date(),"",1);
+  usuario:Usuario = new Usuario("","","","", new Date(),"","",1);
 
   ngOnInit(): void {
   }

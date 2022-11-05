@@ -37,7 +37,7 @@ export class TokenPasswordService {
   }
 
   obtenerToken() :Usuario {
-    let respuesta = new Usuario("","","","", new Date(),"",1);
+    let respuesta = new Usuario("","","","", new Date(),"","",1);
     const item = localStorage.getItem('token');
     if (item) {
       //this.estaLogueado.next(true);

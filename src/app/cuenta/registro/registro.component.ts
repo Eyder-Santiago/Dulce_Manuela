@@ -13,7 +13,7 @@ export class RegistroComponent implements OnInit {
 
   @Output() usuarioCreado = new EventEmitter<Usuario>();
 
-  usuario:Usuario = new Usuario("","","","", new Date(),"",1);
+  usuario:Usuario = new Usuario("","","","", new Date(),"","",1);
 
   constructor(
     private servicioUsuario:UsuarioService,
@@ -29,7 +29,7 @@ export class RegistroComponent implements OnInit {
     this.servicioUsuario.crearUsuario(this.usuario).subscribe(resp =>{
       //una vez se envíe el objeto local se define en blanco
       this.usuarioCreado.emit(this.usuario);  //emite el objeto Usuario que se haya creado en registro
-      this.usuario = new Usuario("","","","", new Date(),"",1)
+      this.usuario = new Usuario("","","","", new Date(),"","",1)
       this.router.navigate([""]);
     }
     );

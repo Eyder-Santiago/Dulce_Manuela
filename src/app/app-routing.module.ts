@@ -36,6 +36,14 @@ const routes: Routes = [
   {
     path: 'sobre-nosotros',
     component: SobreNosotrosComponent
+  },
+  {
+    path: 'pagos-por-nequi',
+    loadChildren: () => import('./formas-de-pago/formas-de-pago.module').then(m => m.FormasDePagoModule)
+  },
+  {
+    path: 'pagos-contra-entrega',
+    loadChildren: () => import('./formas-de-pago/formas-de-pago.module').then(m => m.FormasDePagoModule)
   }
 ];
 

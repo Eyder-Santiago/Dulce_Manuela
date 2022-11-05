@@ -19,6 +19,9 @@ import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodo
 import { PublicacionComponent } from './componentes/publicacion/publicacion.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { FormasDePagoModule } from './formas-de-pago/formas-de-pago.module';
+import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.component';
+import { TiendaComponent } from './tienda/tienda.component';
 
 
 @NgModule({
@@ -33,13 +36,15 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
     ValorTotalMetodosPagoComponent,
     PublicacionComponent,
     HeaderComponent,
-    SobreNosotrosComponent
+    SobreNosotrosComponent,
+    TiendaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FormasDePagoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

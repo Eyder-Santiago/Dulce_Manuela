@@ -22,3 +22,8 @@ img{
   width: 50px;
   padding-right: 10px;
 }
+
+.titulo-nav-off {
+  color: var(--color-rojo);
+}
+

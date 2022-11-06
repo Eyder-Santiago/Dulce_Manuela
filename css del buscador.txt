@@ -1,0 +1,13 @@
+@media screen and (max-width: 600px) {
+  .buscador {
+    width: 8em;
+  }
+
+  #buscador-input{
+    width: 90%;
+  }
+
+  .btn-buscador{
+    width: 10%;
+  }
+}

@@ -6,9 +6,6 @@
     <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="cuenta/login">
       <i class="fa-solid fa-user-lock fa-2x"></i>
     </a>
-    <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="">
-      <i class="fa-solid fa-person-to-door fa-2x"></i>
-    </a>
     <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="carrito">
       <i class="fa-solid fa-cart-shopping fa-2x"></i>
     </a>
@@ -34,26 +31,29 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="sobre-nosotros"><i class="fa-solid fa-users"></i>  Sobre Nosotros</a>
               </li>
+              <li class="nav-item" *ngIf="estaLogueado">
+                <a class="nav-link" routerLink="sobre-nosotros"><i class="fa-solid fa-door-open"></i> Cerrar Sesión</a>
+              </li>
               <li>
                 <hr class="nav-divider">
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Crear Publicación</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-plus"></i> Crear Publicación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Editar Publicación</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-pen-to-square"></i> Editar Publicación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Eliminar Publicación</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-trash"></i> Eliminar Publicación</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Crear Producto</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-plus"></i> Crear Producto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Editar Producto</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-pen-to-square"></i> Editar Producto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Eliminar Producto</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-trash"></i> Eliminar Producto</a>
               </li>
             </ul>
           </div>

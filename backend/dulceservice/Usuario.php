@@ -8,6 +8,7 @@ class Usuario{
     var $email;
     var $direccion;
     var $birthDate;
+    var $numCelular;
     var $password;
     var $estado;
 
@@ -16,7 +17,7 @@ class Usuario{
 
 
     function registrarUsuario(){
-        $sql="insert into usuario(nombre,apellido,email,direccion,birthDate,password,estado) values('$this->nombre','$this->apellido','$this->email','$this->direccion','$this->birthDate','$this->password',$this->estado)";
+        $sql="insert into usuario(nombre,apellido,email,direccion,birthDate,numCelular,password,estado) values('$this->nombre','$this->apellido','$this->email','$this->direccion','$this->birthDate','$this->numCelular','$this->password',$this->estado)";
         $conexion = new Conexion();
         if($conexion->executeQuery($sql)){
             $conexion->close();
@@ -25,7 +26,7 @@ class Usuario{
     }
 
     function actualizarUsuario(){
-        $sql= "update usuario set nombre='$this->nombre', apellido='$this->apellido', email='$this->email', direccion = '$this->direccion', birthDate = '$this->birthDate', password = '$this->password', estado = $this->estado where id =$this->id";
+        $sql= "update usuario set nombre='$this->nombre', apellido='$this->apellido', email='$this->email', direccion = '$this->direccion', birthDate = '$this->birthDate', numCelular = '$this->numCelular', password = '$this->password', estado = $this->estado where id =$this->id";
         $conexion = new Conexion();
         if($conexion->executeQuery($sql)){
             $conexion->close();

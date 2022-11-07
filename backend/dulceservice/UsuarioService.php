@@ -64,6 +64,7 @@ if($metodo =="POST"){
     $usuario->email= $request->email;
     $usuario->direccion= $request->direccion;
     $usuario->birthDate= $request->birthDate;
+    $usuario->numCelular= $request->numCelular;
     $usuario->password= $request->password;
     $usuario->estado= $request->estado;
     //se llama la función de registo
@@ -109,6 +110,7 @@ if($metodo =="PUT"){
     $usuario->email= $request->email;
     $usuario->direccion= $request->direccion;
     $usuario->birthDate= $request->birthDate;
+    $usuario->numCelular= $request->numCelular;
     $usuario->password= $request->password;
     $usuario->estado= $request->estado;
     //se llama la función de registo

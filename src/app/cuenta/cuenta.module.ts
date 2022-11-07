@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AsignPasswordComponent } from './asign-password/asign-password.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { LayoutPasswordComponent } from './layout-password/layout-password.component';
+import { YourselfEditComponent } from '../usuarios/yourself-edit/yourself-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LayoutPasswordComponent } from './layout-password/layout-password.compo
     LoginComponent,
     RetrievePasswordComponent,
     AsignPasswordComponent,
-    LayoutPasswordComponent
+    LayoutPasswordComponent,
+    YourselfEditComponent
   ],
   imports: [
     CommonModule,

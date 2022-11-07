@@ -6,7 +6,7 @@
     <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="cuenta/login">
       <i class="fa-solid fa-user-lock fa-2x"></i>
     </a>
-    <a *ngIf="!estaLogueado" class="btn-img link-dark" routerLink="carrito">
+    <a *ngIf="estaLogueado" class="btn-img link-dark" routerLink="carrito">
       <i class="fa-solid fa-cart-shopping fa-2x"></i>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

@@ -5,6 +5,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { CarritoDeComprasComponent } from './carrito-de-compras/carrito-de-compras.component';
 import { EdicionComponent } from './productos/edicion/edicion.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { TiendaComponent } from './tienda/tienda.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'sobre-nosotros',
     component: SobreNosotrosComponent
+  },
+  {
+    path: 'tienda',
+    component: TiendaComponent
   },
   {
     path: 'pagos-por-nequi',

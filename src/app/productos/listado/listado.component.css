@@ -1,0 +1,142 @@
+.contenedor {
+  width: 110vh;
+  max-width: 180vh;
+  height: 100%;
+  margin: 0;
+}
+
+.tabla {
+  width: 100%;
+  border: 1px solid var(--color-rojo);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+}
+
+.tabla caption {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 8px 0px;
+}
+
+.tabla tr {
+  background-color: var(--color-amarillo);
+  border: 1px solid var(--color-rojo);
+}
+
+.tabla th, .tabla td {
+  font-size: 16px;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabla thead th{
+  text-transform: uppercase;
+  background-color: #fdfd2c;
+}
+
+.tabla tbody tr:hover {
+  background-color: var(--color-rojo-5-98);
+}
+
+.tabla tbody td:hover {
+  background-color: var(--color-rojo);
+}
+
+@media screen and (max-width: 600px) {
+  .tabla {
+      border: 0px;
+  }
+  .tabla caption {
+      font-size: 22px;
+  }
+  .tabla thead {
+      display: none;
+  }
+  .tabla tr {
+      margin-bottom: 8px;
+      border-bottom: 4px solid #fdfd2c;
+      display: block;
+  }
+  .tabla th, .tabla td {
+      font-size: 12px;
+  }
+  .tabla td {
+      display: block;
+      border-bottom: 1px solid #fdfd2c;
+      text-align: right;
+  }
+  .tabla  td:last-child {
+      border-bottom: 0px;
+  }
+  .tabla td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+      float: left;
+  }
+}
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    padding: 10px 50px;
+    box-shadow: 5px 5px 15px rgb(100, 100, 100);
+    margin: 0.5em auto;
+  }
+  @media screen and (max-width: 600px) {
+    .contenedor{
+      width: 22em;
+      height: 100%;
+      padding: 30px;
+      margin: 2em auto;
+      border: 3px solid var(--color-rojo);
+    }
+  
+    input {
+        width: 4.5em;
+    }
+  
+    .ultimo {
+      margin-bottom: 5px;
+    }
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 40px;
+    padding: 0;
+    margin: 10px 0px 30px 0px;
+  }
+  
+  img {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 10em;
+    padding-top: 0;
+  }
+  
+  .conte-for {
+    /*padding: 0;*/
+    padding-top: 12%;
+    width: 25em;
+    margin: 0 auto;
+  }
+  
+  .form-control {
+    width: 20em;
+    border: none;
+    border-radius: 0;
+    justify-content: left;
+    border-bottom: 1px solid var(--color-rojo);
+  }
+  
+  button {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    background-color: var(--color-rojo);
+  }

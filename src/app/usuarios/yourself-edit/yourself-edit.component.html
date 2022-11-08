@@ -1,1 +1,17 @@
-<p>yourself-edit works!</p>
+<div class="container text-center" >
+    <div>
+        <div class="col"></div>
+        <div class="col border gray">
+        <h2>Editar mi información</h2>
+        <label>Id:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.id">
+        <label>Nombre:</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.nombre">
+        <!--<input type="text" class="form-control" [(ngModel)]="usuario.email" >-->
+        <br> <!--si está el id==0 asumimos que está creando, else está editando-->
+        <button class="btn btn-success" (click)="editarCuenta()">Actualizar</button>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+

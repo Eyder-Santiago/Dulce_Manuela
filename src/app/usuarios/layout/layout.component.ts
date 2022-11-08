@@ -31,7 +31,12 @@ export class LayoutComponent implements OnInit {
     console.log(usuario);
   }
   
-  onUsuarioEditado(usuario:Usuario){2
+  onUsuarioEditado(usuario:Usuario){
+    this.cargarUsuarios();
+    console.log(usuario);
+  }
+
+  onUsuarioAutoEditado(usuario:Usuario){
     this.cargarUsuarios();
     console.log(usuario);
   }

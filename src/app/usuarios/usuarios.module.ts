@@ -10,6 +10,7 @@ import { CifrarComponent } from './cifrar/cifrar.component';
 import { LayoutComponent } from './layout/layout.component';
 
 import { UsuariosRoutingModule } from './usuarios-routing';
+import { YourselfEditComponent } from './yourself-edit/yourself-edit.component'; 
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UsuariosRoutingModule } from './usuarios-routing';
     ListadoComponent,
     EliminarComponent,
     CifrarComponent,
-    LayoutComponent
+    LayoutComponent,
+    YourselfEditComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { UsuariosRoutingModule } from './usuarios-routing';
     ListadoComponent, //llenar para usarse en otras clases
     EdicionComponent,
     EliminarComponent,
+    YourselfEditComponent
   ]
 })
 export class UsuarioModule { }

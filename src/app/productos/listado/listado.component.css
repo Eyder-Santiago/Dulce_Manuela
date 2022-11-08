@@ -94,23 +94,23 @@
       margin: 2em auto;
       border: 3px solid var(--color-rojo);
     }
-  
+
     input {
         width: 4.5em;
     }
-  
+
     .ultimo {
       margin-bottom: 5px;
     }
   }
-  
+
   .title {
     text-align: center;
     font-size: 40px;
     padding: 0;
     margin: 10px 0px 30px 0px;
   }
-  
+
   img {
     justify-content: center;
     align-items: center;
@@ -118,14 +118,14 @@
     width: 10em;
     padding-top: 0;
   }
-  
+
   .conte-for {
     /*padding: 0;*/
     padding-top: 12%;
     width: 25em;
     margin: 0 auto;
   }
-  
+
   .form-control {
     width: 20em;
     border: none;
@@ -133,8 +133,8 @@
     justify-content: left;
     border-bottom: 1px solid var(--color-rojo);
   }
-  
-  button {
+
+  .boton {
     display: flex;
     justify-content: center;
     margin: 5px;

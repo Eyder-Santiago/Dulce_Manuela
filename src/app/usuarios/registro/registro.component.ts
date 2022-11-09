@@ -40,6 +40,7 @@ export class RegistroComponent implements OnInit {
       this.usuarioEditado.emit(this.usuario);
       //this.usuario = new Usuario("","","","", new Date())
     }
+    
     );
   }
 

@@ -1,71 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+.contenedor {
+  width: 43em;
+  height: 38em;
+  padding: 0 30px;
+  box-shadow: 5px 5px 15px rgb(100, 100, 100);
+  margin: 1.5em auto;
+}
+@media screen and (max-width: 600px) {
+  .contenedor{
+    width: 22em;
+    height: 46em;
+    padding: 30px;
+    margin: 2em auto;
+    border: 3px solid var(--color-rojo);
+  }
 
-* {
-    box-sizing: border-box;
+  input {
+      width: 4.5em;
   }
-  
-  .body {
-    font-family: comic;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
+
+  .ultimo {
+    margin-bottom: 5px;
   }
-  
-  .container {
-    width: 20%;
-    height: 50%;
-    padding: 15px;
-    box-shadow: 5px 5px 15px rgb(100, 100, 100);
-    margin: 5% auto;
-  }
-  
-  .title {
-    text-align: center;
-    font-size: 40px;
-    padding: 0;
-    margin: 30px 0px 30px 0px;
-  }
-  
-  img {
-    justify-content: center;
-    align-items: center;
-    display:block;
-    margin:auto;
-    
-    width: 200px;
-    height: 100px;
-    
-  }
-  
-  
-  .formulario {
-    margin: 1px;
-  }
-  
-  .login, .password {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    justify-content: center;
-    margin: 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #000;
-  }
-  
-  .boton-iniciar-sesion {
-    justify-content: center;
-    border: none;
-    width: 100%;
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  
-  p.olvidastePassword{
-    margin-top: 30px;
-  }
-  
-  
-  p.sinCuenta{
-    margin-bottom: 40px;
-  }
-  
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  padding: 0;
+  margin: 10px 0px 30px 0px;
+}
+
+img {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 10em;
+  padding-top: 0;
+}
+
+.conte-for {
+  padding: 0;
+  width: 25em;
+  margin: 0 auto;
+}
+
+.form-control {
+  width: 20em;
+  border: none;
+  border-radius: 0;
+  justify-content: left;
+  border-bottom: 1px solid var(--color-rojo);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  background-color: var(--color-rojo);
+}

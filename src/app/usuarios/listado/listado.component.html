@@ -1,7 +1,7 @@
 <div class="contenedor">
     <caption class="title">Usuarios</caption>
   <table class="tabla">
-      
+
       <thead>
           <tr>
               <th>Nombre</th>
@@ -24,8 +24,8 @@
               <td data-label="Fecha de Nacimiento">{{u.birthDate}}</td>
               <td data-label="Estado">{{u.estado}}</td>
               <td data-label="Acciones">
-                  <app-edicion (usuarioEditado)="onUsuarioEditado($event)" [usuario]="u"></app-edicion>
-                  <app-eliminar (usuarioEliminado)="onUsuarioEliminado($event)" [usuario]="u"></app-eliminar>
+                  <app-edicion class="boton" (usuarioEditado)="onUsuarioEditado($event)" [usuario]="u"></app-edicion>
+                  <app-eliminar class="boton" (usuarioEliminado)="onUsuarioEliminado($event)" [usuario]="u"></app-eliminar>
               </td>
           </tr>
       </tbody>

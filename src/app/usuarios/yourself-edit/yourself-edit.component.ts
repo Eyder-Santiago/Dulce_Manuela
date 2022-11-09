@@ -65,6 +65,10 @@ export class YourselfEditComponent implements OnInit {
 
    nuevaCadena = almacenar.slice(2,5);
 
+   nuevaCadena = this.invertir(nuevaCadena);
+
+   console.log(nuevaCadena);
+
    let idUsuarioFind : number = 0;
 
    
@@ -113,7 +117,7 @@ export class YourselfEditComponent implements OnInit {
       for (let p of usuarioGet){
         if(p.id == idLocalStorage)
         {
-          console.log(p.id);
+          //console.log(p.id);
           //asignar valores
           this.usuario.id = p.id;
           this.usuario.nombre = p.nombre;
@@ -131,5 +135,17 @@ export class YourselfEditComponent implements OnInit {
       
   
     }
+
+    modificarUsuario() : void{
+      this.servicioUsuario.editarUsuario(this.usuario).subscribe(resp =>{
+        //una vez se envíe el objeto local se define en blanco
+        this.usuarioAutoEditado.emit(this.usuario);
+        alert('Tus datos se han actualizado correctamente');
+      },
+      err => {
+        alert("No se pudo eliminar el producto: " + err.error);
+      });
+    }
+  
   
 }

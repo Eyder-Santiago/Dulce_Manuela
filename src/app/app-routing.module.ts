@@ -31,10 +31,6 @@ const routes: Routes = [
     component: CarritoDeComprasComponent
   },
   {
-    path: 'editar-usuario',
-    component: EdicionComponent
-  },
-  {
     path: 'sobre-nosotros',
     component: SobreNosotrosComponent
   },
@@ -43,11 +39,7 @@ const routes: Routes = [
     component: TiendaComponent
   },
   {
-    path: 'pagos-por-nequi',
-    loadChildren: () => import('./formas-de-pago/formas-de-pago.module').then(m => m.FormasDePagoModule)
-  },
-  {
-    path: 'pagos-contra-entrega',
+    path: 'pagos',
     loadChildren: () => import('./formas-de-pago/formas-de-pago.module').then(m => m.FormasDePagoModule)
   }
 ];

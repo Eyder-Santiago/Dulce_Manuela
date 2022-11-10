@@ -32,7 +32,7 @@
                 <a class="nav-link" routerLink="sobre-nosotros"><i class="fa-solid fa-users"></i>     Sobre Nosotros</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="sobre-nosotros"><i class="fa-solid fa-door-open"></i>     Cerrar Sesión</a>
+                <a class="nav-link" routerLink=""  (click)="logout()"><i class="fa-solid fa-door-open"></i>     Cerrar Sesión</a>
               </li>
               <li>
                 <hr class="nav-divider">

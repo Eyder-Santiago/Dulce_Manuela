@@ -1,0 +1,60 @@
+.contenedor {
+  width: 43em;
+  height: 38em;
+  padding: 0 30px;
+  box-shadow: 5px 5px 15px rgb(100, 100, 100);
+  margin: 1.5em auto;
+}
+@media screen and (max-width: 600px) {
+  .contenedor{
+    width: 22em;
+    height: 46em;
+    padding: 30px;
+    margin: 2em auto;
+    border: 3px solid var(--color-rojo);
+  }
+
+  input {
+      width: 4.5em;
+  }
+
+  .ultimo {
+    margin-bottom: 5px;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  padding: 0;
+  margin: 10px 0px 30px 0px;
+}
+
+img {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 10em;
+  padding-top: 0;
+}
+
+.conte-for {
+  padding: 0;
+  width: 25em;
+  margin: 0 auto;
+}
+
+.form-control {
+  width: 20em;
+  border: none;
+  border-radius: 0;
+  justify-content: left;
+  border-bottom: 1px solid var(--color-rojo);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  background-color: var(--color-rojo);
+}

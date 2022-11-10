@@ -1,3 +1,4 @@
+
 .contenedor {
   width: 110vh;
   max-width: 180vh;
@@ -140,3 +141,4 @@
     margin: 5px;
     background-color: var(--color-rojo);
   }
+

@@ -43,7 +43,7 @@ export class AsignPasswordComponent implements OnInit {
   newPassword(){
     if (this.contrasena == this.confirmarContrasena){
       //this.editPassword()
-      this.usuario = this.tokenPasswordService.obtenerToken();
+      this.usuario = this.tokenPasswordService.obtenerToken(); //obtiene los valores ingresados previamente al localstorage en retrieve.component.ts
       this.usuario.password =this.contrasena;
       console.log(this.usuario);
       this.editPassword();

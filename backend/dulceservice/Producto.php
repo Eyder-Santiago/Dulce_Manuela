@@ -6,6 +6,7 @@ class Producto{
     var $nombre;
     var $precio;
     var $stock;
+    var $urlImagen;
     var $estado;
 
 
@@ -13,7 +14,7 @@ class Producto{
 
 
     function registrarProducto(){
-        $sql="insert into producto(nombre,precio,stock,estado) values('$this->nombre',$this->precio,$this->stock,$this->estado)";
+        $sql="insert into producto(nombre,precio,stock,urlImagen,estado) values('$this->nombre',$this->precio,$this->stock,'$this->urlImagen',$this->estado)";
         $conexion = new Conexion();
         if($conexion->executeQuery($sql)){
             $conexion->close();
@@ -22,7 +23,7 @@ class Producto{
     }
 
     function actualizarProducto(){
-        $sql= "update producto set nombre='$this->nombre', precio=$this->precio, stock=$this->stock, estado = '$this->estado' where id =$this->id";
+        $sql= "update producto set nombre='$this->nombre', precio=$this->precio, stock=$this->stock, urlImagen='$this->urlImagen', estado = $this->estado where id =$this->id";
         $conexion = new Conexion();
         if($conexion->executeQuery($sql)){
             $conexion->close();

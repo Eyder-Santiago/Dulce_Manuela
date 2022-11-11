@@ -21,6 +21,7 @@ export class EdicionComponent implements OnInit {
     nombre:"",
     precio:0,
     stock:0,
+    urlImagen:"",
     estado:0
    
   }

@@ -1,3 +1,23 @@
-.contenedor {
-  padding: 10px;
+.row {
+  width: 100%;
+  margin: 0;
+  padding: 0 2px 0 2px;
 }
+
+.contenedor-productos {
+  padding: 10px;
+  width: 70%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.vt-mp {
+  width: 30%;
+  padding: 0 10px;
+}
+
+

@@ -13,7 +13,7 @@ export class RegistroComponent implements OnInit{
 
 
   @Output() productoCreado = new EventEmitter<Producto>();
-  
+
   @Output() productoEditado = new EventEmitter<Producto>();
 
   @Input() producto:Producto = new Producto("",0,0,0);
@@ -29,6 +29,7 @@ export class RegistroComponent implements OnInit{
         //una vez se envíe el objeto local se define en blanco
         this.productoCreado.emit(this.producto);
         this.producto = new Producto("", 0, 0, 0);
+        alert("Producto creado Exitosamente!");
       },
       err => {
         alert("No se pudo crear el producto: " + err.error);
@@ -41,6 +42,7 @@ export class RegistroComponent implements OnInit{
       //una vez se envíe el objeto local se define en blanco
         this.productoEditado.emit(this.producto);
         //this.producto = new Producto("", 0, 0, 0);
+        alert("Se actualizo el producto Exitosamente!")
       },
       err => {
         alert("No se pudo actualizar el producto: " + err.error);

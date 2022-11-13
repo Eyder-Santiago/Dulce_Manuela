@@ -1,23 +1,15 @@
-
-<div class="container text-center" >
-  <div class="row">
-      <div class="col"></div>
-      <div class="col border gray">
-        <h2 *ngIf="producto.id==0">Registro Producto</h2>
-        <h2 *ngIf="producto.id>0">Editar Producto</h2>
-        <label>Nombre:</label>
-        <input type="text" class="form-control" [(ngModel)]="producto.nombre" >
-        <label>Precio:</label>
-        <input type="number" class="form-control" [(ngModel)]="producto.precio"  >
-      
-        <label>Stock:</label>
-        <input type="number" class="form-control" [(ngModel)]="producto.stock"  >
-        <label>Estado:</label>
-        <input type="number" class="form-control" [(ngModel)]="producto.estado" >
+<div class="contenedor" >
+        <h2 class="title text-center" *ngIf="producto.id==0">Registro Producto</h2>
+        <h2 class="title text-center" *ngIf="producto.id>0">Editar Producto</h2>
+        <p>Nombre</p>
+        <input type="text" class="form-control" [(ngModel)]="producto.nombre">
+        <p>Precio</p>
+        <input type="number" class="form-control" [(ngModel)]="producto.precio">
+        <p>Stock</p>
+        <input type="number" class="form-control" [(ngModel)]="producto.stock">
+        <p>Estado</p>
+        <input type="number" class="form-control" [(ngModel)]="producto.estado">
         <br>
         <button class="btn btn-success" *ngIf="producto.id==0" (click)="agregarProducto()">Registrar</button>
-        <button *ngIf="producto.id>0" class="btn btn-success" (click)="modificarProducto()">Actualizar</button>
-      </div>
-      <div class="col"></div>
-  </div>
+        <button *ngIf="producto.id>0" class="btn btn-info" (click)="modificarProducto()">Actualizar</button>
 </div>

@@ -1,0 +1,35 @@
+.contenedor {
+  width: 100%;
+  height: auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 80px;
+  min-width: 200px;
+  max-width: 100%;
+}
+
+.contenedor-img {
+  width: 20em;
+  border: 1px solid black;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.detalles-y-acciones {
+  width: 20em;
+}
+
+.cantidad, .btn {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.descripcion {
+  width: 50em;
+}

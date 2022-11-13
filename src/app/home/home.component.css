@@ -12,10 +12,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 10px;
+    gap: 100px;
     min-width: 200px;
     max-width: 100%;
-    
+
   }
 
   @media screen and (max-width: 600px) {
@@ -27,7 +27,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
-      gap: 10px;
+      gap: 30px;
       min-width: 200px;
       max-width: 100%;
     }

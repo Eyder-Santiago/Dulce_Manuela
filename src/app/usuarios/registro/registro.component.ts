@@ -23,13 +23,14 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
 
   }
- 
+
   //se define la función registro que será llamada cuando se de clic en agregar
   agregarUsuario() : void{
     this.servicioUsuario.crearUsuario(this.usuario).subscribe(resp =>{
       //una vez se envíe el objeto local se define en blanco
       this.usuarioCreado.emit(this.usuario);  //emite el objeto Usuario que se haya creado en registro
       this.usuario = new Usuario("","","","", new Date(),'',"",1)
+      alert("cuenta creada exitosamente!");
     }
     );
   }
@@ -39,8 +40,9 @@ export class RegistroComponent implements OnInit {
       //una vez se envíe el objeto local se define en blanco
       this.usuarioEditado.emit(this.usuario);
       //this.usuario = new Usuario("","","","", new Date())
+      alert("datos modificados exitosamente!");
     }
-    
+
     );
   }
 

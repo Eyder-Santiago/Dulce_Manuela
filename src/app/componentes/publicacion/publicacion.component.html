@@ -4,21 +4,28 @@
       <div class="card-body">
         <div class="row">
           <div class="col-2 icono">
-              <i class="fa-regular fa-thumbs-up fa-3x"></i>
+              <button class="fa-regular fa-thumbs-up fa-3x" (click)="sumarLike()"></button>
               <!--función que cuente likes. Sólo 1 like por cuenta y 1 likes por publicación, no se podrá dar más de 1 like
               los visitantes podrán ver el # de likes y comentarios, pero si un visitante intenta dar like o comentar, 
               se le invitará a registrarse con una ventana emergente, si da que sí lo desea hacer se redirigirá a cuenta/registrar, 
               para que se registre.-->
-              <p>##</p> 
-          </div>
+              <p [(ngModel)]="publicacion.like">{{contadorLike}}</p> 
+          </div><br/>
           <div class="col-10 descripcion">
+            <p class="text-center">Descripción</p>
+              <input type="text" class="form-control" [(ngModel)]="publicacion.descripcion">
               <p class="descripcion-publicacion">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, culpa. Est quia itaque perspiciatis? Eum impedit, beatae ipsam esse vel dolores. Ex quia, inventore quam hic porro quisquam earum sunt!</p>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
               <p class="comentarios-publicacion text-center">Comentarios</p>
+              <input type="text" class="form-control" [(ngModel)]="publicacion.comentario">
           </div>
+          <!--escoger el producto junto a la url imagen, propongo publicacion.nombre + publicacion.urlImagen-->
+          <select name="chooseProduct" [(ngModel)]="publicacion.nombre">
+            <option [value]="item" *ngFor="let item of publicacion.nombre">{{item}}</option>
+          </select>
         </div>
       </div>
     </div>

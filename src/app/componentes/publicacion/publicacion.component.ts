@@ -9,7 +9,8 @@ import { Publicacion } from 'src/app/modelo/publicacion';
 })
 export class PublicacionComponent implements OnInit {
 
-  @Input() publicacion:Publicacion = new Publicacion('',0,0,'',0,0,'',0,'');
+  @Input() publicacion:Publicacion = new Publicacion('',0,'',0);
+  @Input() producto:Producto = new Producto('',0,0,'',0);
 
   public contadorLike:number=0;
   public comentario:string='';

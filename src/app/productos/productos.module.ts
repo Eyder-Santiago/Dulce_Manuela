@@ -10,6 +10,7 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { LayoutComponent } from './layout/layout.component';
 
 import { ProductosRoutingModule } from './productos-routing.module';
+import { EspecificoComponent } from './especifico/especifico.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProductosRoutingModule } from './productos-routing.module';
     RegistroComponent,
     EdicionComponent,
     EliminarComponent,
-    LayoutComponent
+    LayoutComponent,
+    EspecificoComponent
   ],
   imports: [
     CommonModule,

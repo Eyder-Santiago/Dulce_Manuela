@@ -8,7 +8,7 @@
 @media screen and (max-width: 600px) {
   .contenedor{
     width: 22em;
-    height: 46em;
+    height: auto;
     padding: 30px;
     margin: 2em auto;
     border: 3px solid var(--color-rojo);

@@ -20,7 +20,7 @@ export class LoginService{
         let header=new HttpHeaders();
         header.append('Content-Type','aplication/json')
         header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
-        header.append('Access-Control-Allow-Origin','http://localhost');
+        header.append('Access-Control-Allow-Origin','http://localhost:8080');
         return this.http.post<RespuestaToken>(url,JSON.stringify(usuario),{headers:header});
     }
 }

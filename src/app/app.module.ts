@@ -22,6 +22,7 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 import { FormasDePagoModule } from './formas-de-pago/formas-de-pago.module';
 import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.component';
 import { TiendaComponent } from './tienda/tienda.component';
+import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { TiendaComponent } from './tienda/tienda.component';
     PublicacionComponent,
     HeaderComponent,
     SobreNosotrosComponent,
-    TiendaComponent
+    TiendaComponent,
+    BtnWhatsappComponent
   ],
   imports: [
     BrowserModule,

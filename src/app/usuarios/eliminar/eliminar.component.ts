@@ -25,7 +25,7 @@ export class EliminarComponent implements OnInit {
     estado:0,
   }
 
-  
+
 
   ngOnInit(): void {
   }
@@ -35,11 +35,11 @@ export class EliminarComponent implements OnInit {
       this.servicioUsuario.eliminarUsuario(this.usuario).subscribe(resp=>{
         console.log(resp);
         this.usuarioEliminado.emit(this.usuario);
-        alert('El usuario ha sido eliminado exitosamente');
+        alert('cuenta eliminada exitosamente');
        },
        err => {
-        alert("No se pudo eliminar el usuario: " + err.error);
-      }); 
+        alert("no se pudo eliminar la cuenta, error: " + err.error);
+      });
     }
   }
 

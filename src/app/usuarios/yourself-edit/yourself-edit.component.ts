@@ -66,21 +66,24 @@ export class YourselfEditComponent implements OnInit {
    nuevaCadena = almacenar.slice(2,5);
 
    nuevaCadena = this.invertir(nuevaCadena);
-
+-
    console.log(nuevaCadena);
 
    let idUsuarioFind : number = 0;
 
-   
+   let acum : string = '';
 
    //iterando la cadena para coger el id de usuario
    for (let u of nuevaCadena){
     if(u == '1'|| u == '2'|| u =='3'|| u=='4'|| u=='5'|| u=='6'|| u=='7'|| u=='8'|| u=='9'|| u=='0'){
-      idUsuarioFind = parseInt(u);
+      //idUsuarioFind = parseInt(u);
       
+      acum = acum + u;
+      console.log(acum);
+
     }
    }
-
+  idUsuarioFind=parseInt(acum);
    //console.log(idUsuarioFind);
 
    this.getDataUser(idUsuarioFind);

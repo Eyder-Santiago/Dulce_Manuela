@@ -26,6 +26,13 @@
           <select name="chooseProduct" [(ngModel)]="publicacion.nombre">
             <option [value]="item" *ngFor="let item of publicacion.nombre">{{item}}</option>
           </select>-->
+          <select name="chooseProduct" [(ngModel)]="publicacion.producto" class="form-control">
+            <option [value]="item" *ngFor="let item of publicacion.producto">{{item}}</option>
+          </select>
+          <select name="prueba" [(ngModel)]="probandoSelect" class="form-control">
+            <option [value]="item" *ngFor="let item of probandoSelect">{{item}}</option>
+          </select>
+
         </div>
       </div>
     </div>

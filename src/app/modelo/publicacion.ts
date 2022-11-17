@@ -8,25 +8,22 @@ export class Publicacion{
     like:number=0;
     comentario:string='';
     estado:number=0;
-
-    Producto : {
-        id:number;
-        nombre:string;
-        precio:number;
-        urlImagen:string;
-    }
+    //producto : Producto = new Producto('',0,0,'',0);
+    producto : Producto[];
 
     constructor(
         descripcion:string,
         like:number,
         comentario:string,
-        estado:number
+        estado:number,
+        producto:Producto[]
     ){
 
         this.descripcion = descripcion;
         this.like = like;
         this.comentario = comentario;
         this.estado = estado;
+        this.producto = producto;
     }
 
 }

@@ -121,7 +121,7 @@ export class YourselfEditComponent implements OnInit {
         if(p.id == idLocalStorage)
         {
           //console.log(p.id);
-          //asignar valores
+          //asignar valores a arreglo usuario
           this.usuario.id = p.id;
           this.usuario.nombre = p.nombre;
           this.usuario.apellido = p.apellido;

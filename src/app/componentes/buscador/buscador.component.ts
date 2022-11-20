@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Producto } from 'src/app/modelo/producto';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
@@ -26,7 +27,8 @@ export class BuscadorComponent implements OnInit {
   }
 
   constructor(
-    public productoService : ProductoService
+    public productoService : ProductoService,
+    public router : Router
   ) { }
 
 
@@ -47,6 +49,16 @@ export class BuscadorComponent implements OnInit {
       this.producto.stock = p.stock;
       this.producto.urlImagen = p.urlImagen;
       this.producto.estado = p.estado;
+    }
+  }
+
+  validarArticulo(){
+    alert("Producto añadido exitosamente ");
+
+    let resultado:boolean = confirm("¿Quieres ir al carrito de compras ahora mismo?");
+
+    if (resultado){
+      this.router.navigate(["/productos/especifico"]);
     }
   }
 

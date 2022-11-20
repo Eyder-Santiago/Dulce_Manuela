@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { RegistroComponent } from './registro/registro.component';
 import { EdicionComponent } from './edicion/edicion.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
+import { EspecificoComponent } from './especifico/especifico.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'eliminar',
     component:EliminarComponent
+  },
+  {
+    path: 'especifico',
+    component:EspecificoComponent
   }
 ];
 

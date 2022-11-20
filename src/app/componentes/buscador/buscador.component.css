@@ -1,42 +1,34 @@
-.buscador {
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px auto;
-    width: 300px;
-    height: 35px;
-    padding: 0;
+.contenedor {
+    width: 100%;
+    height: auto;
+    padding: 37px 30px;
     display: flex;
-    justify-content: center;
-}
-
-#buscador-input {
-    width: 270px;
-    height: 100%;
-    border: none;
-    padding-left: 10px;
-    
-}
-
-.btn-buscador {
-    width: 30px;
-    height: 100%;
-    border-left: 1px solid;
-    padding: 5px;
-    text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img{
-    max-height: 50px;
-    max-width: 50px;
-}
-
-.card-body {
-    background-color: var(--color-amarillo);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
   }
   
-
-
+  .btn-buscador {
+      width: 30px;
+      height: 100%;
+      border-left: 1px solid;
+      padding: 5px;
+      text-decoration: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .card {
+    margin: 20px;
+  }
+  
+  img{
+    width: 100%;
+  }
+  
+  .card-body {
+      background-color: var(--color-amarillo);
+    }

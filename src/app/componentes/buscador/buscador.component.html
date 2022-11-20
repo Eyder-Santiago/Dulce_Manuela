@@ -9,17 +9,18 @@
     </div>
 </div>
 
-<div *ngFor="let p of productos | filter: filterProduct" class="card" style="width: 18rem;">
-  <img [src]="{link}" class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">{{p.nombre}}</h5>
-    <p class="card-text">{{p.precio}}</p>
-    <img src="{{p.urlImagen}}" alt="logo-dulce-manuela"/><br>
-    <a href="/productos" class="btn btn-primary">Ver Producto</a>
+<div class="contenedor">
+  <div *ngFor="let p of productos | filter: filterProduct" class="card" style="width: 18rem;">
+    <img src="{{p.urlImagen}}" alt="logo-dulce-manuela"/>
+    <div class="card-body">
+      <h5 class="card-title">{{p.nombre}}</h5>
+      <p class="card-text">{{p.precio}}</p>
+      <br>
+      <a href="/productos" class="btn btn-primary">Ver Producto</a>
+    </div>
   </div>
 </div>
 
-  
 
 <!--
 <input type="text" name="valor-buscar" class="form-control " id="buscador-input" placeholder="Buscar..." [(ngModel)]="producto.nombre" />

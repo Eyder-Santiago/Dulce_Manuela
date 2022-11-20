@@ -14,7 +14,18 @@
     height: 100%;
     border: none;
     padding-left: 10px;
-    
+
+}
+
+.contenedor {
+  width: 100%;
+  height: auto;
+  padding: 37px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
 }
 
 .btn-buscador {
@@ -29,14 +40,17 @@ a {
   text-decoration: none;
 }
 
+.card {
+  margin: 20px;
+}
+
 img{
-    max-height: 50px;
-    max-width: 50px;
+  width: 100%;
 }
 
 .card-body {
     background-color: var(--color-amarillo);
   }
-  
+
 
 

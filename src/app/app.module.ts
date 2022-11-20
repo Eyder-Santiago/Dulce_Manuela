@@ -23,6 +23,7 @@ import { FormasDePagoModule } from './formas-de-pago/formas-de-pago.module';
 import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.co
     HeaderComponent,
     SobreNosotrosComponent,
     TiendaComponent,
-    BtnWhatsappComponent
+    BtnWhatsappComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -29,4 +29,14 @@ a {
   text-decoration: none;
 }
 
+img{
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.card-body {
+    background-color: var(--color-amarillo);
+  }
+  
+
 

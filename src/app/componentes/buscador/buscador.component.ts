@@ -11,6 +11,9 @@ export class BuscadorComponent implements OnInit {
 
   @Output() idOfPassword = new EventEmitter<Producto>();
 
+  link:string = 'https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/D65K3MSUSJHB3AX5DTTVHK5X5E.jpg';
+  filterPost:string="";
+
   productos:Producto[]=[];
 
   @Input() producto:Producto={

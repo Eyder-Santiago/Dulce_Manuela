@@ -1,4 +1,36 @@
+<div class="contenedor">
+    <caption class="title">Productos</caption>
+    <table class="tabla">
+        <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Url Imagen</th>
+              <th>Estado</th>
+                <th class="ar-acciones">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of productos">
+            <td data-label="Nombre">{{p.nombre}}</td>
+            <td data-label="Precio">{{p.precio}}</td>
+            <td data-label="Stock">{{p.stock}}</td>
+            <td data-label="Url Imagen">{{p.urlImagen}}</td>
+            <td data-label="Estado">{{p.estado}}</td>
+            <td data-label="Acciones">
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  
+
 <div class="buscador">
+    <!--
     <input type="text" name="valor-buscar" class="form-control " id="buscador-input" placeholder="Buscar...">
-    <a href="" class="btn-buscador link-dark"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="" class="btn-buscador link-dark"><i class="fa-solid fa-magnifying-glass"></i></a>-->
+
+   
+
 </div>

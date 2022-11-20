@@ -5,7 +5,7 @@ import { Producto } from "./producto";
 export class Publicacion{
     idPublicacion:number=0;
     descripcion:string='';
-    like:number=0;
+    likeP:number=0;
     comentario:string='';
     estado:number=0;
     //producto : Producto = new Producto('',0,0,'',0);
@@ -20,7 +20,7 @@ export class Publicacion{
     ){
 
         this.descripcion = descripcion;
-        this.like = like;
+        this.likeP = like;
         this.comentario = comentario;
         this.estado = estado;
         this.producto = producto;

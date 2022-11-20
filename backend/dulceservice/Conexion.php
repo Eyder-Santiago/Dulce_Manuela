@@ -3,7 +3,7 @@
             var $username="root";
             var $password="";
             var $host="localhost";
-            var $db="tienda";
+            var $db="dulce_manuela";
             var $mysqli;
 
             function __construct(){
@@ -13,10 +13,10 @@
                 }
             }
             function executeQuery($sql){
-
+                
                 $res = $this->mysqli->query($sql);
-                return $res;
-            }
+                return $res;  
+            }        
              function close(){
                  $this->mysqli->close();
             }

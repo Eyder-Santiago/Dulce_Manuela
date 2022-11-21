@@ -13,7 +13,6 @@ import { RetrievePasswordComponent } from './cuenta/retrieve-password/retrieve-p
 import { AsignPasswordComponent } from './cuenta/asign-password/asign-password.component';
 
 import { CarritoDeComprasComponent } from './carrito-de-compras/carrito-de-compras.component';
-import { ProductoComponent } from './componentes/producto/producto.component';
 import { ProductoCarritoComponent } from './componentes/producto-carrito/producto-carrito.component';
 import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodos-pago/valor-total-metodos-pago.component';
 import { PublicacionComponent } from './componentes/publicacion/publicacion.component';
@@ -24,6 +23,9 @@ import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.compo
 import { TiendaComponent } from './tienda/tienda.component';
 import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { EspecificoComponent } from './productos/especifico/especifico.component';
+//import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
+import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
 
 
 @NgModule({
@@ -33,7 +35,6 @@ import { FilterPipe } from './pipes/filter.pipe';
     HomeComponent,
     BuscadorComponent,
     CarritoDeComprasComponent,
-    ProductoComponent,
     ProductoCarritoComponent,
     ValorTotalMetodosPagoComponent,
     PublicacionComponent,
@@ -41,7 +42,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     SobreNosotrosComponent,
     TiendaComponent,
     BtnWhatsappComponent,
-    FilterPipe
+    FilterPipe,
+    EspecificoComponent,
+    EspecificoSeleccionadoComponent
+    
   ],
   imports: [
     BrowserModule,

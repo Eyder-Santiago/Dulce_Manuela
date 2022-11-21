@@ -22,10 +22,6 @@ const routes: Routes = [
   {
     path: 'eliminar',
     component:EliminarComponent
-  },
-  {
-    path: 'especifico',
-    component:EspecificoComponent
   }
 ];
 

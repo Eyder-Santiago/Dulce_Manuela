@@ -11,6 +11,7 @@ export class ProductoService {
 //public productos:Producto[]=[];
 
 public productos:Array<Producto>=[];
+public productoSeleccionado:Array<Producto>=[]
 
 constructor(
   private http: HttpClient,
@@ -47,10 +48,15 @@ eliminarProducto(producto:Producto){
   return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
 }
 
-
+productoSeleccionadoCliente(producto:Producto){
+  this.productoSeleccionado.push(producto);
 }
 
+productoDevuelto(){
+  return this.productoSeleccionado.pop();
+}
 
+}
 
 
 

@@ -6,6 +6,8 @@ import { CarritoDeComprasComponent } from './carrito-de-compras/carrito-de-compr
 import { EdicionComponent } from './productos/edicion/edicion.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { TiendaComponent } from './tienda/tienda.component';
+import { EspecificoComponent } from './productos/especifico/especifico.component';
+import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,14 @@ const routes: Routes = [
   {
     path: 'pagos',
     loadChildren: () => import('./formas-de-pago/formas-de-pago.module').then(m => m.FormasDePagoModule)
+  },
+  {
+    path: 'productos/especifico',
+    component: EspecificoComponent
+  },
+  {
+    path: 'productos/especifico-selected',
+    component: EspecificoSeleccionadoComponent
   }
 ];
 
@@ -49,3 +59,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

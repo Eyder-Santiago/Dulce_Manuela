@@ -10,7 +10,8 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { LayoutComponent } from './layout/layout.component';
 
 import { ProductosRoutingModule } from './productos-routing.module';
-import { EspecificoComponent } from './especifico/especifico.component';
+//import { EspecificoComponent } from './especifico/especifico.component';
+//import { EspecificoSeleccionadoComponent } from './especifico-seleccionado/especifico-seleccionado.component';
 
 
 @NgModule({
@@ -19,8 +20,7 @@ import { EspecificoComponent } from './especifico/especifico.component';
     RegistroComponent,
     EdicionComponent,
     EliminarComponent,
-    LayoutComponent,
-    EspecificoComponent
+    LayoutComponent
   ],
   imports: [
     CommonModule,

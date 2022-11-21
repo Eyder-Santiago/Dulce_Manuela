@@ -9,46 +9,93 @@ import { TokenService } from './token.service';
 })
 export class ProductoService {
 //public productos:Producto[]=[];
+  
+  public productos:Array<Producto>=[];
+  public productoSeleccionado:Array<Producto>=[]
+  
+  constructor(
+    private http: HttpClient,
+    private tokenService: TokenService,
+    
+  ) { }
+  
+  public agregar(p:Producto){
+    this.productos.push(p);
+  }
+  
+  UrlBase:string = environment.UrlBackend;
+  
+  public getProductos(){
+     //defino la url donde esta el servicio
+    let  url = this.UrlBase + '/ProductoService.php';
+    return this.http.get<Producto[]>(url,{headers:this.tokenService.obtenerHeaders()});
+  }
+  
+  public crearProducto(producto:Producto){
+    //defino la url donde esta el servicio
+    let  url = this.UrlBase + '/ProductoService.php';
+    return this.http.post(url,JSON.stringify(producto),{headers:this.tokenService.obtenerHeaders()});
+  }
+  
+  public editarProducto(producto:Producto){
+    //defino la url donde esta el servicio
+    let  url = this.UrlBase + '/ProductoService.php'; 
+    return this.http.put(url,JSON.stringify(producto),{headers:this.tokenService.obtenerHeaders()});
+  }
+  
+  eliminarProducto(producto:Producto){
+    //defino la url donde esta el servicio
+    let  url = this.UrlBase + '/ProductoService.php?id='+ producto.id;
+    return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
+  }
 
-public productos:Array<Producto>=[];
-public productoSeleccionado:Array<Producto>=[]
+  guardarAlLocalStorage(producto:Producto){
+    const item = JSON.stringify(producto);
+    localStorage.setItem('producto', item);
+  }
+/*
+  obtenerLocalStorage() :string {
+    let respuesta = "";
+    const item = localStorage.getItem('producto');
 
-constructor(
-  private http: HttpClient,
-  private tokenService: TokenService,
-) { }
+    if (item) {
+      //this.estaLogueado.next(true);
+      //respuesta = JSON.parse(item);
+      respuesta = item;
+    }
+    else {
+      //this.estaLogueado.next(false);
+    }
 
-public agregar(p:Producto){
-  this.productos.push(p);
+    return respuesta;
+  }
+
+
 }
+*/
 
-UrlBase:string = environment.UrlBackend;
+obtenerLocalStorage() :Producto {
+  let respuesta = new Producto("",0,0,"",0);
+  const item = localStorage.getItem('producto');
+  if (item) {
+    //this.estaLogueado.next(true);
+    respuesta = JSON.parse(item);
+    //respuesta = item;
+  }
+  else {
+    //this.estaLogueado.next(false);
+  }
 
-public getProductos(){
-   //defino la url donde esta el servicio
-  let  url = this.UrlBase + '/ProductoService.php';
-  return this.http.get<Producto[]>(url,{headers:this.tokenService.obtenerHeaders()});
+  return respuesta;
 }
-
-public crearProducto(producto:Producto){
-  //defino la url donde esta el servicio
-  let  url = this.UrlBase + '/ProductoService.php';
-  return this.http.post(url,JSON.stringify(producto),{headers:this.tokenService.obtenerHeaders()});
 }
-
-public editarProducto(producto:Producto){
-  //defino la url donde esta el servicio
-  let  url = this.UrlBase + '/ProductoService.php'; 
-  return this.http.put(url,JSON.stringify(producto),{headers:this.tokenService.obtenerHeaders()});
-}
-
-eliminarProducto(producto:Producto){
-  //defino la url donde esta el servicio
-  let  url = this.UrlBase + '/ProductoService.php?id='+ producto.id;
-  return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
-}
-
+/*
 productoSeleccionadoCliente(producto:Producto){
+
+ // console.log(producto);
+
+
+
   this.productoSeleccionado.push(producto);
 }
 
@@ -57,6 +104,7 @@ productoDevuelto(){
 }
 
 }
+*/
 
 
 

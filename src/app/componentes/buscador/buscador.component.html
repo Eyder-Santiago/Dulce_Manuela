@@ -20,7 +20,7 @@
       <p class="card-text">{{p.precio}}</p>
       <br>
 
-      <app-especifico (productoSeleccionado)="onProductoSeleccionado($event)" [producto]="p"></app-especifico>
+      <app-especifico (productoSeleccionado)="onProductoSeleccionado($event)" [producto]="p" (click)="validarArticulo()"></app-especifico>
     <!-- <app-especifico-seleccionado style="display: none;" (enviarProducto)="onRecibirProducto($event)" [producto]="p"></app-especifico-seleccionado>--> 
 
       <!--<a href="/productos/especifico" class="btn btn-primary">Ver Producto</a>-->

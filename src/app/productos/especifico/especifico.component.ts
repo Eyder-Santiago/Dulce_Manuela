@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Producto } from 'src/app/modelo/producto';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-especifico',
@@ -12,6 +13,8 @@ export class EspecificoComponent implements OnInit {
   @Output() productoSeleccionado = new EventEmitter<Producto>();
 
   productos:Producto[]=[];
+
+  //public nombre: string = "";
 
 
 
@@ -29,24 +32,39 @@ export class EspecificoComponent implements OnInit {
    }
 
    
+   
 
 
 
   constructor(
-    public servicioProducto:ProductoService
-  ) { }
+    public servicioProducto:ProductoService,
+    //private cookieService: CookieService
+
+  ) {
+    
+   }
+
+
 
   //por primera vez, se emitirán todos los productos, con la función mostrarProductoSeleccionado, se accede al que en la tienda el usuario dio click
   ngOnInit(): void {
     this.mostrarProductoSeleccionado();
-    
+    //console.log(this.producto);
+    //this.cookieService.set('', this.producto.nombre);
+
+  
   }
 
   mostrarProductoSeleccionado(){
-    console.log(this.productoSeleccionado.emit);
-    console.log(this.producto);
+    let nombre:string = '';
+    //console.log(this.productoSeleccionado.emit);
+    //console.log(this.producto);
+    this.servicioProducto.guardarAlLocalStorage(this.producto);
+    //console.log(this.producto.nombre);
     //this.enviarEspecifico.funcionAgrupadora(this.producto);
-    this.servicioProducto.productoSeleccionadoCliente(this.producto);
+    //this.servicioProducto.productoSeleccionadoCliente(this.producto);
+    nombre = this.producto.nombre;
+    //this.cookieService.set('nombre',nombre);
     this.productos.push(this.producto);
   }
 }

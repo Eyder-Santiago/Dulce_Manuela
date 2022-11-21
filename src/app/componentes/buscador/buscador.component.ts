@@ -30,7 +30,7 @@ export class BuscadorComponent implements OnInit {
 
   constructor(
     public productoService : ProductoService,
-    public router : Router
+    public router : Router,
   ) { }
 
   //productoDevuelto:Array<Producto> = this.productoService.productoDevuelto();
@@ -61,7 +61,7 @@ export class BuscadorComponent implements OnInit {
     let resultado:boolean = confirm("¿Quieres ir al carrito de compras ahora mismo?");
 
     if (resultado){
-      this.router.navigate(["productos/especifico"]);
+      this.router.navigate(["productos/especifico-selected"]);
     }
   }
 

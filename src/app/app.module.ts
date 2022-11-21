@@ -26,6 +26,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { EspecificoComponent } from './productos/especifico/especifico.component';
 //import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccio
     FormsModule,
     FormasDePagoModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,25 +1,43 @@
-
 <div class="container">
-    <div class="buscador">
-        <!--
-        <input type="text" name="valor-buscar" class="form-control " id="buscador-input" placeholder="Buscar...">
-        <a href="" class="btn-buscador link-dark"><i class="fa-solid fa-magnifying-glass"></i></a>-->
-        <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterProduct" name="filterProduct">
+  <div class="buscador">
+      <!--
+      <input type="text" name="valor-buscar" class="form-control " id="buscador-input" placeholder="Buscar...">
+      <a href="" class="btn-buscador link-dark"><i class="fa-solid fa-magnifying-glass"></i></a>-->
+      <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterProduct" name="filterProduct">
 
-    </div>
+  </div>
 </div>
 
 <div class="contenedor">
-  <div *ngFor="let p of productos | filter: filterProduct" class="card" style="width: 18rem;">
-    <img src="{{p.urlImagen}}" alt="logo-dulce-manuela"/>
-    <div class="card-body">
-      <h5 class="card-title">{{p.nombre}}</h5>
-      <p class="card-text">{{p.precio}}</p>
-      <br>
-      <a href="/productos" class="btn btn-primary">Ver Producto</a>
-    </div>
+<div *ngFor="let p of productos | filter: filterProduct" class="card box-shadow" style="width: 18rem;">
+  <img src="{{p.urlImagen}}" alt="logo-dulce-manuela"/>
+  <div class="card-body">
+    <h5 class="card-title">{{p.nombre}}</h5>
+    <p class="card-text">{{p.precio}}</p>
+    <br>
+    <a href="/productos/especifico" class="btn btn-primary">Ver Producto</a>
   </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!--

@@ -1,3 +1,7 @@
+.container {
+  margin-top: 20px;
+}
+
 .buscador {
     border: 1px solid black;
     border-radius: 5px;

@@ -24,6 +24,7 @@ import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.compo
 import { TiendaComponent } from './tienda/tienda.component';
 import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { PagosModule } from './pagos/pagos.module';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FormasDePagoModule
+    FormasDePagoModule,
+    PagosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

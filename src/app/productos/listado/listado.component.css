@@ -28,7 +28,9 @@
 }
 
 .tabla th, .tabla td {
-  font-size: 16px;
+  height: auto;
+  width: auto;
+  font-size: 13px;
   padding: 8px;
   text-align: center;
 }
@@ -36,6 +38,10 @@
 .tabla thead th{
   text-transform: uppercase;
   background-color: #fdfd2c;
+}
+
+#url {
+  font-size: 5px;
 }
 
 .tabla tbody tr:hover {
@@ -62,7 +68,9 @@
       display: block;
   }
   .tabla th, .tabla td {
-      font-size: 12px;
+    height: auto;
+    width: auto;  
+    font-size: 10px;
   }
   .tabla td {
       display: block;
@@ -102,6 +110,12 @@
 
     .ultimo {
       margin-bottom: 5px;
+    }
+
+    .tabla th, .tabla td {
+      font-size: 13px;
+      padding: 8px;
+      text-align: center;
     }
   }
 

@@ -29,3 +29,8 @@
 .fondo-amarillo {
   background-color: var(--color-amarillo);
 }
+
+button {
+  background: transparent;
+  border: none;
+}

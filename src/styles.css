@@ -1,6 +1,6 @@
 :root {
   --color-amarillo: #FFFF7E;
-  --color-rojo: #F54852; 
+  --color-rojo: #F54852;
   --color-rojo-5-98: #AF3138;
 }
 
@@ -28,6 +28,14 @@
 
 .fondo-amarillo {
   background-color: var(--color-amarillo);
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+.box-shadow {
+  box-shadow: 5px 5px 15px rgb(100, 100, 100);
 }
 
 button {

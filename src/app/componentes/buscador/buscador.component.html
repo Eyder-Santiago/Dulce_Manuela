@@ -1,7 +1,3 @@
-<div>
-
-</div>
-
 <div class="container">
   <div class="buscador">
       <!--
@@ -13,26 +9,35 @@
 </div>
 
 <div class="contenedor">
-  <div *ngFor="let p of productos | filter: filterProduct" class="card" style="width: 18rem;">
-    <img src="{{p.urlImagen}}" alt="logo-dulce-manuela"/>
-    <div class="card-body">
-      <h5 class="card-title">{{p.nombre}}</h5>
-      <p class="card-text">{{p.precio}}</p>
-      <br>
-
-      <app-especifico (productoSeleccionado)="onProductoSeleccionado($event)" [producto]="p" (click)="validarArticulo()"></app-especifico>
-    <!-- <app-especifico-seleccionado style="display: none;" (enviarProducto)="onRecibirProducto($event)" [producto]="p"></app-especifico-seleccionado>--> 
-
-      <!--<a href="/productos/especifico" class="btn btn-primary">Ver Producto</a>-->
-      
-      <!--<a (click)="validarArticulo()" class="btn btn-primary">Ver Producto</a>-->
-      <!--<a (click)="validarArticulo()" class="btn btn-primary">Ver Producto</a>-->
-      <!--<button class="btn btn-primary">Ver Producto</button>-->
-    </div>
+<div *ngFor="let p of productos | filter: filterProduct" class="card box-shadow" style="width: 18rem;">
+  <img src="{{p.urlImagen}}" alt="logo-dulce-manuela"/>
+  <div class="card-body">
+    <h5 class="card-title">{{p.nombre}}</h5>
+    <p class="card-text">{{p.precio}}</p>
+    <br>
+    <a href="/productos/especifico" class="btn btn-primary">Ver Producto</a>
   </div>
+</div>
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 

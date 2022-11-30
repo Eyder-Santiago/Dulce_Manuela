@@ -6,10 +6,10 @@
           <div class="col-2 icono">
               <button class="fa-regular fa-thumbs-up fa-3x" (click)="sumarLike()"></button>
               <!--función que cuente likes. Sólo 1 like por cuenta y 1 likes por publicación, no se podrá dar más de 1 like
-              los visitantes podrán ver el # de likes y comentarios, pero si un visitante intenta dar like o comentar, 
-              se le invitará a registrarse con una ventana emergente, si da que sí lo desea hacer se redirigirá a cuenta/registrar, 
+              los visitantes podrán ver el # de likes y comentarios, pero si un visitante intenta dar like o comentar,
+              se le invitará a registrarse con una ventana emergente, si da que sí lo desea hacer se redirigirá a cuenta/registrar,
               para que se registre.-->
-              <p [(ngModel)]="publicacion.likeP">{{contadorLike}}</p> 
+              <p [(ngModel)]="publicacion.likeP">{{contadorLike}}</p>
           </div><br/>
           <div class="col-10 descripcion">
             <p class="text-center">Descripción</p>

@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { BuscadorComponent } from './componentes/buscador/buscador.component';
 
@@ -23,6 +22,7 @@ import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.compo
 import { TiendaComponent } from './tienda/tienda.component';
 import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { PagosModule } from './pagos/pagos.module';
 import { EspecificoComponent } from './productos/especifico/especifico.component';
 //import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
@@ -32,7 +32,6 @@ import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HomeComponent,
     BuscadorComponent,
     CarritoDeComprasComponent,
@@ -53,9 +52,10 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FormasDePagoModule
+    FormasDePagoModule,
+    PagosModule
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

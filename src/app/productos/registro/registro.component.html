@@ -5,10 +5,8 @@
         <input type="text" class="form-control" [(ngModel)]="producto.nombre">
         <p>Precio</p>
         <input type="number" class="form-control" [(ngModel)]="producto.precio">
-        <p>Stock</p>
-        <input type="number" class="form-control" [(ngModel)]="producto.stock">
-        <p>Estado</p>
-        <input type="number" class="form-control" [(ngModel)]="producto.estado">
+        <p>Url Imagen</p>
+        <input type="text" class="form-control" [(ngModel)]="producto.urlImagen">
         <br>
         <button class="btn btn-success" *ngIf="producto.id==0" (click)="agregarProducto()">Registrar</button>
         <button *ngIf="producto.id>0" class="btn btn-info" (click)="modificarProducto()">Actualizar</button>

@@ -4,6 +4,7 @@ export class Producto{
      precio:number=0;
      stock:number=0;
      urlImagen:string='';
+     descripcion:string='';
      estado:number=0;
 
      constructor(n:string, p:number,s:number,u:string,e:number){

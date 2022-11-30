@@ -30,6 +30,7 @@ export class EspecificoSeleccionadoComponent implements OnInit {
     precio:0,
     stock:0,
     urlImagen:"",
+    descripcion:"",
     estado:1
    
   }

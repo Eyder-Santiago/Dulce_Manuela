@@ -20,6 +20,7 @@ export class EliminarComponent implements OnInit {
     precio:0,
     stock:0,
     urlImagen:"",
+    descripcion:"",
     estado:0
    
   }

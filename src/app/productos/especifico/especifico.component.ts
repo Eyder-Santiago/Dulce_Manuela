@@ -59,7 +59,7 @@ export class EspecificoComponent implements OnInit {
   mostrarProductoSeleccionado(){
     let nombre:string = '';
     //console.log(this.productoSeleccionado.emit);
-    //console.log(this.producto);
+    console.log(this.producto);
     this.servicioProducto.guardarAlLocalStorage(this.producto);
     //console.log(this.producto.nombre);
     //this.enviarEspecifico.funcionAgrupadora(this.producto);

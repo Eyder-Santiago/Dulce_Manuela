@@ -7,11 +7,12 @@ export class Producto{
      descripcion:string='';
      estado:number=0;
 
-     constructor(n:string, p:number,s:number,u:string,e:number){
+     constructor(n:string, p:number,s:number,u:string,d:string,e:number){
         this.nombre=n;
         this.precio=p;
         this.stock=s;
         this.urlImagen=u;
+        this.descripcion=d;
         this.estado=e;
      }
 }

@@ -52,18 +52,21 @@ export class BuscadorComponent implements OnInit {
       this.producto.precio = p.precio;
       this.producto.stock = p.stock;
       this.producto.urlImagen = p.urlImagen;
+      this.producto.descripcion = p.descripcion;
       this.producto.estado = p.estado;
     }
   }
 
   validarArticulo(){
-    alert("Producto añadido exitosamente ");
+    //alert("Producto añadido exitosamente ");
 
-    let resultado:boolean = confirm("¿Quieres ir al carrito de compras ahora mismo?");
-
+   // let resultado:boolean = confirm("¿Quieres ir al carrito de compras ahora mismo?");
+/*
     if (resultado){
       this.router.navigate(["productos/especifico-selected"]);
     }
+*/
+    this.router.navigate(["productos/especifico-selected"]);
   }
 
   //evento que manda el producto que el cliente ha seleccionado y lo desea editar

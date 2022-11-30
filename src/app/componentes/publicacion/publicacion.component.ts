@@ -11,7 +11,7 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 export class PublicacionComponent implements OnInit {
 
   public saveProductos: Producto[] = [];
-  public guardaProductos: Producto = new Producto("",0,0,"",0);
+  public guardaProductos: Producto = new Producto("",0,0,"","",0);
 
   public probandoSelect: string[] = ['alga','árbol','planta'];
   
@@ -30,13 +30,14 @@ export class PublicacionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getDataProduct();
+    //this.getDataProduct();
   }
 
   sumarLike(){
     this.contadorLike++;
   }
 
+  /*
   getDataProduct(){
     this.servicioProducto.getProductos().subscribe((resp:Producto[])=>
       {
@@ -60,5 +61,5 @@ export class PublicacionComponent implements OnInit {
     // console.log(this.publicacion.producto.nombre);
     
   }
-
+*/
 }

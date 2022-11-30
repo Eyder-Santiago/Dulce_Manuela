@@ -45,6 +45,7 @@ export class EspecificoSeleccionadoComponent implements OnInit {
     this.producto.precio = varProducto.precio;
     this.producto.stock = varProducto.stock;
     this.producto.urlImagen = varProducto.urlImagen;
+    this.producto.descripcion = varProducto.descripcion;
     this.producto.estado = varProducto.estado;
 
   }

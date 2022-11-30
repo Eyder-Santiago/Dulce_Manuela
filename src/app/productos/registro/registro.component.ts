@@ -16,7 +16,7 @@ export class RegistroComponent implements OnInit{
 
   @Output() productoEditado = new EventEmitter<Producto>();
 
-  @Input() producto:Producto = new Producto("",0,0,"",0);
+  @Input() producto:Producto = new Producto("",0,0,"","",0);
 
   constructor(public servicioProducto:ProductoService) { }
 
@@ -28,7 +28,7 @@ export class RegistroComponent implements OnInit{
     this.servicioProducto.crearProducto(this.producto).subscribe(resp =>{
         //una vez se envíe el objeto local se define en blanco
         this.productoCreado.emit(this.producto);
-        this.producto = new Producto("",0,0,"",0);
+        this.producto = new Producto("",0,0,"","",0);
       },
       err => {
         alert("No se pudo crear el producto: " + err.error);

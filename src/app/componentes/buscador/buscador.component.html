@@ -15,7 +15,8 @@
     <h5 class="card-title">{{p.nombre}}</h5>
     <p class="card-text">{{p.precio}}</p>
     <br>
-    <a href="/productos/especifico-selected" class="btn btn-primary">Ver Producto</a>
+    <app-especifico (productoSeleccionado)="onProductoSeleccionado($event)" [producto]="p" (click)="validarArticulo()"></app-especifico>
+    
   </div>
 </div>
 </div>

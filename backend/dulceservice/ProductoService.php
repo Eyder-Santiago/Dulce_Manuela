@@ -63,6 +63,7 @@ if($metodo =="POST"){
     $producto->precio= $request->precio;
     $producto->stock= $request->stock;
     $producto->urlImagen= $request->urlImagen;
+    $producto->descripcion= $request->descripcion;
     $producto->estado= $request->estado;
     //se llama la función de registo
     $producto->registrarProducto();
@@ -106,6 +107,7 @@ if($metodo =="PUT"){
     $producto->precio= $request->precio;
     $producto->stock= $request->stock;
     $producto->urlImagen= $request->urlImagen;
+    $producto->descripcion= $request->descripcion;
     $producto->estado= $request->estado;
     //se llama la función de registo
     $producto->actualizarProducto();

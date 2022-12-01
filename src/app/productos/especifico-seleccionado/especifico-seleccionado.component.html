@@ -6,8 +6,8 @@
         <h4 class="nombre text-center">{{producto.nombre}}</h4>
         <h5 class="precio text-center">{{producto.precio}}</h5>
         <input type="number" class="cantidad" min="1" placeholder="cantidad...">
-        <button class="btn btn-primary">Comprar</button>
-        <button class="btn btn-success">Agregar al Carrito de Compras</button>
+        <button class="btn btn-primary" (click)="irACarrito()">Seguir comprando</button>
+        <button class="btn btn-success" (click)="agregarEnCarrito()">Agregar al Carrito de Compras</button>
     </div>
     <div class="descripcion">
         <h4 class="text-center">Ingredientes</h4>

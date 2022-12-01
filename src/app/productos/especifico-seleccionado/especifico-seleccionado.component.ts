@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Producto } from 'src/app/modelo/producto';
 //import { CookieService } from 'ngx-cookie-service';
 import { ProductoService } from 'src/app/servicios/producto.service';
@@ -12,11 +13,15 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 export class EspecificoSeleccionadoComponent implements OnInit {
   
 
-  constructor(public servicioProducto:ProductoService) {
+  constructor(
+    public servicioProducto:ProductoService,
+    public router : Router
+    ) {
     //this.cookieService.set('Test', 'Hello World');
     //this.cookieValue = this.cookieService.get('Test');
   }
 
+  productoCarrito : Producto[] = [];
   
 
   ngOnInit(): void {
@@ -38,7 +43,7 @@ export class EspecificoSeleccionadoComponent implements OnInit {
   funcionAuxLocalStorage(){
     let varProducto : Producto; 
     varProducto = this.servicioProducto.obtenerLocalStorage();
-    console.log(varProducto);
+    //console.log(varProducto);
 
     this.producto.id = varProducto.id;
     this.producto.nombre = varProducto.nombre;
@@ -47,6 +52,21 @@ export class EspecificoSeleccionadoComponent implements OnInit {
     this.producto.urlImagen = varProducto.urlImagen;
     this.producto.descripcion = varProducto.descripcion;
     this.producto.estado = varProducto.estado;
+
+  }
+
+  irACarrito(){
+    this.router.navigate(["tienda"]);
+  }
+
+  agregarEnCarrito(){
+    let varProducto : Producto; 
+    varProducto = this.servicioProducto.obtenerLocalStorage();
+
+    this.productoCarrito.push(varProducto);
+    console.log(this.productoCarrito);
+    this.servicioProducto.guardarAlLocalStorageArray(this.productoCarrito);
+
 
   }
 

@@ -53,6 +53,11 @@ export class ProductoService {
     const item = JSON.stringify(producto);
     localStorage.setItem('producto', item);
   }
+
+  guardarAlLocalStorageArray(producto:Producto[]){
+    const item = JSON.stringify(producto);
+    localStorage.setItem('productoArray', item);
+  }
 /*
   obtenerLocalStorage() :string {
     let respuesta = "";

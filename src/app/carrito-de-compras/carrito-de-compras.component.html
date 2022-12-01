@@ -7,11 +7,9 @@
 
   <div class="row">
     <div class="col-9 contenedor-productos">
-      <app-producto-carrito></app-producto-carrito>
-      <app-producto-carrito></app-producto-carrito>
-      <app-producto-carrito></app-producto-carrito>
-      <app-producto-carrito></app-producto-carrito>
-      <app-producto-carrito></app-producto-carrito>
+      <div *ngFor="let p of productosCarrito">
+        <app-producto-carrito [productoCarrito]="p"></app-producto-carrito>
+      </div>
     </div>
     <div class="col-3 vt-mp">
       <app-valor-total-metodos-pago></app-valor-total-metodos-pago>

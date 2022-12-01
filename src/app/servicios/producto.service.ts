@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../modelo/producto';
+import { ProductoCarrito } from '../modelo/productoCarrito';
 import {HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { TokenService } from './token.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +14,19 @@ export class ProductoService {
   
   public productos:Array<Producto>=[];
   public productoSeleccionado:Array<Producto>=[]
+  public productosCarrito:ProductoCarrito[] = [];
+
+  private productosCarritoSubject = new BehaviorSubject<ProductoCarrito[]>([]);
+
+  productosCarrito$ = this.productosCarritoSubject.asObservable();
   
   constructor(
     private http: HttpClient,
     private tokenService: TokenService,
-    
-  ) { }
+  ) {
+    this.productosCarrito = this.obtenerLocalStorageArray();
+    this.productosCarritoSubject.next(this.productosCarrito);
+  }
   
   public agregar(p:Producto){
     this.productos.push(p);
@@ -54,9 +63,57 @@ export class ProductoService {
     localStorage.setItem('producto', item);
   }
 
-  guardarAlLocalStorageArray(producto:Producto[]){
+  guardarAlLocalStorageArray(producto:ProductoCarrito[]){
     const item = JSON.stringify(producto);
     localStorage.setItem('productoArray', item);
+  }
+
+  obtenerLocalStorageArray() :ProductoCarrito[] {
+    let respuesta = [];
+    const item = localStorage.getItem('productoArray');
+    if (item) {
+      respuesta = JSON.parse(item);
+    }
+  
+    return respuesta;
+  }
+
+  agregarEnCarrito(producto:ProductoCarrito){
+    this.productosCarrito = this.obtenerLocalStorageArray();
+
+    let productoSeleccionado = this.productosCarrito.find(p => p.producto.id === producto.producto.id);
+    if (!productoSeleccionado) {
+      productoSeleccionado = producto;
+      this.productosCarrito.push(producto);
+    }
+    else {
+      productoSeleccionado.cantidad += producto.cantidad;
+    }
+
+    this.productosCarritoSubject.next(this.productosCarrito);
+    this.guardarAlLocalStorageArray(this.productosCarrito);
+  }
+
+  actualizarEnCarrito(producto:ProductoCarrito) {
+    this.productosCarrito = this.obtenerLocalStorageArray();
+    let productoSeleccionado = this.productosCarrito.find(p => p.producto.id === producto.producto.id);
+    if (productoSeleccionado) {
+      if (producto.cantidad > 0) {
+        productoSeleccionado.cantidad = producto.cantidad;
+        this.productosCarritoSubject.next(this.productosCarrito);
+        this.guardarAlLocalStorageArray(this.productosCarrito);
+      }
+      else {
+        this.quitarEnCarrito(producto);
+      }
+    }
+  }
+
+  quitarEnCarrito(producto:ProductoCarrito) {
+    this.productosCarrito = this.obtenerLocalStorageArray();
+    this.productosCarrito = this.productosCarrito.filter(p => p.producto.id !== producto.producto.id);
+    this.productosCarritoSubject.next(this.productosCarrito);
+    this.guardarAlLocalStorageArray(this.productosCarrito);
   }
 /*
   obtenerLocalStorage() :string {

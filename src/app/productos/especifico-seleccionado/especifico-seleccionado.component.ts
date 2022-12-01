@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/modelo/producto';
+import { ProductoCarrito } from 'src/app/modelo/productoCarrito';
 //import { CookieService } from 'ngx-cookie-service';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
@@ -37,8 +38,9 @@ export class EspecificoSeleccionadoComponent implements OnInit {
     urlImagen:"",
     descripcion:"",
     estado:1
-   
   }
+
+  cantidad :number = 0;
 
   funcionAuxLocalStorage(){
     let varProducto : Producto; 
@@ -62,12 +64,11 @@ export class EspecificoSeleccionadoComponent implements OnInit {
   agregarEnCarrito(){
     let varProducto : Producto; 
     varProducto = this.servicioProducto.obtenerLocalStorage();
+    let productoCarrito = new ProductoCarrito(this.cantidad, varProducto);
 
-    this.productoCarrito.push(varProducto);
-    console.log(this.productoCarrito);
-    this.servicioProducto.guardarAlLocalStorageArray(this.productoCarrito);
-
-
+    // this.productoCarrito.push(varProducto);
+    // console.log(this.productoCarrito);
+    this.servicioProducto.agregarEnCarrito(productoCarrito);
   }
 
   

@@ -2,14 +2,21 @@
   <div class="card-body">
     <div class="row">
       <div class="col">
-        <h5 class="card-title">Nombre</h5>
-        <h6 class="card-subtitle mb-2">Precio</h6>
+        <h5 class="card-title">Nombre: {{ productoCarrito.producto.nombre }}</h5>
+        <h6 class="card-subtitle mb-2">Precio: ${{ productoCarrito.producto.precio }}</h6>
         <p class="card-text">Cantidad</p>
       </div>
       <div class="col">
-        <input type="number" name="cantidad">
+        <input type="number" name="cantidad" [(ngModel)]="productoCarrito.cantidad">
         <hr>
-        <a href="#" class="btn btn-danger">Sacar del Carrito</a>
+        <div class="row">
+          <div class="col-6">
+            <a href="#" class="btn btn-danger" (click)="quitarProducto($event)">Sacar del Carrito</a>
+          </div>
+          <div class="col-6">
+            <a href="#" class="btn btn-primary" (click)="actualizarProducto($event)">Actualizar</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

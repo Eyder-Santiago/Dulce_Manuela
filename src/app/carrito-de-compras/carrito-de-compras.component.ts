@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoCarrito } from '../modelo/productoCarrito';
+import { ProductoService } from '../servicios/producto.service';
 
 @Component({
   selector: 'app-carrito-de-compras',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoDeComprasComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public productoService: ProductoService
+  ) { }
+
+  productosCarrito: ProductoCarrito[] = [];
+
 
   ngOnInit(): void {
+    //this.productosCarrito = this.productoService.obtenerLocalStorageArray();
+    this.productoService.productosCarrito$.subscribe(lista => this.productosCarrito = lista);
   }
-
 }

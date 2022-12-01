@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoCarrito } from '../../modelo/productoCarrito';
+import { ProductoService } from '../../servicios/producto.service';
 
 @Component({
   selector: 'app-valor-total-metodos-pago',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ValorTotalMetodosPagoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public productoService: ProductoService
+  ) { }
+
+  precioTotal:number = 0;
 
   ngOnInit(): void {
+    this.productoService.productosCarrito$.subscribe(lista => {
+      this.precioTotal = 0;
+      for(let p of lista) {
+        this.precioTotal += p.producto.precio * p.cantidad;
+      }
+    });
   }
 
 }

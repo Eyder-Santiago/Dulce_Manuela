@@ -62,6 +62,7 @@ export class EspecificoSeleccionadoComponent implements OnInit {
   }
 
   agregarEnCarrito(){
+    alert("Producto Agregado Exitosamente!");
     let varProducto : Producto; 
     varProducto = this.servicioProducto.obtenerLocalStorage();
     let productoCarrito = new ProductoCarrito(this.cantidad, varProducto);

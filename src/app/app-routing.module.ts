@@ -30,6 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'carrito',
+    canActivate: [AuthGuard],
     component: CarritoDeComprasComponent
   },
   {

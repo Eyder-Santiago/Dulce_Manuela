@@ -40,6 +40,7 @@ export class CrearComponent {
 
   public contadorLike:number=0;
   public comentario:string='';
+  public acum:number=0;
   
 
  // producto: Producto = new Producto()
@@ -51,8 +52,12 @@ export class CrearComponent {
     this.cargarProductos();
   }
 
+
   sumarLike(){
     this.contadorLike++;
+  }
+  sumarAcum(){
+    this.acum++;
   }
 
   cargarProductos(){

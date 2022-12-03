@@ -25,7 +25,23 @@ export class PublicacionService{
     UrlBase:string = environment.UrlBackend;
 
     public getPublicacion(){
-        
+        let  url = this.UrlBase + '/PublicacionService.php';
+        return this.http.get<Publicacion[]>(url,{headers:this.tokenService.obtenerHeaders()});
+    }
+
+    public crearPublicacion(publicacion:Publicacion){
+        let  url = this.UrlBase + '/PublicacionService.php';
+        return this.http.post(url,JSON.stringify(publicacion),{headers:this.tokenService.obtenerHeaders()});
+    }
+
+    public editarPublicacion(publicacion:Publicacion){
+        let  url = this.UrlBase + '/PublicacionService.php';
+        return this.http.put(url,JSON.stringify(publicacion),{headers:this.tokenService.obtenerHeaders()});
+    }
+
+    public eliminarPublicacion(publicacion:Publicacion){
+        let  url = this.UrlBase + '/PublicacionService.php?idPublicacion='+ publicacion.idPublicacion;
+        return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
     }
 
 }

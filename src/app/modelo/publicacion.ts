@@ -9,14 +9,14 @@ export class Publicacion{
     comentario:string='';
     estado:number=0;
     //producto : Producto = new Producto('',0,0,'',0);
-    producto : Producto[];
+    producto : Producto;
 
     constructor(
         descripcion:string,
         like:number,
         comentario:string,
         estado:number,
-        producto:Producto[]
+        producto:Producto
     ){
 
         this.descripcion = descripcion;

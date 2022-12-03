@@ -26,7 +26,7 @@ import { PagosModule } from './pagos/pagos.module';
 import { EspecificoComponent } from './productos/especifico/especifico.component';
 //import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
-import { CookieService } from 'ngx-cookie-service';
+//import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({

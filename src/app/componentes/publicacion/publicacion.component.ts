@@ -14,10 +14,26 @@ export class PublicacionComponent implements OnInit {
   public guardaProductos: Producto = new Producto("",0,0,"","",0);
 
   public probandoSelect: string[] = ['alga','árbol','planta'];
-  
-
-  @Input() publicacion:Publicacion = new Publicacion('',0,'',1,this.saveProductos);
+ 
+  constructor(
+    public servicioProducto : ProductoService
+  ) { }
+ /* 
+  publicacionCrear :  Publicacion = {
+    idPublicacion:0,
+    descripcion:'',
+    likeP:0,
+    comentario:'',
+    estado:1,
+    producto: new Producto("", 0, 0, "", "", 0)};
+    */
+  //@Input() publicacion:Publicacion = new Publicacion('',0,'',1,this.saveProductos);
   //@Input() producto:Producto = new Producto('',0,0,'',0);
+
+  productoGuardar:Producto[] = [];
+
+  publicacion:Publicacion = new Publicacion('',0,'',1,new Producto("", 0, 0, "", "", 0));
+  //publicacion:Publicacion = new Publicacion('',0,'',1,this.productoGuardar);
 
   public contadorLike:number=0;
   public comentario:string='';
@@ -25,16 +41,21 @@ export class PublicacionComponent implements OnInit {
 
  // producto: Producto = new Producto()
 
-  constructor(
-    public servicioProducto : ProductoService
-  ) { }
+
 
   ngOnInit(): void {
     //this.getDataProduct();
+    this.cargarProductos();
   }
 
   sumarLike(){
     this.contadorLike++;
+  }
+
+  cargarProductos(){
+    this.servicioProducto.getProductos().subscribe((res: Producto[]) => {
+      this.productoGuardar = res;
+    });
   }
 
   /*

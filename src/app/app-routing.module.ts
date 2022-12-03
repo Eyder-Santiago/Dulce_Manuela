@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'productos/especifico-selected',
     component: EspecificoSeleccionadoComponent
+  },
+  {
+    path: 'publicaciones',
+    loadChildren: () => import('./publicacion/publicacion.module').then(m=> m.PublicacionModule)
   }
 ];
 

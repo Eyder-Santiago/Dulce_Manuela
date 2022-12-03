@@ -14,7 +14,6 @@ import { AsignPasswordComponent } from './cuenta/asign-password/asign-password.c
 import { CarritoDeComprasComponent } from './carrito-de-compras/carrito-de-compras.component';
 import { ProductoCarritoComponent } from './componentes/producto-carrito/producto-carrito.component';
 import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodos-pago/valor-total-metodos-pago.component';
-import { PublicacionComponent } from './componentes/publicacion/publicacion.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { FormasDePagoModule } from './formas-de-pago/formas-de-pago.module';
@@ -26,6 +25,7 @@ import { PagosModule } from './pagos/pagos.module';
 import { EspecificoComponent } from './productos/especifico/especifico.component';
 //import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
+import { PublicacionModule } from './publicacion/publicacion.module';
 //import { CookieService } from 'ngx-cookie-service';
 
 
@@ -37,7 +37,6 @@ import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccio
     CarritoDeComprasComponent,
     ProductoCarritoComponent,
     ValorTotalMetodosPagoComponent,
-    PublicacionComponent,
     HeaderComponent,
     SobreNosotrosComponent,
     TiendaComponent,
@@ -53,7 +52,8 @@ import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccio
     HttpClientModule,
     FormsModule,
     FormasDePagoModule,
-    PagosModule
+    PagosModule,
+    PublicacionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

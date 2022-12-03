@@ -1,22 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Producto } from 'src/app/modelo/producto';
 import { Publicacion } from 'src/app/modelo/publicacion';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { PublicacionService } from 'src/app/servicios/publicacion.service';
 
 @Component({
-  selector: 'app-publicacion',
-  templateUrl: './publicacion.component.html',
-  styleUrls: ['./publicacion.component.css']
+  selector: 'app-crear',
+  templateUrl: './crear.component.html',
+  styleUrls: ['./crear.component.css']
 })
-export class PublicacionComponent implements OnInit {
-
+export class CrearComponent {
   public saveProductos: Producto[] = [];
   public guardaProductos: Producto = new Producto("",0,0,"","",0);
+
+  @Output() publicacionCreada = new EventEmitter<Publicacion>;
 
   public probandoSelect: string[] = ['alga','árbol','planta'];
  
   constructor(
-    public servicioProducto : ProductoService
+    public servicioProducto : ProductoService,
+    public servicioPublicacion : PublicacionService
   ) { }
  /* 
   publicacionCrear :  Publicacion = {
@@ -32,7 +35,7 @@ export class PublicacionComponent implements OnInit {
 
   productoGuardar:Producto[] = [];
 
-  publicacion:Publicacion = new Publicacion('',0,'',1,new Producto("", 0, 0, "", "", 0));
+  @Input() publicacion:Publicacion = new Publicacion('',0,'',1,this.productoGuardar);
   //publicacion:Publicacion = new Publicacion('',0,'',1,this.productoGuardar);
 
   public contadorLike:number=0;
@@ -58,29 +61,14 @@ export class PublicacionComponent implements OnInit {
     });
   }
 
-  /*
-  getDataProduct(){
-    this.servicioProducto.getProductos().subscribe((resp:Producto[])=>
-      {
-        console.log(resp);
-        this.almacenarProductos(resp);
-        this.saveProductos = resp;
-      });
-      
+  agregarPublicacion(){
+    this.servicioPublicacion.crearPublicacion(this.publicacion).subscribe(resp=> {
+      this.publicacionCreada.emit();
+      this.publicacion = new Publicacion('',0,'',0,this.productoGuardar);
+    },
+    err => {
+      alert("No se pudo crear el producto: " + err.error);
+    }
+    );
   }
-
-  almacenarProductos(productoGet:Producto[]){
-    // //console.log(producto);
-    // for(let p of productoGet){
-    //   this.publicacion.producto.id = p.id;
-    //   this.publicacion.producto.nombre = p.nombre;
-    //   this.publicacion.producto.precio = p.precio;
-    //   this.publicacion.producto.urlImagen = p.urlImagen;
-    //   this.publicacion.producto.estado = p.estado;
-    // }
-
-    // console.log(this.publicacion.producto.nombre);
-    
-  }
-*/
 }

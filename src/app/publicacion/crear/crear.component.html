@@ -29,10 +29,12 @@
               <select name="chooseProduct" [(ngModel)]="publicacion.producto" class="form-control">
                 <option [value]="item" *ngFor="let item of productoGuardar">{{item.nombre + ' $' + item.precio}}</option>
               </select>
+              <select name="chooseProduct" [(ngModel)]="publicacion.producto" class="form-control">
+                <option [value]="item" *ngFor="let item of productoGuardar">{{item.nombre + ' $' + item.precio}}</option>
+              </select>
             </div>
-            <button id="otroSelect">+</button>
           </div>
           <button (click)="agregarPublicacion()">Guardar</button>
         </div>
       </div>
-  </div>
+</div>

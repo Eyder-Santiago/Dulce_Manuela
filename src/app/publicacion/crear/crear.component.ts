@@ -40,8 +40,7 @@ export class CrearComponent {
 
   public contadorLike:number=0;
   public comentario:string='';
-  public acum:number=0;
-  
+  public productoNinguno:Producto = {id:999, nombre:'Ninguno', descripcion:'',precio:0,stock:0,urlImagen:'',estado:0}  
 
  // producto: Producto = new Producto()
 
@@ -56,13 +55,12 @@ export class CrearComponent {
   sumarLike(){
     this.contadorLike++;
   }
-  sumarAcum(){
-    this.acum++;
-  }
+
 
   cargarProductos(){
     this.servicioProducto.getProductos().subscribe((res: Producto[]) => {
       this.productoGuardar = res;
+      this.productoGuardar.push(this.productoNinguno);
     });
   }
 

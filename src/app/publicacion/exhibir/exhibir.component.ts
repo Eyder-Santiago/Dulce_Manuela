@@ -10,7 +10,9 @@ import { PublicacionService } from 'src/app/servicios/publicacion.service';
 })
 export class ExhibirComponent implements OnInit {
 
-  publicacion : Publicacion[] = [];
+  @Input() publicaciones : Publicacion[] = [];
+  @Output() publicacionEliminada = new EventEmitter<Publicacion>;
+  @Output() publicacionEditada = new EventEmitter<Publicacion>
 
   constructor(public servicioPublicacion : PublicacionService){
     
@@ -18,7 +20,7 @@ export class ExhibirComponent implements OnInit {
 
   cargarPublicaciones(){
     this.servicioPublicacion.getPublicacion().subscribe((res: Publicacion[]) => {
-      this.publicacion = res;
+      this.publicaciones = res;
     });
   }
 
@@ -26,5 +28,14 @@ export class ExhibirComponent implements OnInit {
   ngOnInit(): void {
     this.cargarPublicaciones();
   }
+
+  onPublicacionEliminado(publicacion:Publicacion){
+    this.publicacionEliminada.emit(publicacion);
+  }
+
+  onPublicacionEditado(publicacion:Publicacion){
+    this.publicacionEditada.emit(publicacion);
+  }
+
 
 }

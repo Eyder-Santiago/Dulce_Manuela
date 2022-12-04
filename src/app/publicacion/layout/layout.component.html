@@ -1,0 +1,12 @@
+<div class="container bg-dark text-light">
+    <br>
+    <h1 class="text-center ">Listado Productos</h1>
+    <br>
+  </div>
+  
+  <app-crear (publicacionCreada)="onPublicacionCreada($event)"></app-crear>
+  
+  <br>
+  <hr>
+  <app-exhibir #exhibir [publicaciones]="publicaciones" (publicacionEliminada)="onPublicacionEliminada($event)"
+  (publicacionEditada)="onPublicacionEditada($event)" ></app-exhibir>

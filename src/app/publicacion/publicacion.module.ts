@@ -5,6 +5,8 @@ import { EliminarComponent } from './eliminar/eliminar.component';
 import { ExhibirComponent } from './exhibir/exhibir.component';
 import { FormsModule } from '@angular/forms';
 import { PublicacionRoutingModule } from './publicacion-routing.module';
+import { LayoutComponent } from './layout/layout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,12 +14,14 @@ import { PublicacionRoutingModule } from './publicacion-routing.module';
   declarations: [
     CrearComponent,
     EliminarComponent,
-    ExhibirComponent
+    ExhibirComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    PublicacionRoutingModule
+    PublicacionRoutingModule,
+    HttpClientModule
   ]
 })
 export class PublicacionModule { }

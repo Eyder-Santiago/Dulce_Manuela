@@ -1,0 +1,18 @@
+.contenedor-publicacion {
+    background-color: var(--color-amarillo);
+  }
+  
+  .card {
+    width: 30rem;
+  }
+  
+  .card-body {
+    background-color: var(--color-amarillo);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .card {
+      width: 20rem;
+    }
+}
+  

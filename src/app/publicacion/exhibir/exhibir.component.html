@@ -1,10 +1,10 @@
-<div class="contenedor-publicacion">
+<div *ngFor="let p of publicaciones" class="contenedor-publicacion">
     <div class="card">
         <img src="../../../assets/Imagenes/Cheescake-de-limon.jpg" class="card-img-top" alt="publicidad">
         <div class="card-body">
           <div class="row">
             <div class="col-2 icono">
-                
+                <p>{{p.likeP}}</p>
                 <!--función que cuente likes. Sólo 1 like por cuenta y 1 likes por publicación, no se podrá dar más de 1 like
                 los visitantes podrán ver el # de likes y comentarios, pero si un visitante intenta dar like o comentar,
                 se le invitará a registrarse con una ventana emergente, si da que sí lo desea hacer se redirigirá a cuenta/registrar,
@@ -13,18 +13,21 @@
             </div><br/>
             <div class="col-10 descripcion">
               <p class="text-center">Descripción</p>
-                
+              <p>{{p.descripcion}}</p>            
             </div>
           </div>
           <div class="row">
             <div class="col-10">
                 <p class="comentarios-publicacion text-center">Comentarios</p>
-                
+                <p>{{p.comentario}}</p>
             </div>
             <!--escoger el producto junto a la url imagen, propongo publicacion.nombre + publicacion.urlImagen
             <select name="chooseProduct" [(ngModel)]="publicacion.nombre">
               <option [value]="item" *ngFor="let item of publicacion.nombre">{{item}}</option>
             </select>-->
+            <div *ngFor="let q of p.producto">
+                <p>{{q.nombre + ' $' + q.precio}}</p>
+            </div>>
             <div>
 
             </div>

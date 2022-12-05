@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  UrlBackend: 'http://localhost/dulceservice' //colocar puerto al cambiar pc
+  UrlBackend: 'http://dulce_manuela.local/api' //colocar puerto al cambiar pc
 };
 
 /*

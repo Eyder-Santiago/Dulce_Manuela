@@ -25,27 +25,27 @@ export class UsuarioService{
 
     public getUsuarios(){
         //defino la url donde esta el servicio
-       let  url =this.UrlBase + '/UsuarioService.php';
+       let  url =this.UrlBase + '/admin/usuarios';
        return this.http.get<Usuario[]>(url,{headers:this.tokenService.obtenerHeaders()});
     }
 
     public crearUsuario(usuario:Usuario){
 
         //defino la url donde esta el servicio
-        let  url = this.UrlBase + '/UsuarioService.php';
+        let  url = this.UrlBase + '/admin/usuarios';
         return this.http.post(url,JSON.stringify(usuario),{headers:this.tokenService.obtenerHeaders()});
       }
 
     public editarUsuario(usuario:Usuario){
 
         //defino la url donde esta el servicio
-        let  url = this.UrlBase + '/UsuarioService.php';
+        let  url = this.UrlBase + '/admin/usuarios/' + usuario.id;
         return this.http.put(url,JSON.stringify(usuario),{headers:this.tokenService.obtenerHeaders()});
       }
 
     eliminarUsuario(usuario:Usuario){
         //defino la url donde esta el servicio
-        let  url = this.UrlBase + '/UsuarioService.php?id='+ usuario.id;
+        let  url = this.UrlBase + '/admin/usuarios/'+ usuario.id;
         return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
       }
 

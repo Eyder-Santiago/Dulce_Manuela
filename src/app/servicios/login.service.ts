@@ -16,7 +16,7 @@ export class LoginService{
 
     public login(usuario:Usuario){
         //defino la url donde esta el servicio
-        let  url = this.UrlBase + '/CuentaService.php';
+        let  url = this.UrlBase + '/login';
         let header=new HttpHeaders();
         header.append('Content-Type','aplication/json')
         header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')

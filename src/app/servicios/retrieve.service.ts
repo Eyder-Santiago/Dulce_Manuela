@@ -25,13 +25,26 @@ export class RetrieveService {
     public existEmail(){
         //defino la url donde esta el servicio
         let header=new HttpHeaders();
-        let  url =this.UrlBase + '/UsuarioService.php';
+        let  url =this.UrlBase + '/usuarios';
         return this.http.get<Usuario[]>(url,{headers:header});
+    }
+
+    public crearUsuario(usuario:Usuario){
+        //defino la url donde esta el servicio
+        let  url = this.UrlBase + '/registrar';
+        return this.http.post(url,JSON.stringify(usuario),{headers:this.tokenService.obtenerHeaders()});
+    }
+
+    public editarUsuario(usuario:Usuario){
+
+        //defino la url donde esta el servicio
+        let  url = this.UrlBase + '/perfil/' + usuario.id;
+        return this.http.put(url,JSON.stringify(usuario),{headers:this.tokenService.obtenerHeaders()});
     }
 
     public editPassword(usuario:Usuario){
         let header=new HttpHeaders();
-        let  url =this.UrlBase + '/RetrievePasswordService.php'; //no afectó llamarlo retrieve
+        let  url =this.UrlBase + '/password'; //no afectó llamarlo retrieve
         return this.http.put(url,JSON.stringify(usuario),{headers:header});
     }
         

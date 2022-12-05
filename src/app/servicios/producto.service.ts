@@ -36,25 +36,25 @@ export class ProductoService {
   
   public getProductos(){
      //defino la url donde esta el servicio
-    let  url = this.UrlBase + '/ProductoService.php';
+    let  url = this.UrlBase + '/productos';
     return this.http.get<Producto[]>(url,{headers:this.tokenService.obtenerHeaders()});
   }
   
   public crearProducto(producto:Producto){
     //defino la url donde esta el servicio
-    let  url = this.UrlBase + '/ProductoService.php';
+    let  url = this.UrlBase + '/admin/productos';
     return this.http.post(url,JSON.stringify(producto),{headers:this.tokenService.obtenerHeaders()});
   }
   
   public editarProducto(producto:Producto){
     //defino la url donde esta el servicio
-    let  url = this.UrlBase + '/ProductoService.php'; 
+    let  url = this.UrlBase + '/admin/productos/' + producto.id; 
     return this.http.put(url,JSON.stringify(producto),{headers:this.tokenService.obtenerHeaders()});
   }
   
   eliminarProducto(producto:Producto){
     //defino la url donde esta el servicio
-    let  url = this.UrlBase + '/ProductoService.php?id='+ producto.id;
+    let  url = this.UrlBase + '/admin/productos/'+ producto.id;
     return this.http.delete(url,{headers:this.tokenService.obtenerHeaders()});
   }
 

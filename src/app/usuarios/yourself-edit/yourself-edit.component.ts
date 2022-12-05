@@ -5,6 +5,7 @@ import { Usuario } from 'src/app/modelo/usuario';
 import { TokenService } from 'src/app/servicios/token.service';
 import { TokenPasswordService } from 'src/app/servicios/tokenPassword.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { RetrieveService } from 'src/app/servicios/retrieve.service';
 
 @Component({
   selector: 'app-yourself-edit',
@@ -41,6 +42,7 @@ export class YourselfEditComponent implements OnInit {
 
   constructor(
     public servicioUsuario : UsuarioService,
+    private retrieveService:RetrieveService,
     private router: Router,
     private tokenUsar : TokenService
     //private token : TokenPasswordService
@@ -58,32 +60,34 @@ export class YourselfEditComponent implements OnInit {
   editarCuenta(){
    let almacenar : string = ""; 
    almacenar = this.tokenUsar.obtenerToken();
+   almacenar = almacenar.replace("idUsuario", "id_usuario");
+   let token:Token = JSON.parse(almacenar);
 
-   almacenar = this.invertir(almacenar);
+//    almacenar = this.invertir(almacenar);
 
-   let nuevaCadena : string = "";
+//    let nuevaCadena : string = "";
 
-   nuevaCadena = almacenar.slice(2,5);
+//    nuevaCadena = almacenar.slice(2,5);
 
-   nuevaCadena = this.invertir(nuevaCadena);
--
-   console.log(nuevaCadena);
+//    nuevaCadena = this.invertir(nuevaCadena);
+// -
+//    console.log(nuevaCadena);
 
-   let idUsuarioFind : number = 0;
+//    let idUsuarioFind : number = 0;
 
-   let acum : string = '';
+//    let acum : string = '';
 
-   //iterando la cadena para coger el id de usuario
-   for (let u of nuevaCadena){
-    if(u == '1'|| u == '2'|| u =='3'|| u=='4'|| u=='5'|| u=='6'|| u=='7'|| u=='8'|| u=='9'|| u=='0'){
-      //idUsuarioFind = parseInt(u);
+//    //iterando la cadena para coger el id de usuario
+//    for (let u of nuevaCadena){
+//     if(u == '1'|| u == '2'|| u =='3'|| u=='4'|| u=='5'|| u=='6'|| u=='7'|| u=='8'|| u=='9'|| u=='0'){
+//       //idUsuarioFind = parseInt(u);
       
-      acum = acum + u;
-      console.log(acum);
+//       acum = acum + u;
+//       console.log(acum);
 
-    }
-   }
-  idUsuarioFind=parseInt(acum);
+//     }
+//    }
+  let idUsuarioFind:number = token.id_usuario;
    //console.log(idUsuarioFind);
 
    this.getDataUser(idUsuarioFind);
@@ -140,7 +144,7 @@ export class YourselfEditComponent implements OnInit {
     }
 
     modificarUsuario() : void{
-      this.servicioUsuario.editarUsuario(this.usuario).subscribe(resp =>{
+      this.retrieveService.editarUsuario(this.usuario).subscribe(resp =>{
         //una vez se envíe el objeto local se define en blanco
         this.usuarioAutoEditado.emit(this.usuario);
         alert('Tus datos se han actualizado correctamente');

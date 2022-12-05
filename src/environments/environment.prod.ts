@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  UrlBackend: 'http://localhost/dulceservice'
+  UrlBackend: 'http://dulce_manuela.local/api'
 };

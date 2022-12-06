@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PagoNequiComponent } from './pago-nequi.component';
+import { MisPedidosComponent } from './mis-pedidos.component';
 
-describe('PagoNequiComponent', () => {
-  let component: PagoNequiComponent;
-  let fixture: ComponentFixture<PagoNequiComponent>;
+describe('MisPedidosComponent', () => {
+  let component: MisPedidosComponent;
+  let fixture: ComponentFixture<MisPedidosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PagoNequiComponent ]
+      declarations: [ MisPedidosComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PagoNequiComponent);
+    fixture = TestBed.createComponent(MisPedidosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

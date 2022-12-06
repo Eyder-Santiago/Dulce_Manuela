@@ -8,6 +8,8 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 import { TiendaComponent } from './tienda/tienda.component';
 import { EspecificoComponent } from './productos/especifico/especifico.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { MisPedidosComponent } from './mis-pedidos/mis-pedidos.component';
 
 const routes: Routes = [
   {
@@ -53,7 +55,17 @@ const routes: Routes = [
   {
     path: 'publicaciones',
     loadChildren: () => import('./publicacion/publicacion.module').then(m=> m.PublicacionModule)
-  }
+  },
+  {
+    path: 'pedidos',
+    canActivate: [AuthGuard],
+    component: PedidosComponent
+  },
+  {
+    path: 'mis-pedidos',
+    canActivate: [AuthGuard],
+    component: MisPedidosComponent
+  },
 ];
 
 @NgModule({

@@ -50,6 +50,11 @@ export class PedidoService {
     return this.http.get<Pedido[]>(url,{headers:this.tokenService.obtenerHeaders()});
   }
 
+  public getPedidosUsuario(idUsuario:number){
+    let  url = this.UrlBase + '/pedidos?idUsuario=' + idUsuario;
+    return this.http.get<Pedido[]>(url,{headers:this.tokenService.obtenerHeaders()});
+  }
+
   public crearPedido(pedido:Pedido) {
     let  url = this.UrlBase + '/pedidos';
     return this.http.post<RespuestaPedido>(url,JSON.stringify(pedido), { headers: this.tokenService.obtenerHeaders() });

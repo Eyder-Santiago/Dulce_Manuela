@@ -55,6 +55,15 @@
               <li class="nav-item" *ngIf="estaLogueado">
                 <a class="nav-link" routerLink="productos"><i class="fa-solid fa-pen-to-square"></i>     Listado y Acciones</a>
               </li>
+              <li>
+                <hr class="nav-divider">
+              </li>
+              <li class="nav-item" *ngIf="estaLogueado">
+                <a class="nav-link" routerLink="pedidos"><i class="fa-solid fa-basket-shopping"></i>     Listado de pedidos</a>
+              </li>
+              <li class="nav-item" *ngIf="estaLogueado">
+                <a class="nav-link" routerLink="mis-pedidos"><i class="fa-sharp fa-solid fa-bag-shopping"></i>     Mis pedidos</a>
+              </li>
             </ul>
           </div>
         </div>

@@ -19,15 +19,16 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 import { TiendaComponent } from './tienda/tienda.component';
 import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
 import { FilterPipe } from './pipes/filter.pipe';
-import { PagosModule } from './pagos/pagos.module';
 import { EspecificoComponent } from './productos/especifico/especifico.component';
 //import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
 import { PublicacionModule } from './publicacion/publicacion.module';
 import { PagosNequiComponent } from './componentes/pagos-nequi/pagos-nequi.component';
 import { PagosContraentregaComponent } from './componentes/pagos-contraentrega/pagos-contraentrega.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { MisPedidosComponent } from './mis-pedidos/mis-pedidos.component';
+import { ListaPedidosComponent } from './componentes/lista-pedidos/lista-pedidos.component';
 //import { CookieService } from 'ngx-cookie-service';
-
 
 @NgModule({
   declarations: [
@@ -45,7 +46,10 @@ import { PagosContraentregaComponent } from './componentes/pagos-contraentrega/p
     EspecificoComponent,
     EspecificoSeleccionadoComponent,
     PagosNequiComponent,
-    PagosContraentregaComponent
+    PagosContraentregaComponent,
+    PedidosComponent,
+    MisPedidosComponent,
+    ListaPedidosComponent
     
   ],
   imports: [
@@ -53,7 +57,6 @@ import { PagosContraentregaComponent } from './componentes/pagos-contraentrega/p
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    PagosModule,
     PublicacionModule
   ],
   providers: [],

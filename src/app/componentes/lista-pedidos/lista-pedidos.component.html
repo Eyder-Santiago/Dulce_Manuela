@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Núm.</th>
+            <th>Cliente</th>
+            <th>Correo</th>
+            <th>Cantidad de productos</th>
+            <th>Valor del pedido</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of pedidos">
+            <td>{{ p.id }}</td>
+            <td>{{ p.usuario.nombre }}</td>
+            <td>{{ p.usuario.email }}</td>
+            <td>{{ p.cantidadProductos }}</td>
+            <td>${{ p.precioTotal }}</td>
+            <td>{{ p.fecha }}</td>
+        </tr>
+    </tbody>
+</table>

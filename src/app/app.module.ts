@@ -16,8 +16,6 @@ import { ProductoCarritoComponent } from './componentes/producto-carrito/product
 import { ValorTotalMetodosPagoComponent } from './componentes/valor-total-metodos-pago/valor-total-metodos-pago.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
-import { FormasDePagoModule } from './formas-de-pago/formas-de-pago.module';
-import { PagoNequiComponent } from './formas-de-pago/pago-nequi/pago-nequi.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { BtnWhatsappComponent } from './componentes/btn-whatsapp/btn-whatsapp.component';
 import { FilterPipe } from './pipes/filter.pipe';
@@ -51,7 +49,6 @@ import { PublicacionModule } from './publicacion/publicacion.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FormasDePagoModule,
     PagosModule,
     PublicacionModule
   ],

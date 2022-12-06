@@ -43,10 +43,6 @@ const routes: Routes = [
     component: TiendaComponent
   },
   {
-    path: 'pagos',
-    loadChildren: () => import('./formas-de-pago/formas-de-pago.module').then(m => m.FormasDePagoModule)
-  },
-  {
     path: 'productos/especifico',
     component: EspecificoComponent
   },

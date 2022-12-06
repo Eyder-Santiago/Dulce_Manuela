@@ -1,0 +1,27 @@
+<div *ngIf="mostrarPago" tabindex="-1" class="modal show d-block" style="background-color: rgba(0,0,0,0.5);">
+	<div class="modal-dialog contenedor">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Pago con Nequi</h5>
+				<button type="button" class="btn-close" (click)="ocultarPago()" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+                <div class="contenedor text-center">
+                    <img src="../../../assets/logo/logo.png" alt="">
+                    <div class="col">
+                        <h2>Pago por Nequi</h2>
+                        <br>
+                        <br>
+                        <h5>Valor a Pagar: $<span>{{ pedido.precioTotal }}</span></h5>
+                        <br>
+                        <h5>3113189264</h5>
+                        <br>
+                        <p>Por favor envienos una captura del certificado de pago</p>
+                        <a href="https://web.whatsapp.com/send?phone=573113189264&amp;text=ComprobanteDePago" class="btn btn-success mx-2">Enviar comprobante</a>
+                        <a class="btn btn-primary mx-2" (click)="crearPedido()">Confirmar pedido</a>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>

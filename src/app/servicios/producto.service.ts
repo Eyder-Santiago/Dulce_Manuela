@@ -115,6 +115,10 @@ export class ProductoService {
     this.productosCarritoSubject.next(this.productosCarrito);
     this.guardarAlLocalStorageArray(this.productosCarrito);
   }
+
+  limpiarCarrito() {
+    localStorage.setItem('productoArray', "");
+  }
 /*
   obtenerLocalStorage() :string {
     let respuesta = "";

@@ -1,6 +1,19 @@
 <h5>Precio Total: ${{ precioTotal }}</h5>
 <br>
 <h6>Metodos de Pago</h6>
-<button class="btn btn-primary btn-lg" (click)="crearPedido()">Contra Entrega</button>
-<button class="btn btn-success btn-lg" routerLink="pagos/pago-nequi">Nequi</button>
+<button class="btn btn-primary btn-lg" (click)="mostrarPagoContraentrega()">Contra Entrega</button>
+<button class="btn btn-success btn-lg" (click)="mostrarPagoNequi()">Nequi</button>
+
+<app-pagos-nequi
+    [mostrarPago]="mostrarNequi"
+    [pedido]="pedido"
+    (formularioCerrado)="cerrarPagoNequi()"
+    (pedidoCreado)="pedidoCreado($event)">
+</app-pagos-nequi>
+<app-pagos-contraentrega
+    [mostrarPago]="mostrarContraentrega"
+    [pedido]="pedido"
+    (formularioCerrado)="cerrarPagoContraentrega()"
+    (pedidoCreado)="pedidoCreado($event)">
+</app-pagos-contraentrega>
 

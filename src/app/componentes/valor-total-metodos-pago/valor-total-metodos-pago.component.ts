@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoCarrito } from '../../modelo/productoCarrito';
 import { ProductoService } from '../../servicios/producto.service';
 import { PedidoService } from '../../servicios/pedido.service';
 import { Pedido } from '../../modelo/pedido';
-import { DetallePedido } from '../../modelo/detallePedido';
-import { Token } from '../../modelo/token';
-import { TokenService } from '../../servicios/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-valor-total-metodos-pago',
@@ -17,10 +14,14 @@ export class ValorTotalMetodosPagoComponent implements OnInit {
   constructor(
     private pedidoService: PedidoService,
     private productoService: ProductoService,
-    private tokenService: TokenService
+    private router:Router
   ) { }
 
   precioTotal:number = 0;
+  pedido:Pedido = new Pedido();
+
+  mostrarNequi:boolean = false;
+  mostrarContraentrega:boolean = false;
 
   ngOnInit(): void {
     this.productoService.productosCarrito$.subscribe(lista => {
@@ -31,18 +32,31 @@ export class ValorTotalMetodosPagoComponent implements OnInit {
     });
   }
 
-  crearPedido() {
-    let token:Token = JSON.parse(this.tokenService.obtenerToken());
-    let carrito:ProductoCarrito[] = this.productoService.obtenerLocalStorageArray();
-    let detalles:DetallePedido[] = [];
-    let pedido = new Pedido(0, 0, 0, "Nequi", "Cuenta Nequi: 123456", "nuevo", "", token.idUsuario, undefined, detalles);
-    for (let item of carrito) {
-      let detalle:DetallePedido = new DetallePedido(0, 0, item.producto.id, undefined, item.cantidad, 0, 0);
-      detalles.push(detalle);
-    }
-
-    pedido.detalles = detalles;
-    this.pedidoService.crearPedido(pedido).subscribe(result => console.log(result));
+  generarPedido() {
+    this.pedido = this.pedidoService.generarPedido();
   }
 
+  mostrarPagoNequi() {
+    this.generarPedido();
+    this.mostrarNequi = true;
+  }
+
+  cerrarPagoNequi() {
+    this.mostrarNequi = false;
+  }
+
+  mostrarPagoContraentrega() {
+    this.generarPedido();
+    this.mostrarContraentrega = true;
+  }
+
+  cerrarPagoContraentrega() {
+    this.mostrarContraentrega = false;
+  }
+
+  pedidoCreado(pedido:Pedido) {
+    this.productoService.limpiarCarrito();
+    alert("Se ha creado exitosamente el pedido. El número de pedido es " + pedido.id);
+    this.router.navigate(["/tienda"]);
+  }
 }

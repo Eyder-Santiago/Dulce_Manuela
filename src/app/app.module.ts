@@ -24,6 +24,8 @@ import { EspecificoComponent } from './productos/especifico/especifico.component
 //import { ProductosComponent } from './especifico-seleccionado/productos/productos.component';
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
 import { PublicacionModule } from './publicacion/publicacion.module';
+import { PagosNequiComponent } from './componentes/pagos-nequi/pagos-nequi.component';
+import { PagosContraentregaComponent } from './componentes/pagos-contraentrega/pagos-contraentrega.component';
 //import { CookieService } from 'ngx-cookie-service';
 
 
@@ -41,7 +43,9 @@ import { PublicacionModule } from './publicacion/publicacion.module';
     BtnWhatsappComponent,
     FilterPipe,
     EspecificoComponent,
-    EspecificoSeleccionadoComponent
+    EspecificoSeleccionadoComponent,
+    PagosNequiComponent,
+    PagosContraentregaComponent
     
   ],
   imports: [

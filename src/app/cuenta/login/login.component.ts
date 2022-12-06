@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   hacerLogin() {
     this.loginService.login(this.usuario).subscribe(respuesta => {
       if (respuesta.respuesta.valida == 'S') {
-        this.tokenService.guardarToken(respuesta.respuesta.token, respuesta.respuesta.id_usuario);
+        this.tokenService.guardarToken(respuesta.respuesta.token, respuesta.respuesta.idUsuario);
         this.router.navigate([""]);
       }
       else {

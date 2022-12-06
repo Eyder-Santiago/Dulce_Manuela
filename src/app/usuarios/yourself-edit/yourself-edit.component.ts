@@ -87,7 +87,7 @@ export class YourselfEditComponent implements OnInit {
 
 //     }
 //    }
-  let idUsuarioFind:number = token.id_usuario;
+  let idUsuarioFind:number = token.idUsuario;
    //console.log(idUsuarioFind);
 
    this.getDataUser(idUsuarioFind);

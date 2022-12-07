@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { DetallePedido } from 'src/app/modelo/detallePedido';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Pedido } from 'src/app/modelo/pedido';
 
 @Component({
   selector: 'app-detalle-pedidos',
@@ -8,6 +8,13 @@ import { DetallePedido } from 'src/app/modelo/detallePedido';
 })
 export class DetallePedidosComponent {
 
-  @Input() detalle:DetallePedido[] = [];
+  @Input() pedido:Pedido = new Pedido();
+  @Input() mostrarDetalle:boolean = false;
   
+  @Output() detalleCerrado = new EventEmitter<boolean>();
+
+  ocultarDetalle() {
+    this.mostrarDetalle = false;
+    this.detalleCerrado.emit(false);
+  }
 }

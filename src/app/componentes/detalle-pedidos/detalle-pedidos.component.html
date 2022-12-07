@@ -1,19 +1,40 @@
-<table class="table table-striped">
-    <thead class="thead-light">
-        <tr>
-            <th>Núm.</th>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad de productos</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of detalle" >
-            <td>{{ p.id }}</td>
-            <td>{{ p.producto.nombre }}</td>
-            <td>{{ p.producto.precio }}</td>
-            <td>{{ p.cantidad }}</td>
-        </tr>
-
-    </tbody>
-</table>
+<div *ngIf="mostrarDetalle" tabindex="-1" class="modal show d-block" style="background-color: rgba(0,0,0,0.5);">
+	<div class="modal-dialog contenedor">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Detalle del pedido</h5>
+				<button type="button" class="btn-close" (click)="ocultarDetalle()" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+                <div class="contenedor">
+                    <ul class="mb-5">
+                        <li><strong>Pedido # {{ pedido.id }}</strong></li>
+                        <li><strong>Estado:</strong> {{ pedido.estado }}</li>
+                        <li><strong>Medio de pago:</strong> {{ pedido.medioPago }}</li>
+                        <li><strong>Información del pago:</strong> {{ pedido.informacionPago }}</li>
+                    </ul>
+                    <table class="table table-striped text-center">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Núm.</th>
+                                <th>Producto</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                                <th>Cantidad de productos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let p of pedido.detalles" >
+                                <td>{{ p.id }}</td>
+                                <td>{{ p.producto.nombre }}</td>
+                                <td><img src="{{ p.producto.urlImagen }}" alt="" width="50" /></td>
+                                <td>{{ p.producto.precio }}</td>
+                                <td>{{ p.cantidad }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>

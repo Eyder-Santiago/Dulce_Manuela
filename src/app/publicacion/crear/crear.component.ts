@@ -35,6 +35,9 @@ export class CrearComponent {
 
   productoGuardar:Producto[] = [];
 
+  public productoSelectedUno:Producto;
+  public productoSelectedDos:Producto;
+
   @Input() publicacion:Publicacion = new Publicacion('',0,'',1,this.productoGuardar);
   //publicacion:Publicacion = new Publicacion('',0,'',1,this.productoGuardar);
 
@@ -49,6 +52,7 @@ export class CrearComponent {
   ngOnInit(): void {
     //this.getDataProduct();
     this.cargarProductos();
+    console.log(this.productoSelectedUno);
   }
 
 
@@ -60,7 +64,7 @@ export class CrearComponent {
   cargarProductos(){
     this.servicioProducto.getProductos().subscribe((res: Producto[]) => {
       this.productoGuardar = res;
-      this.productoGuardar.push(this.productoNinguno);
+      //this.productoGuardar.push(this.productoNinguno);
     });
   }
 
@@ -70,7 +74,7 @@ export class CrearComponent {
       this.publicacion = new Publicacion('',0,'',0,this.productoGuardar);
     },
     err => {
-      alert("No se pudo crear el producto: " + err.error);
+      alert("No se pudo crear la publicacion: " + err.error);
     }
     );
   }

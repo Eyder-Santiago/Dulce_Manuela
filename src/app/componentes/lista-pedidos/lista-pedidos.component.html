@@ -4,19 +4,24 @@
             <th>Núm.</th>
             <th>Cliente</th>
             <th>Correo</th>
-            <th>Cantidad de productos</th>
+            <th># productos</th>
+            <th>Medio de Pago</th>
             <th>Valor del pedido</th>
             <th>Fecha</th>
+            <th>Más </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of pedidos">
+        <tr *ngFor="let p of pedidos" >
             <td>{{ p.id }}</td>
             <td>{{ p.usuario.nombre }}</td>
             <td>{{ p.usuario.email }}</td>
-            <td>{{ p.cantidadProductos }}</td>
+            <td style="text-align: center;">{{ p.cantidadProductos }}</td>
+            <td>{{ p.medioPago }}</td>
             <td>${{ p.precioTotal }}</td>
             <td>{{ p.fecha }}</td>
+            <td><a href="/detalle-pedido">Ver</a></td>
         </tr>
+
     </tbody>
 </table>

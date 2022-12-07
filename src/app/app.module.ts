@@ -28,6 +28,8 @@ import { PagosContraentregaComponent } from './componentes/pagos-contraentrega/p
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { MisPedidosComponent } from './mis-pedidos/mis-pedidos.component';
 import { ListaPedidosComponent } from './componentes/lista-pedidos/lista-pedidos.component';
+import { UploadFilesComponent } from './componentes/upload-files/upload-files.component';
+import { DetallePedidosComponent } from './componentes/detalle-pedidos/detalle-pedidos.component'
 //import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
@@ -49,8 +51,9 @@ import { ListaPedidosComponent } from './componentes/lista-pedidos/lista-pedidos
     PagosContraentregaComponent,
     PedidosComponent,
     MisPedidosComponent,
-    ListaPedidosComponent
-    
+    ListaPedidosComponent,
+    UploadFilesComponent,
+    DetallePedidosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DetallePedido } from 'src/app/modelo/detallePedido';
 import { Pedido } from '../../modelo/pedido';
 
 @Component({
@@ -8,5 +9,7 @@ import { Pedido } from '../../modelo/pedido';
 })
 export class ListaPedidosComponent {
   @Input() pedidos:Pedido[] = [];
+
+  @Input() detalle:DetallePedido[] = [];
 
 }

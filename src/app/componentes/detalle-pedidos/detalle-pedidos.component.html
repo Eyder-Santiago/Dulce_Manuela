@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Núm.</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad de productos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of detalle" >
+            <td>{{ p.id }}</td>
+            <td>{{ p.producto.nombre }}</td>
+            <td>{{ p.producto.precio }}</td>
+            <td>{{ p.cantidad }}</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -26,10 +26,10 @@
               <option [value]="item" *ngFor="let item of publicacion.nombre">{{item}}</option>
             </select>-->
             <div>
-              <select name="chooseProduct" [(ngModel)]="publicacion.producto" class="form-control">
+              <select name="chooseProduct" [(ngModel)]="productoSelectedUno" class="form-control">
                 <option [value]="item" *ngFor="let item of productoGuardar">{{item.nombre + ' $' + item.precio}}</option>
               </select>
-              <select name="chooseProduct" [(ngModel)]="publicacion.producto" class="form-control">
+              <select name="chooseProduct" [(ngModel)]="productoSelectedDos" class="form-control">
                 <option [value]="item" *ngFor="let item of productoGuardar">{{item.nombre + ' $' + item.precio}}</option>
               </select>
             </div>

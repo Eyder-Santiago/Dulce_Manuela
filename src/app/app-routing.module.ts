@@ -10,6 +10,9 @@ import { EspecificoComponent } from './productos/especifico/especifico.component
 import { EspecificoSeleccionadoComponent } from './productos/especifico-seleccionado/especifico-seleccionado.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { MisPedidosComponent } from './mis-pedidos/mis-pedidos.component';
+import { UploadFilesComponent } from './componentes/upload-files/upload-files.component';
+import { DetallePedido } from './modelo/detallePedido';
+import { DetallePedidosComponent } from './componentes/detalle-pedidos/detalle-pedidos.component';
 
 const routes: Routes = [
   {
@@ -66,6 +69,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: MisPedidosComponent
   },
+  {
+    path: 'detalle-pedido',
+    component:DetallePedidosComponent
+  },
+  {
+    path: 'upload-file',
+    component:UploadFilesComponent
+  }
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from 'src/app/servicios/producto.service';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private productoService : ProductoService
   ) { }
 
   estaLogueado:boolean;
@@ -44,6 +46,8 @@ export class HeaderComponent implements OnInit {
     //this.dataService.deleteToken();
     window.location.href = "/pagina_principal";
     this.tokenService.quitarToken();
+    //vaciar el carrito 
+    this.productoService.limpiarCarrito();
   }
 }
 

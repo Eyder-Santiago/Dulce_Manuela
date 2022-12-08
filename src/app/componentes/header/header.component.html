@@ -20,19 +20,19 @@
       <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" routerLink=""><i class="fa-solid fa-house-chimney"></i>     Pagina de inicio</a>
+                <a class="nav-link" aria-current="page" routerLink="" data-bs-dismiss="offcanvas" ><i class="fa-solid fa-house-chimney"></i>     Pagina de inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="tienda"><i class="fa-solid fa-shop"></i>     Tienda</a>
+                <a class="nav-link" routerLink="tienda" data-bs-dismiss="offcanvas"><i class="fa-solid fa-shop"></i>     Tienda</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="usuarios/auto-edit"><i class="fa-solid fa-user-pen"></i>    Editar Usuario</a>
+                <a class="nav-link" routerLink="usuarios/auto-edit" data-bs-dismiss="offcanvas"><i class="fa-solid fa-user-pen"></i>    Editar mi información</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="sobre-nosotros"><i class="fa-solid fa-users"></i>     Sobre Nosotros</a>
+                <a class="nav-link" routerLink="sobre-nosotros" data-bs-dismiss="offcanvas"><i class="fa-solid fa-users" data-bs-dismiss="offcanvas"></i>     Sobre Nosotros</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink=""  (click)="logout()"><i class="fa-solid fa-door-open"></i>     Cerrar Sesión</a>
+                <a class="nav-link" routerLink=""  (click)="logout()" data-bs-dismiss="offcanvas"><i class="fa-solid fa-door-open" data-bs-dismiss="offcanvas"></i>     Cerrar Sesión</a>
               </li>
               <li>
                 <hr class="nav-divider">
@@ -41,28 +41,28 @@
                 <h5 class="titulo-nav-off">Publicaciones</h5>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" href="#"><i class="fa-solid fa-plus"></i>     Crear</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-plus" data-bs-dismiss="offcanvas"></i>     Crear</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" href="#"><i class="fa-solid fa-pen-to-square"></i>     Listado y Acciones</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-pen-to-square" data-bs-dismiss="offcanvas"></i>     Listado y Acciones</a>
               </li>
               <li class="nav-tittle" *ngIf="estaLogueado">
                 <h5 class="titulo-nav-off">Productos</h5>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="productos/agregar"><i class="fa-solid fa-plus"></i>     Crear</a>
+                <a class="nav-link" routerLink="productos/agregar"><i class="fa-solid fa-plus"data-bs-dismiss="offcanvas"></i>     Crear</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="productos"><i class="fa-solid fa-pen-to-square"></i>     Listado y Acciones</a>
+                <a class="nav-link" routerLink="productos" data-bs-dismiss="offcanvas"><i class="fa-solid fa-pen-to-square"></i>     Listado y Acciones</a>
               </li>
               <li>
                 <hr class="nav-divider">
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="pedidos"><i class="fa-solid fa-basket-shopping"></i>     Listado de pedidos</a>
+                <a class="nav-link" routerLink="pedidos" data-bs-dismiss="offcanvas"><i class="fa-solid fa-basket-shopping"></i>     Listado de pedidos</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="mis-pedidos"><i class="fa-sharp fa-solid fa-bag-shopping"></i>     Mis pedidos</a>
+                <a class="nav-link" routerLink="mis-pedidos" data-bs-dismiss="offcanvas"><i class="fa-sharp fa-solid fa-bag-shopping"></i>     Mis pedidos</a>
               </li>
             </ul>
           </div>

@@ -16,18 +16,7 @@ export class EdicionComponent implements OnInit {
 
  // public producto:Producto = new Producto("",0,0,0);
 
-  @Input() producto:Producto={
-    id:0,
-    nombre:"",
-    precio:0,
-    stock:0,
-    urlImagen:"",
-    descripcion:"",
-    estado:0
-   
-  }
-
-
+  @Input() producto:Producto = new Producto();
 
   constructor(public servicioProducto:ProductoService) { }
 

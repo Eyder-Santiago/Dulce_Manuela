@@ -17,17 +17,7 @@ export class BuscadorComponent implements OnInit {
 
   productos:Producto[]=[];
 
-
-
-  @Input() producto:Producto={
-    id:0,
-    nombre:"",
-    precio:0,
-    stock:0,
-    urlImagen:"",
-    descripcion:"",
-    estado:1,
-  }
+  @Input() producto:Producto = new Producto();
 
   constructor(
     public productoService : ProductoService,

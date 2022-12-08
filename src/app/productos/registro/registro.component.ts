@@ -16,8 +16,8 @@ export class RegistroComponent implements OnInit{
 
   @Output() productoEditado = new EventEmitter<Producto>();
 
-  @Input() producto:Producto = new Producto("",0,0,"","",0);
-
+  @Input() producto:Producto = new Producto();
+  
   constructor(public servicioProducto:ProductoService) { }
 
   ngOnInit(): void {
@@ -25,10 +25,11 @@ export class RegistroComponent implements OnInit{
 
   //se define la función ccrear que será llamada cuando se de clic en registrar
   agregarProducto() : void{
+    this.producto.estado = 1;
     this.servicioProducto.crearProducto(this.producto).subscribe(resp =>{
         //una vez se envíe el objeto local se define en blanco
         this.productoCreado.emit(this.producto);
-        this.producto = new Producto("",0,0,"","",0);
+        this.producto = new Producto();
       },
       err => {
         alert("No se pudo crear el producto: " + err.error);
@@ -47,5 +48,17 @@ export class RegistroComponent implements OnInit{
         alert("No se pudo actualizar el producto: " + err.error);
       }
     );
+  }
+
+  archivoCargado(event:any): void {
+    let archivo:File = event.target.files[0];
+    console.log(archivo);
+
+    (new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(archivo);
+      reader.onload = () => resolve(reader.result?.toString() ?? "");
+      reader.onerror = error => reject(error);
+    })).then(result => this.producto.imagen = result);
   }
 }

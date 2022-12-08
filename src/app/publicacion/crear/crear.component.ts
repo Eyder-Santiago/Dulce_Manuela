@@ -11,7 +11,7 @@ import { PublicacionService } from 'src/app/servicios/publicacion.service';
 })
 export class CrearComponent {
   public saveProductos: Producto[] = [];
-  public guardaProductos: Producto = new Producto("",0,0,"","",0);
+  public guardaProductos: Producto = new Producto();
 
   @Output() publicacionCreada = new EventEmitter<Publicacion>;
 
@@ -43,7 +43,7 @@ export class CrearComponent {
 
   public contadorLike:number=0;
   public comentario:string='';
-  public productoNinguno:Producto = {id:999, nombre:'Ninguno', descripcion:'',precio:0,stock:0,urlImagen:'',estado:0}  
+  public productoNinguno:Producto = new Producto(999, 'Ninguno')  
 
  // producto: Producto = new Producto()
 

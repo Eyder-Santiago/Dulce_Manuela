@@ -11,7 +11,7 @@ import { ProductoService } from '../../servicios/producto.service';
 })
 export class ProductoCarritoComponent implements OnInit {
 
-  @Input() productoCarrito: ProductoCarrito = { cantidad: 0, producto: new Producto("", 0, 0, "", "", 0) };
+  @Input() productoCarrito: ProductoCarrito = { cantidad: 0, producto: new Producto() };
 
   constructor(
     public productoService: ProductoService

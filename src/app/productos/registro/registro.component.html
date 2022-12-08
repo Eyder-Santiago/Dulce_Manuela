@@ -7,6 +7,8 @@
         <input type="number" class="form-control" [(ngModel)]="producto.precio">
         <p>Url Imagen</p>
         <input type="text" class="form-control" [(ngModel)]="producto.urlImagen">
+        <p>Archivo Imagen</p>
+        <input type="file" #ImagenProducto class="form-control" accept="image/*" (change)="archivoCargado($event)" />
         <p>Ingredientes</p>
         <input type="text" class="form-control" [(ngModel)]="producto.descripcion">
         <br>

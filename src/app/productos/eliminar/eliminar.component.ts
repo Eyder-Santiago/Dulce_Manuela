@@ -14,18 +14,7 @@ export class EliminarComponent implements OnInit {
 
   @Output() productoEliminado = new EventEmitter<Producto>();
 
-  @Input() producto:Producto={
-    id:0,
-    nombre:"",
-    precio:0,
-    stock:0,
-    urlImagen:"",
-    descripcion:"",
-    estado:0
-   
-  }
-
-
+  @Input() producto:Producto = new Producto();
 
   ngOnInit(): void {
   }

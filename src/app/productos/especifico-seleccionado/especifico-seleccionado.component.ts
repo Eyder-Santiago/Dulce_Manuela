@@ -30,17 +30,9 @@ export class EspecificoSeleccionadoComponent implements OnInit {
     this.funcionAuxLocalStorage();
   }
 
-  @Input() producto:Producto={
-    id:0,
-    nombre:"",
-    precio:0,
-    stock:0,
-    urlImagen:"",
-    descripcion:"",
-    estado:1
-  }
+  @Input() producto:Producto = new Producto();
 
-  cantidad :number = 0;
+  cantidad :number = 1;
 
   funcionAuxLocalStorage(){
     let varProducto : Producto; 

@@ -141,7 +141,7 @@ export class ProductoService {
 */
 
 obtenerLocalStorage() :Producto {
-  let respuesta = new Producto("",0,0,"","",0);
+  let respuesta = new Producto();
   const item = localStorage.getItem('producto');
   if (item) {
     //this.estaLogueado.next(true);

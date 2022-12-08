@@ -15,45 +15,20 @@ export class EspecificoComponent implements OnInit {
   productos:Producto[]=[];
 
   //public nombre: string = "";
-
-
-
-
   // public producto:Producto = new Producto("",0,0,0);
- 
-   @Input() producto:Producto={
-     id:0,
-     nombre:"",
-     precio:0,
-     stock:0,
-     urlImagen:"",
-     descripcion:"",
-     estado:0
-    
-   }
-
-   
-   
-
-
+  @Input() producto:Producto = new Producto();
 
   constructor(
     public servicioProducto:ProductoService,
     //private cookieService: CookieService
 
-  ) {
-    
-   }
-
-
+  ) { }
 
   //por primera vez, se emitirán todos los productos, con la función mostrarProductoSeleccionado, se accede al que en la tienda el usuario dio click
   ngOnInit(): void {
     this.mostrarProductoSeleccionado();
     //console.log(this.producto);
     //this.cookieService.set('', this.producto.nombre);
-
-  
   }
 
   mostrarProductoSeleccionado(){

@@ -19,7 +19,7 @@ export class YourselfEditComponent implements OnInit {
   @Input() usuarios : Usuario[] = [];
 
   //@Input() usuario:Usuario = new Usuario("","","","", new Date(),"","",1);
-  
+
   @Input() usuario:Usuario={
     id:0,
     nombre:"",
@@ -38,7 +38,7 @@ export class YourselfEditComponent implements OnInit {
 
   public idInput:number=0;
 
-  
+
 
   constructor(
     public servicioUsuario : UsuarioService,
@@ -58,10 +58,11 @@ export class YourselfEditComponent implements OnInit {
 
   //traer el usuario logeado del localstorage token
   editarCuenta(){
-   let almacenar : string = ""; 
+   let almacenar : string = "";
    almacenar = this.tokenUsar.obtenerToken();
-   almacenar = almacenar.replace("idUsuario", "id_usuario");
+   //almacenar = almacenar.replace("idUsuario", "id_usuario");
    let token:Token = JSON.parse(almacenar);
+   
 
 //    almacenar = this.invertir(almacenar);
 
@@ -81,7 +82,7 @@ export class YourselfEditComponent implements OnInit {
 //    for (let u of nuevaCadena){
 //     if(u == '1'|| u == '2'|| u =='3'|| u=='4'|| u=='5'|| u=='6'|| u=='7'|| u=='8'|| u=='9'|| u=='0'){
 //       //idUsuarioFind = parseInt(u);
-      
+
 //       acum = acum + u;
 //       console.log(acum);
 
@@ -102,7 +103,7 @@ export class YourselfEditComponent implements OnInit {
    invertir(cadena:string) {
     var x = cadena.length; //número de veces que itera
     var cadenaInvertida = "";
-  
+
     while (x>=0) {
       cadenaInvertida = cadenaInvertida + cadena.charAt(x);
       x--;
@@ -117,30 +118,32 @@ export class YourselfEditComponent implements OnInit {
       }
       );
     }
-  
+
     auxiliarDataUser(usuarioGet:Usuario[], idLocalStorage:number){
-      
+
       //me traigo todos los usuarios del arreglo
-      for (let p of usuarioGet){
-        if(p.id == idLocalStorage)
-        {
-          //console.log(p.id);
-          //asignar valores a arreglo usuario
-          this.usuario.id = p.id;
-          this.usuario.nombre = p.nombre;
-          this.usuario.apellido = p.apellido;
-          this.usuario.email = p.email;
-          this.usuario.direccion = p.direccion;
-          this.usuario.birthDate = p.birthDate;
-          this.usuario.numCelular = p.numCelular;
-          this.usuario.password = p.password;
-          this.usuario.estado = p.estado;
-          this.usuarios.push(this.usuario);
-        }
-      }
-  
-      
-  
+
+      this.usuario = usuarioGet.find(usuario => usuario.id === idLocalStorage) ?? new Usuario("","","","", new Date(),"","",1);
+      // for (let p of usuarioGet){
+      //   if(p.id == idLocalStorage)
+      //   {
+      //     //console.log(p.id);
+      //     //asignar valores a arreglo usuario
+      //     this.usuario.id = p.id;
+      //     this.usuario.nombre = p.nombre;
+      //     this.usuario.apellido = p.apellido;
+      //     this.usuario.email = p.email;
+      //     this.usuario.direccion = p.direccion;
+      //     this.usuario.birthDate = p.birthDate;
+      //     this.usuario.numCelular = p.numCelular;
+      //     this.usuario.password = p.password;
+      //     this.usuario.estado = p.estado;
+      //     this.usuarios.push(this.usuario);
+      //   }
+      // }
+
+
+
     }
 
     modificarUsuario() : void{
@@ -153,6 +156,6 @@ export class YourselfEditComponent implements OnInit {
         alert("No se pudo eliminar el producto: " + err.error);
       });
     }
-  
-  
+
+
 }

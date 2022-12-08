@@ -11,5 +11,16 @@ export class ListaPedidosComponent {
   @Input() pedidos:Pedido[] = [];
 
   @Input() detalle:DetallePedido[] = [];
+  mostrarDetalle:boolean = false;
+  pedidoSeleccionado:Pedido = new Pedido();
 
+  onDetalleCerrado(value:boolean):void {
+    this.mostrarDetalle = value;
+  }
+
+  mostrarDetalleEsp(pedido:Pedido, event:Event):void {
+    event.preventDefault();
+    this.pedidoSeleccionado = pedido;
+    this.mostrarDetalle = true;
+  }
 }

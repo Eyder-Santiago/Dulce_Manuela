@@ -20,8 +20,13 @@
             <td>{{ p.medioPago }}</td>
             <td>${{ p.precioTotal }}</td>
             <td>{{ p.fecha }}</td>
-            <td><a href="/detalle-pedido">Ver</a></td>
+            <td><a href="#" (click)="mostrarDetalleEsp(p, $event)">Ver</a></td>
         </tr>
-
     </tbody>
 </table>
+
+<app-detalle-pedidos
+    [mostrarDetalle]="mostrarDetalle"
+    [pedido]="pedidoSeleccionado"
+    (detalleCerrado)="onDetalleCerrado($event)"
+></app-detalle-pedidos>

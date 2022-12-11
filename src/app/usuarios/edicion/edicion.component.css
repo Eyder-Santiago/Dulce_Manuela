@@ -1,0 +1,12 @@
+.modal {
+    height: auto;
+    width: 100%;
+}
+
+.modal-dialog {
+    width: auto;
+}
+
+.modal-content {
+    width: 60em;
+}

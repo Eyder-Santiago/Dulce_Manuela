@@ -13,6 +13,7 @@ import { MisPedidosComponent } from './mis-pedidos/mis-pedidos.component';
 import { UploadFilesComponent } from './componentes/upload-files/upload-files.component';
 import { DetallePedido } from './modelo/detallePedido';
 import { DetallePedidosComponent } from './componentes/detalle-pedidos/detalle-pedidos.component';
+import { AuthGuardRol } from './guards/auth.guard-rol';
 
 const routes: Routes = [
   {
@@ -21,12 +22,12 @@ const routes: Routes = [
   },
   {
     path: 'productos',
-    canActivate: [ AuthGuard ],
+    canActivate: [ AuthGuardRol ],
     loadChildren: () => import('./productos/productos.module').then(m => m.ProductosModule)
   },
   {
     path: 'usuarios',
-    canActivate: [ AuthGuard ],
+    
     loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuarioModule)
   },
   {
@@ -61,7 +62,7 @@ const routes: Routes = [
   },
   {
     path: 'pedidos',
-    canActivate: [AuthGuard],
+    canActivate: [ AuthGuardRol ],
     component: PedidosComponent
   },
   {

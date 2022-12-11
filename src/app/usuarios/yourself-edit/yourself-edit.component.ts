@@ -59,9 +59,9 @@ export class YourselfEditComponent implements OnInit {
   //traer el usuario logeado del localstorage token
   editarCuenta(){
    let almacenar : string = "";
-   almacenar = this.tokenUsar.obtenerToken();
+   almacenar = this.tokenUsar.obtenerToken(); //obtengo el token como string
    //almacenar = almacenar.replace("idUsuario", "id_usuario");
-   let token:Token = JSON.parse(almacenar);
+   let token:Token = JSON.parse(almacenar); //lo convierto a tipo token
    
 
 //    almacenar = this.invertir(almacenar);
@@ -88,6 +88,7 @@ export class YourselfEditComponent implements OnInit {
 
 //     }
 //    }
+  //al ya haberlo convertido en token, uso los métodos token para sacar la idUsuario
   let idUsuarioFind:number = token.idUsuario;
    //console.log(idUsuarioFind);
 
@@ -153,7 +154,7 @@ export class YourselfEditComponent implements OnInit {
         alert('Tus datos se han actualizado correctamente');
       },
       err => {
-        alert("No se pudo eliminar el producto: " + err.error);
+        alert("No se pudo editar: " + err.error);
       });
     }
 

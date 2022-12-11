@@ -5,6 +5,7 @@
 }
 
 #bienvenida {
+    width: auto;
     max-height: 100vh;
     background-color: #F54852;
     padding: 5em;

@@ -9,7 +9,7 @@
         <input type="text" class="form-control" [(ngModel)]="producto.urlImagen">
         <p>Archivo Imagen</p>
         <input type="file" #ImagenProducto class="form-control" accept="image/*" (change)="archivoCargado($event)" />
-        <p>Ingredientes</p>
+        <p>Descripción</p>
         <input type="text" class="form-control" [(ngModel)]="producto.descripcion">
         <br>
         <button class="btn btn-success" *ngIf="producto.id==0" (click)="agregarProducto()">Registrar</button>

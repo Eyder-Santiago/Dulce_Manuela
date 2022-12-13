@@ -1,3 +1,4 @@
+import { Token } from 'src/app/modelo/token';
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from 'src/app/servicios/producto.service';
 import { TokenService } from 'src/app/servicios/token.service';
@@ -15,9 +16,19 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   estaLogueado:boolean;
+  esAdmin:boolean=false;
 
   ngOnInit(): void {
     this.tokenService.estaLogueado$.subscribe(valor => this.estaLogueado = valor);
+    this.obtenerIdLogueado();
+  }
+
+  obtenerIdLogueado(){
+    let tokenAdmin:Token;
+    tokenAdmin = this.tokenService.obtenerTokenToken();
+    if(tokenAdmin.idUsuario==4){
+      this.esAdmin=true;
+    }
   }
 
   /*

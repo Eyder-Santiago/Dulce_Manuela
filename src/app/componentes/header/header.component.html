@@ -26,7 +26,7 @@
                 <a class="nav-link" routerLink="tienda" data-bs-dismiss="offcanvas"><i class="fa-solid fa-shop"></i>     Tienda</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">
-                <a class="nav-link" routerLink="usuarios/auto-edit" data-bs-dismiss="offcanvas"><i class="fa-solid fa-user-pen"></i>    Editar mi información</a>
+                <a class="nav-link" routerLink="usuarios/auto-edit" data-bs-dismiss="offcanvas"><i class="fa-solid fa-user-pen"></i>    Editar Mi Información</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="sobre-nosotros" data-bs-dismiss="offcanvas"><i class="fa-solid fa-users" data-bs-dismiss="offcanvas"></i>     Sobre Nosotros</a>
@@ -37,22 +37,22 @@
               <li>
                 <hr class="nav-divider">
               </li>
-              <li class="nav-tittle" *ngIf="estaLogueado">
+              <li class="nav-tittle" *ngIf="esAdmin">
                 <h5 class="titulo-nav-off">Usuarios</h5>
               </li>
-              <li class="nav-item" *ngIf="estaLogueado">
+              <li class="nav-item" *ngIf="esAdmin">
                 <a class="nav-link" routerLink="usuarios"><i class="fa-solid fa-gears"></i>     Crear, Editar y Listado</a>
               </li>
-              <li class="nav-tittle" *ngIf="estaLogueado">
+              <li class="nav-tittle" *ngIf="esAdmin">
                 <h5 class="titulo-nav-off">Productos</h5>
               </li>
-              <li class="nav-item" *ngIf="estaLogueado">
+              <li class="nav-item" *ngIf="esAdmin">
                 <a class="nav-link" routerLink="productos" data-bs-dismiss="offcanvas"><i class="fa-solid fa-gears"></i>     Crear, Editar y Listado</a>
               </li>
               <li>
                 <hr class="nav-divider">
               </li>
-              <li class="nav-item" *ngIf="estaLogueado">
+              <li class="nav-item" *ngIf="esAdmin">
                 <a class="nav-link" routerLink="pedidos" data-bs-dismiss="offcanvas"><i class="fa-solid fa-basket-shopping"></i>     Listado de pedidos</a>
               </li>
               <li class="nav-item" *ngIf="estaLogueado">

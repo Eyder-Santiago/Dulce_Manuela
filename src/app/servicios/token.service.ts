@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders} from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { Token } from 'src/app/modelo/token';
 
 @Injectable({
   providedIn: 'root'
@@ -48,4 +49,20 @@ export class TokenService {
       'Access-Control-Allow-Origin': 'http://localhost',
     });
   }
+
+  obtenerTokenToken() :Token {
+    let respuesta = new Token(0,'','');
+    const item = localStorage.getItem('token');
+    if (item) {
+      //this.estaLogueado.next(true);
+      respuesta = JSON.parse(item);
+      //respuesta = item;
+    }
+    else {
+      //this.estaLogueado.next(false);
+    }
+  
+    return respuesta;
+  }
+  
 }

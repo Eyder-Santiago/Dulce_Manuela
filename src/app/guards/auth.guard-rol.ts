@@ -84,7 +84,7 @@ export class AuthGuardRol implements CanActivate {
 
     auxiliarDataUser(usuarioGet:Usuario[], idLocalStorage:number){
 
-      //me traigo todos los usuarios del arreglo
+      //me traigo todos los usuarios del arreglo, usuario Get son los usuarios en BD
 
       this.usuario = usuarioGet.find(usuario => usuario.id === idLocalStorage) ?? new Usuario("","","","", new Date(),"","",1);
       

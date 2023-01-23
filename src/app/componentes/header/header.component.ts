@@ -21,14 +21,17 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.tokenService.estaLogueado$.subscribe(valor => this.estaLogueado = valor);
     this.obtenerIdLogueado();
+    console.log(this.esAdmin);
   }
 
+  //vuelve y recarga la página
   obtenerIdLogueado(){
     let tokenAdmin:Token;
     tokenAdmin = this.tokenService.obtenerTokenToken();
     if(tokenAdmin.idUsuario==4){
       this.esAdmin=true;
     }
+    console.log(tokenAdmin.idUsuario);
   }
 
   /*

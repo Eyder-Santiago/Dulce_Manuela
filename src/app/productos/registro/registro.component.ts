@@ -25,7 +25,9 @@ export class RegistroComponent implements OnInit{
 
   //se define la función ccrear que será llamada cuando se de clic en registrar
   agregarProducto() : void{
-    this.producto.estado = 1;
+    if(this.producto.nombre.length === 0 || this.producto.precio === 0 || this.producto.descripcion.length === 0){
+      alert("no se pudo enviar");
+    }else {
     this.servicioProducto.crearProducto(this.producto).subscribe(resp =>{
         //una vez se envíe el objeto local se define en blanco
         this.productoCreado.emit(this.producto);
@@ -35,6 +37,7 @@ export class RegistroComponent implements OnInit{
         alert("No se pudo crear el producto: " + err.error);
       }
     );
+  }
   }
 
   modificarProducto() : void{

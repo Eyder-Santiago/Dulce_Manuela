@@ -1,17 +1,18 @@
 <div class="contenedor" >
         <h2 class="title text-center" *ngIf="producto.id==0">Registro Producto</h2>
         <h2 class="title text-center" *ngIf="producto.id>0">Editar Producto</h2>
-        <p>Nombre</p>
-        <input type="text" class="form-control" [(ngModel)]="producto.nombre">
-        <p>Precio</p>
-        <input type="number" class="form-control" [(ngModel)]="producto.precio">
+        <p>Nombre  *</p>
+        <input type="text" name="nombre" class="form-control" [(ngModel)]="producto.nombre" placeholder="nombre" required>
+        <p>Precio  *</p>
+        <input type="number" name="precio" class="form-control" [(ngModel)]="producto.precio" required>
         <p>Url Imagen</p>
         <input type="text" class="form-control" [(ngModel)]="producto.urlImagen">
-        <p>Archivo Imagen</p>
+        <p>Archivo Imagen  *</p>
         <input type="file" #ImagenProducto class="form-control" accept="image/*" (change)="archivoCargado($event)" />
-        <p>Descripción</p>
-        <input type="text" class="form-control" [(ngModel)]="producto.descripcion">
+        <p>Descripción  *</p>
+        <input type="text" class="form-control" [(ngModel)]="producto.descripcion" placeholder="descripcion" required>
         <br>
-        <button class="btn btn-success" *ngIf="producto.id==0" (click)="agregarProducto()">Registrar</button>
-        <button *ngIf="producto.id>0" class="btn btn-info" (click)="modificarProducto()">Actualizar</button>
+        <button class="btn btn-success" type="submit" *ngIf="producto.id==0" (click)="agregarProducto()">Registrar</button>
+        <button *ngIf="producto.id>0" type="submit" class="btn btn-info" (click)="modificarProducto()">Actualizar</button>
+        
 </div>
